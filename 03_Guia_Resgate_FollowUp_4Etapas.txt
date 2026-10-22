@@ -1,0 +1,74 @@
+==============================================================================
+GUIA ANTI-VÁCUO DE RECUPERAÇÃO DE CLIENTES (CADERNO DE RESGATE)
+CRONOGRAMA DE 4 ETAPAS DE FOLLOW-UP QUE RESSUSCITA CONVERSAS ESQUECIDAS
+==============================================================================
+
+A REGRA DE OURO DO FOLLOW-UP:
+Nunca pergunte: "Oi, pensou sobre o que conversamos?" ou "Tem alguma novidade?".
+Isso gera cobrança e faz a cliente se afastar ainda mais. Toda mensagem de recuperação deve oferecer um motivo novo, uma oportunidade ou uma solução de dúvida.
+
+------------------------------------------------------------------------------
+MENSAGEM 1: O "TOQUE SUAVE" (Após 4 a 6 horas de silêncio)
+------------------------------------------------------------------------------
+Objetivo: Retomar quem se distraiu na correria do dia a dia.
+Script para copiar e colar:
+
+"Oi, [Nome]! Tudo bem?
+
+A nossa recepção estava organizando a grade de atendimentos da semana e lembrei de você.
+
+Só para eu não fechar a agenda sem te avisar: você prefere que eu segure aquele horário de [Dia/Turno] ou tem outro dia que fica melhor para a sua rotina?"
+
+------------------------------------------------------------------------------
+MENSAGEM 2: PROVA SOCIAL + REDUÇÃO DE RISCO (Após 24 horas de silêncio)
+------------------------------------------------------------------------------
+Objetivo: Eliminar o medo inconsciente do procedimento, da dor ou do resultado artificial.
+Script para copiar e colar:
+
+"[Nome], lembrei de você hoje na clínica!
+
+Atendemos uma paciente que tinha exatamente a mesma preocupação que a sua sobre [ex: ficar com o rosto muito inchado / dor da picadinha / ficar artificial].
+
+Olha esse resultado de como ficou super natural: (anexar 1 foto discreta de antes/depois ou print de elogio de paciente).
+
+Era mais ou menos esse resultado que você estava imaginando para você?"
+
+------------------------------------------------------------------------------
+MENSAGEM 3: GATILHO DE ESCASSEZ REAL (Após 48 horas de silêncio)
+------------------------------------------------------------------------------
+Objetivo: Forçar a tomada de decisão rápida sem parecer desespero.
+Script para copiar e colar:
+
+"Passando rapidinho, [Nome]!
+
+O nosso lote de insumos com o valor promocional que te passei encerra hoje às 18h. A partir de amanhã o sistema atualiza para a tabela cheia.
+
+Se você ainda tiver interesse em fazer a sua aplicação com a [vantagem/bônus], me dá um ok por aqui até o final da tarde para eu travar o seu desconto no sistema, tá bom?"
+
+------------------------------------------------------------------------------
+MENSAGEM 4: O "DESAPEGO ESTRATÉGICO" (Após 5 a 7 dias de silêncio)
+------------------------------------------------------------------------------
+Objetivo: Criar o choque psicológico de perda. Essa mensagem tem a maior taxa de resposta de clientes que sumiram (mais de 40% respondem justificando e pedindo para agendar).
+Script para copiar e colar:
+
+"Oi, [Nome], tudo bem?
+
+Como não tive mais retorno seu, imaginei que você tenha decidido deixar o seu cuidado com [Procedimento] para outro momento, e está tudo bem!
+
+Estou dando baixa na sua ficha temporária aqui no sistema para liberar a vaga da agenda para outra pessoa da fila.
+
+Se no futuro você quiser retomar, as portas estão super abertas. Um grande abraço!"
+
+------------------------------------------------------------------------------
+CHECKLIST DIÁRIO DA RECEPCIONISTA (ROTINA 9H E 17H):
+------------------------------------------------------------------------------
+[09:00]
+[ ] Checar novas conversas geradas pelo ManyChat vindas do Instagram.
+[ ] Enviar a Etapa 1 (Acolhimento com Inversão) para quem chamou durante a noite.
+[ ] Disparar a Mensagem 2 (Prova Social) para quem parou de responder ontem.
+
+[17:00]
+[ ] Disparar a Mensagem 1 (Toque Suave) para quem chamou de manhã e sumiu.
+[ ] Disparar a Mensagem 3 (Escassez de Lote) para quem está negociando há 48h.
+[ ] Disparar a Mensagem 4 (Desapego Estratégico) para quem sumiu há 7 dias.
+

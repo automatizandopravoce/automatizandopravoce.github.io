@@ -1,0 +1,59 @@
+==============================================================================
+MÓDULO 2: O ROBÔ DE RESPOSTAS NO DIRECT (MANYCHAT EXPRESS)
+DA PERGUNTA "QUANTO CUSTA?" AO AGENDAMENTO QUALIFICADO NO WHATSAPP
+==============================================================================
+
+FLUXO DE CONFIGURAÇÃO EM 4 PASSOS:
+
+PASSO 1: GATILHO DE ENTRADA (KEYWORD / COMENTÁRIO)
+- Tipo de gatilho no ManyChat: "User comments on a Post or Reel" ou "User sends Direct Message".
+- Palavras-chave cadastradas:
+  * "VALOR"
+  * "PREÇO"
+  * "QUANTO CUSTA"
+  * "EU QUERO"
+- Resposta pública automática no comentário do post (Gera engajamento para o algoritmo):
+  "Te mandei todos os detalhes no Direct! Dá uma olhadinha lá 🥰"
+
+PASSO 2: PRIMEIRA MENSAGEM NO DIRECT (INSTANTÂNEA E HUMANIZADA)
+Texto automático enviado no Direct:
+"Oi, {{first_name}}! Vi seu interesse no nosso protocolo de [Procedimento].
+Como cada avaliação precisa ser analisada individualmente pela nossa especialista, nosso atendimento VIP e envio de fotos de casos reais acontecem no WhatsApp.
+Toque no botão abaixo para falar direto com a gente e garantir o bônus da primeira consulta 👇"
+
+PASSO 3: BOTÃO DE AÇÃO DIRETA COM LINK DA API DO WHATSAPP
+- Tipo de ação no botão: "Open Website".
+- Link com mensagem pré-definida:
+  https://wa.me/55SEUNUMERO?text=Oi!%20Vim%20pelo%20Instagram%20e%20quero%20minha%20condição%20especial
+
+PASSO 4: DISPARO DE RECUPERAÇÃO / FOLLOW-UP (REGRA DE 15 A 20 MINUTOS)
+- Condicional: Se o lead não clicou no link em 15 a 20 minutos, disparar automaticamente:
+"[Primeiro Nome], as vagas com bônus de revisão para esta semana estão quase esgotadas. Quer que eu reserve a sua antes de fechar a agenda de hoje?"
+
+------------------------------------------------------------------------------
+ROTEIRO PASSO A PASSO PARA A AULA EM VÍDEO DO MANYCHAT (12 A 15 MIN)
+(Para você gravar compartilhando a tela no Loom ou OBS Studio)
+------------------------------------------------------------------------------
+
+[00:00 a 02:00] BLOCO 1: BOAS-VINDAS E VISÃO GERAL
+• O que falar: "Nesta aula prática, vamos tirar você da escravidão de responder 'qual o valor' manualmente no Instagram. Em menos de 15 minutos, seu perfil vai responder no segundo exato em que a pessoa comentar e levar ela direto para o seu WhatsApp com interesse real em agendar."
+• O que mostrar na tela: O resultado final funcionando (um Direct chegando no celular e abrindo a conversa no WhatsApp).
+
+[02:00 a 05:00] BLOCO 2: CONEXÃO E CONFIGURAÇÃO BÁSICA
+• O que mostrar na tela: Acessando manychat.com e fazendo login gratuito com a conta do Facebook/Instagram. Verificação se a conta do Instagram é Comercial/Profissional. Menu lateral esquerdo clicando em Automations (Automações) → New Flow (Novo Fluxo).
+
+[05:00 a 09:00] BLOCO 3: CRIANDO O GATILHO DE COMENTÁRIO EM POST/REELS
+• O que mostrar na tela: Adicionando o gatilho 'User comments on a Post or Reel'. Selecionando palavras-chave: 'VALOR', 'PREÇO', 'QUANTO CUSTA', 'EU QUERO'. Configurando a resposta pública de comentário.
+
+[09:00 a 13:00] BLOCO 4: A MENSAGEM NO DIRECT COM BOTÃO PARA WHATSAPP
+• O que mostrar na tela: Criando o bloco de texto no Direct com a variável {{first_name}}. Clicando em '+ Add Button' → 'Open Website'. Ensinando a criar o link da API do WhatsApp com mensagem pronta.
+
+[13:00 a 15:00] BLOCO 5: TESTE PRÁTICO E ATIVAÇÃO
+• O que mostrar na tela: Clicando no botão azul 'Publish' (Publicar) no canto superior direito e testando ao vivo enviando um comentário de outro perfil para mostrar a mágica acontecendo.
+
+------------------------------------------------------------------------------
+COMO INSTRUIR A IA A GERAR VARIAÇÕES DO SCRIPT PARA QUALQUER NICHO:
+------------------------------------------------------------------------------
+Prompt mestre para usar no ChatGPT:
+"Atue como um especialista em copywriting e vendas diretas pelo WhatsApp no modelo Direct-to-Consumer (D2C). Crie um script de atendimento dividido em 4 etapas: Acolhimento, Sondagem, Pitch com Urgência/Escassez e Fechamento. Em seguida, escreva 3 quebras de objeção contundentes para as frases: 'Está caro', 'Vou ver com meu cônjuge' e 'Vou pensar'. O nicho é: [Inserir Nicho, Ex: Clínica de Estética / Loja de Roupas]. O tom deve ser prestativo, profissional e persuasivo, com frases curtas fáceis de ler no celular."
+
