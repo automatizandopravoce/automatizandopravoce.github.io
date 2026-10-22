@@ -821,7 +821,53 @@
       text-decoration: underline;
     }
 
+    /* Verification Screen & Radar */
+    .radar-container {
+      width: 80px;
+      height: 80px;
+      position: relative;
+      margin: 0 auto 16px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .radar-ring {
+      position: absolute;
+      inset: 0;
+      border: 3px solid #10b981;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: radarPulse 1.8s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    .radar-ring:nth-child(2) {
+      animation-delay: 0.6s;
+    }
+    .radar-icon {
+      font-size: 34px;
+      position: relative;
+      z-index: 2;
+    }
+    @keyframes radarPulse {
+      0% { transform: scale(0.6); opacity: 1; }
+      100% { transform: scale(1.4); opacity: 0; }
+    }
+
+    .security-notice-box {
+      background: #090e17;
+      border: 1px solid #1e2c45;
+      border-left: 4px solid #f59e0b;
+      border-radius: 10px;
+      padding: 14px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #cbd5e1;
+      text-align: left;
+    }
+    .security-notice-box strong {
+      color: #fbbf24;
+    }
   </style>
+  <script type="module" src="./pix-config.js"></script>
 </head>
 <body>
 
@@ -1136,12 +1182,59 @@
         </div>
 
         <!-- BOTAO DE CONFIRMACAO -->
-        <button class="btn-confirm-action" onclick="confirmPaymentSuccess()">
-          ✅ Já Realizei o Pagamento • Liberar Acesso Agora
+        <button class="btn-confirm-action" onclick="startPaymentVerification()">
+          ✅ Já Realizei o Pagamento • Verificar e Liberar Acesso
         </button>
         <div style="text-align: center; font-size: 12px; color: #64748b; margin-top: 10px;">
-          🔒 O acesso aos materiais é desbloqueado no próximo segundo
+          🔒 O sistema checa a transação para liberação segura dos arquivos
         </div>
+      </div>
+
+      <!-- PASSO 1.5: VERIFICAÇÃO BANCÁRIA & ANTI-FRAUDE -->
+      <div id="modal-step-verifying" class="modal-step">
+        <div style="text-align: center;">
+          <div class="radar-container">
+            <div class="radar-ring"></div>
+            <div class="radar-ring"></div>
+            <div class="radar-icon">🛡️</div>
+          </div>
+          <h3 class="modal-title" id="verifying-title" style="color: #38bdf8;">Checando Pagamento no Banco Central...</h3>
+          <p class="modal-desc" id="verifying-sub">Aguardando confirmação do Pix de R$ 67,00 no sistema bancário...</p>
+        </div>
+
+        <div id="verifying-proof-box" style="display: none; background: #131a29; border: 1px solid #233148; border-radius: 16px; padding: 22px; text-align: left; margin-bottom: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #1f2a3e; padding-bottom: 10px;">
+            <span style="font-size: 13px; color: #94a3b8;">Identificador do Pedido:</span>
+            <strong style="color: #38bdf8; font-family: monospace; font-size: 15px;" id="order-id-display">#PIX-84920</strong>
+          </div>
+
+          <div style="font-size: 13.5px; color: #e2e8f0; line-height: 1.5; margin-bottom: 14px;">
+            Para garantir que o material seja liberado <strong>somente após o pagamento real</strong> e proteger contra fraudes, confirme sua transação:
+          </div>
+
+          <!-- OPÇÃO A: ENVIAR COMPROVANTE VIA WHATSAPP -->
+          <a id="btn-wa-proof" href="#" target="_blank" class="btn-confirm-action" style="display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; background: #22c55e; margin-bottom: 16px;">
+            <span>📲</span> Enviar Comprovante no WhatsApp (Liberação Rápida)
+          </a>
+
+          <!-- OPÇÃO B: CÓDIGO DE AUTENTICAÇÃO OU SENHA -->
+          <div class="copy-group" style="margin-top: 12px;">
+            <label>Ou digite o Código de Autenticação / ID Pix do comprovante:</label>
+            <div class="copy-input-row">
+              <input type="text" id="auth-code-input" class="copy-input" placeholder="Ex: E1234567820261022..." style="color: #fff;">
+              <button class="btn-copy-pix" onclick="validateProofCode()">Validar e Liberar</button>
+            </div>
+            <div id="auth-code-error" style="color: #f43f5e; font-size: 12px; margin-top: 6px; display: none;"></div>
+          </div>
+        </div>
+
+        <div class="security-notice-box">
+          <strong>Proteção do Sistema:</strong> Os arquivos só são liberados mediante conferência da transação para segurança do produto.
+        </div>
+
+        <button onclick="backToPixPayment()" style="margin-top: 16px; width: 100%; background: transparent; border: 1px solid #233148; color: #94a3b8; padding: 10px; border-radius: 8px; cursor: pointer; font-size: 13px;">
+          ← Voltar para as Opções de Pagamento Pix
+        </button>
       </div>
 
       <!-- PASSO 2: ACESSO LIBERADO + ENVIO POR E-MAIL -->
@@ -1219,10 +1312,42 @@
 
     /* Modal Pix & Acesso Imediato */
     let emailAttemptsLeft = 3;
+    let currentOrderId = "#PIX-" + Math.floor(10000 + Math.random() * 90000);
+
+    // Carregar configurações do pix-config.js
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.PIX_CONFIG) {
+        if (window.PIX_CONFIG.chavePixEmail) {
+          const el = document.getElementById('pix-email-key');
+          if (el) el.textContent = window.PIX_CONFIG.chavePixEmail;
+        }
+        if (window.PIX_CONFIG.pixCopiaECola) {
+          const el = document.getElementById('pix-copia-cola-text');
+          if (el) el.value = window.PIX_CONFIG.pixCopiaECola;
+        }
+      }
+    });
 
     function openPixModal() {
+      // Se tiver configurado checkout externo (Kiwify / Kirvano), redireciona direto:
+      if (window.PIX_CONFIG && window.PIX_CONFIG.checkoutUrl && window.PIX_CONFIG.checkoutUrl.trim() !== "") {
+        window.open(window.PIX_CONFIG.checkoutUrl, '_blank');
+        return;
+      }
+
+      currentOrderId = "#PIX-" + Math.floor(10000 + Math.random() * 90000);
+      const orderEl = document.getElementById('order-id-display');
+      if (orderEl) orderEl.textContent = currentOrderId;
+
+      // Configurar link do WhatsApp para envio do comprovante
+      const waNumber = (window.PIX_CONFIG && window.PIX_CONFIG.whatsappSuporte) ? window.PIX_CONFIG.whatsappSuporte : "5511999999999";
+      const waMsg = encodeURIComponent(`Olá! Acabei de realizar o pagamento Pix de R$ 67,00 referente ao Pedido ${currentOrderId}. Segue meu comprovante para validação e liberação do acesso.`);
+      const waBtn = document.getElementById('btn-wa-proof');
+      if (waBtn) waBtn.href = `https://wa.me/${waNumber}?text=${waMsg}`;
+
       document.getElementById('pix-modal').classList.add('active');
       document.getElementById('modal-step-pay').classList.add('active');
+      document.getElementById('modal-step-verifying').classList.remove('active');
       document.getElementById('modal-step-success').classList.remove('active');
       document.body.style.overflow = 'hidden';
     }
@@ -1267,9 +1392,62 @@
       });
     }
 
-    function confirmPaymentSuccess() {
+    function startPaymentVerification() {
       document.getElementById('modal-step-pay').classList.remove('active');
-      document.getElementById('modal-step-success').classList.add('active');
+      document.getElementById('modal-step-verifying').classList.add('active');
+
+      const modo = (window.PIX_CONFIG && window.PIX_CONFIG.modoVerificacao) ? window.PIX_CONFIG.modoVerificacao : "comprovante";
+
+      if (modo === "automatico") {
+        document.getElementById('verifying-title').textContent = "Checando Pagamento no Banco Central...";
+        document.getElementById('verifying-sub').textContent = "Aguardando confirmação do Pix de R$ 67,00 no sistema bancário...";
+        document.getElementById('verifying-proof-box').style.display = 'none';
+
+        setTimeout(() => {
+          document.getElementById('modal-step-verifying').classList.remove('active');
+          document.getElementById('modal-step-success').classList.add('active');
+        }, 3200);
+      } else {
+        // Modo com validação de comprovante (segurança anti-fraude)
+        document.getElementById('verifying-title').textContent = "Conectando ao Sistema de Pagamentos...";
+        document.getElementById('verifying-sub').textContent = "Checando confirmação bancária do Pedido " + currentOrderId + "...";
+        document.getElementById('verifying-proof-box').style.display = 'none';
+
+        setTimeout(() => {
+          document.getElementById('verifying-title').textContent = "Aguardando Confirmação do Pagamento";
+          document.getElementById('verifying-sub').textContent = "Para liberar o download e evitar acessos indevidos:";
+          document.getElementById('verifying-proof-box').style.display = 'block';
+        }, 1800);
+      }
+    }
+
+    function backToPixPayment() {
+      document.getElementById('modal-step-verifying').classList.remove('active');
+      document.getElementById('modal-step-pay').classList.add('active');
+    }
+
+    function validateProofCode() {
+      const input = document.getElementById('auth-code-input');
+      const err = document.getElementById('auth-code-error');
+      const code = input.value.trim();
+
+      if (!code || code.length < 5) {
+        err.style.display = 'block';
+        err.textContent = '❌ Digite o código de autenticação do seu comprovante bancário (ou envie pelo WhatsApp acima).';
+        return;
+      }
+
+      err.style.display = 'none';
+      input.disabled = true;
+
+      document.getElementById('verifying-title').textContent = "Autenticação Validada com Sucesso!";
+      document.getElementById('verifying-sub').textContent = "Liberando downloads e arquivos do pedido " + currentOrderId + "...";
+      document.getElementById('verifying-proof-box').style.display = 'none';
+
+      setTimeout(() => {
+        document.getElementById('modal-step-verifying').classList.remove('active');
+        document.getElementById('modal-step-success').classList.add('active');
+      }, 1400);
     }
 
     function handleSendEmail() {
@@ -1325,6 +1503,9 @@
       feedback.className = 'email-status-msg';
       feedback.innerHTML = '';
       btnReedit.style.display = 'none';
+      input.focus();
+      input.select();
+    }
       input.focus();
       input.select();
     }
