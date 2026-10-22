@@ -77,3 +77,4 @@ Esse comando compila o projeto e cria automaticamente a branch `gh-pages` com a 
 - `vite.config.js`: Configuração com `base: './'` que garante que o site funcione em qualquer URL do GitHub Pages.
 - `package.json`: Scripts do NPM (`dev`, `build`, `preview`, `deploy`).
 - `.github/workflows/deploy.yml`: Automação de deploy contínuo do GitHub.
+
