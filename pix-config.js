@@ -6,7 +6,7 @@
 window.PIX_CONFIG = {
   // 1. LINK DE CHECKOUT AUTOMÁTICO (PAGSEGURO / KIWIFY / KIRVANO)
   // Quando preenchido, o botão leva diretamente para a página de pagamento seguro!
-  checkoutUrl: "https://pag.ae/82gVcc5TJ",
+  checkoutUrl: "https://pay.kiwify.com.br/POBB16U",
 
   // 2. SUA CHAVE PIX PESSOAL (TIPO E-MAIL)
   chavePixEmail: "seu-email-pix@exemplo.com",
