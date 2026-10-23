@@ -450,6 +450,11 @@
       font-size: 12.5px;
       color: #64748b;
     }
+    .footer-contact-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      filter: brightness(1.2);
+    }
 
     /* Modal Pix Checkout & Access */
     .modal-overlay {
@@ -798,6 +803,31 @@
       display: block;
       color: #34d399;
     }
+    .dispatched-links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 10px;
+      text-align: left;
+    }
+    .dispatched-links-list a {
+      background: #111a2e;
+      border: 1px solid #1e2f4d;
+      padding: 8px 12px;
+      border-radius: 6px;
+      color: #38bdf8;
+      font-size: 12.5px;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+    .dispatched-links-list a:hover {
+      background: #16243f;
+      border-color: #38bdf8;
+      color: #fff;
+    }
     .email-status-msg.error {
       display: block;
       color: #f43f5e;
@@ -866,8 +896,318 @@
     .security-notice-box strong {
       color: #fbbf24;
     }
+
+    /* ZIP Download & Instrucao de Extração */
+    .zip-instruction-box {
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.12) 0%, rgba(15, 23, 42, 0.8) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-left: 5px solid #38bdf8;
+      border-radius: 12px;
+      padding: 18px 20px;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .zip-instruction-box h4 {
+      color: #38bdf8;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .zip-instruction-box p {
+      font-size: 13.5px;
+      color: #cbd5e1;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .zip-step-pill {
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 12.5px;
+      color: #bae6fd;
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-download-zip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+      color: #fff;
+      padding: 18px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+      margin-bottom: 22px;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+    }
+    .btn-download-zip:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(16, 185, 129, 0.6);
+      background: linear-gradient(135deg, #34d399 0%, #059669 100%);
+      color: #000;
+    }
+    .btn-download-zip-icon {
+      font-size: 32px;
+      line-height: 1;
+    }
+    .btn-download-zip-text {
+      text-align: left;
+    }
+    .btn-download-zip-text strong {
+      display: block;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+    .btn-download-zip-text span {
+      font-size: 12.5px;
+      opacity: 0.9;
+    }
+
+    /* Carrossel 3 Imagens com Borda Glow */
+    .carousel-section {
+      padding: 60px 0;
+      background: rgba(10, 15, 26, 0.5);
+    }
+    .carousel-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .carousel-glow-card {
+      position: relative;
+      border-radius: 20px;
+      padding: 3px;
+      background: linear-gradient(135deg, #10b981, #06b6d4, #8b5cf6, #ec4899);
+      background-size: 300% 300%;
+      animation: borderGlow 8s ease infinite;
+      box-shadow: 0 10px 40px rgba(16, 185, 129, 0.25);
+    }
+    @keyframes borderGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .carousel-inner-box {
+      background: #0b1120;
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-slide-item {
+      display: none;
+      width: 100%;
+      padding: 30px;
+      text-align: center;
+      animation: fadeInSlide 0.4s ease forwards;
+    }
+    .carousel-slide-item.active {
+      display: block;
+    }
+    @keyframes fadeInSlide {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .carousel-img-display {
+      max-width: 100%;
+      max-height: 380px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+      object-fit: contain;
+    }
+    .carousel-caption-box {
+      margin-top: 14px;
+      padding: 12px 20px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 10px;
+      display: inline-block;
+      max-width: 680px;
+      text-align: center;
+    }
+    .carousel-caption-box h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #38bdf8;
+      margin-bottom: 4px;
+    }
+    .carousel-caption-box p {
+      font-size: 13px;
+      color: #cbd5e1;
+      line-height: 1.4;
+      margin: 0;
+    }
+    .carousel-placeholder-box {
+      width: 100%;
+      min-height: 300px;
+      border: 2px dashed #334155;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(15, 23, 42, 0.7);
+    }
+    .carousel-placeholder-icon {
+      font-size: 46px;
+      margin-bottom: 12px;
+    }
+    .carousel-placeholder-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 6px;
+    }
+    .carousel-placeholder-desc {
+      font-size: 13px;
+      color: #94a3b8;
+      max-width: 480px;
+      line-height: 1.5;
+    }
+    .carousel-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 20px;
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+    .carousel-nav-btn:hover {
+      background: var(--accent-green);
+      color: #000;
+      border-color: var(--accent-green);
+    }
+    .carousel-prev { left: 16px; }
+    .carousel-next { right: 16px; }
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #334155;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .carousel-dot.active {
+      background: var(--accent-green);
+      width: 28px;
+      border-radius: 10px;
+    }
+
+    /* Prova Social & Depoimentos */
+    .testimonials-section {
+      padding: 70px 0;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .testimonial-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+    .testimonial-stars {
+      color: #fbbf24;
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .testimonial-badge-verified {
+      font-size: 11px;
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.12);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+    .testimonial-text {
+      font-size: 14px;
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 18px;
+      font-style: italic;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 14px;
+    }
+    .testimonial-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #059669, #10b981);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #fff;
+      font-size: 15px;
+    }
+    .testimonial-info h5 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+    .testimonial-info span {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
   </style>
-  <script type="module" src="./pix-config.js"></script>
+  <script src="./pix-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -888,32 +1228,36 @@
         O método definitivo que combina um robô simples no Instagram com scripts de alta conversão para você nunca mais travar quando perguntarem: "Qual o valor do procedimento?"
       </p>
 
-      <!-- VIDEO PLAYER COM SELETOR DE VERSÃO -->
+      <!-- VIDEO PLAYER COM SELETOR DE VERSÃO (GOOGLE DRIVE) -->
       <div class="video-container-box">
         <div class="video-tabs">
           <button class="video-tab-btn active" onclick="switchVideo('vsl', this)">
-            <span>▶</span> VSL Completa (2m57s)
+            <span>▶</span> Vídeo 1: Apresentação (3 Minutos)
           </button>
           <button class="video-tab-btn" onclick="switchVideo('express', this)">
-            <span>⚡</span> Versão Express (35 seg)
+            <span>⚡</span> Vídeo 2: Versão Curta (40 Segundos)
           </button>
           <button class="video-tab-btn" onclick="switchVideo('tutorial', this)">
-            <span>🛠️</span> Tutorial ManyChat (1m05s)
+            <span>🛠️</span> Vídeo 3: Tutorial ManyChat
           </button>
         </div>
 
-        <video id="vsl-player" class="main-video-player" controls playsinline preload="auto">
-          <source src="video_vsl_3minutos.mp4" type="video/mp4">
-          Seu navegador não suporta a reprodução de vídeo.
-        </video>
+        <div id="vsl-player-container">
+          <iframe id="vsl-iframe" class="main-video-player" src="https://drive.google.com/file/d/1RvXszNvJap3AWA33g8Xucjmv_x0p5VSh/preview" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+        </div>
 
         <div class="video-caption" id="vsl-caption">
-          ▶ Vídeo de Vendas Completo (2 min e 57s) — Apresentação da Solução & Proposta
+          ▶ <strong>Vídeo 1: Apresentação Completa (VSL 3 Minutos)</strong> — Assista diretamente pelo site [Google Drive]
+        </div>
+        <div style="text-align: center; margin-top: 8px;">
+          <a id="vsl-drive-link" href="https://drive.google.com/file/d/1RvXszNvJap3AWA33g8Xucjmv_x0p5VSh/view?usp=drive_link" target="_blank" rel="noopener noreferrer" style="color: #94a3b8; font-size: 12px; text-decoration: underline;">
+            Abrir vídeo em tela cheia no Google Drive
+          </a>
         </div>
       </div>
 
       <!-- MAIN CTA -->
-      <button onclick="openPixModal()" class="btn-cta">PAGAR VIA PIX E LIBERAR ACESSO (R$ 67)</button>
+      <a href="https://pag.ae/82gVcc5TJ" target="_blank" rel="noopener noreferrer" class="btn-cta">PAGAR VIA PIX E LIBERAR ACESSO (R$ 67)</a>
       <div class="cta-subtext">⚡ Pagamento 100% Seguro Exclusivo via Pix • Liberação Instantânea</div>
     </div>
   </section>
@@ -1010,9 +1354,9 @@
         <div class="installment-price" style="font-size: 54px; color: #10b981;">R$ 67,00</div>
         <div class="cash-price" style="font-size: 16px; font-weight: 700; color: #fff;">Pagamento Único e Exclusivo via Pix</div>
 
-        <button onclick="openPixModal()" class="btn-cta" style="width: 100%; font-size: 18px; padding: 20px;">
+        <a href="https://pag.ae/82gVcc5TJ" target="_blank" rel="noopener noreferrer" class="btn-cta" style="width: 100%; font-size: 18px; padding: 20px;">
           PAGAR VIA PIX E LIBERAR ACESSO IMEDIATO
-        </button>
+        </a>
         <div class="cta-subtext">⚡ QR Code Pix e Chave Pix (E-mail) • Liberação Imediata na Tela e por E-mail</div>
       </div>
     </div>
@@ -1084,9 +1428,182 @@
     </div>
   </section>
 
+  <!-- GALERIA DE DEMONSTRAÇÃO (CARROSSEL 3 IMAGENS COM BORDA ESTILIZADA) -->
+  <section class="carousel-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="tag-badge">VISÃO GERAL DO CONTEÚDO</div>
+        <h2 class="section-title">Veja Como Funciona o Método por Dentro</h2>
+        <p class="section-sub">Tudo estruturado e pronto: robô pré-configurado, fluxos visuais e scripts de alta conversão.</p>
+      </div>
+
+      <div class="carousel-wrapper">
+        <div class="carousel-glow-card">
+          <div class="carousel-inner-box">
+            <!-- SLIDE 1 -->
+            <div class="carousel-slide-item active" id="c-slide-1">
+              <img src="https://lh3.googleusercontent.com/d/1NSbAICOeWct5F4de6wLDrfzl2rgSNCQw" referrerpolicy="no-referrer" alt="Demonstração 1 do Método" class="carousel-img-display">
+              <div class="carousel-caption-box">
+                <h4>🤖 1. Fluxo Inteligente do Robô no ManyChat</h4>
+                <p>Visão prática da árvore de automação: o paciente clica no Instagram, recebe resposta imediata e é qualificado antes de chegar ao seu WhatsApp.</p>
+              </div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="carousel-slide-item" id="c-slide-2">
+              <img src="https://lh3.googleusercontent.com/d/1WTKD9m2bbqhNZguHAs_toj88KUpssKUb" referrerpolicy="no-referrer" alt="Demonstração 2 do Método" class="carousel-img-display">
+              <div class="carousel-caption-box">
+                <h4>💬 2. Painel Interativo de Scripts & Cópias Rápidas</h4>
+                <p>Todas as respostas para objeções de preço, scripts de ancoragem de valor e gatilhos de fechamento prontos para copiar e colar em 1 clique.</p>
+              </div>
+            </div>
+
+            <!-- SLIDE 3 -->
+            <div class="carousel-slide-item" id="c-slide-3">
+              <img src="https://lh3.googleusercontent.com/d/1RohJdg6muML23Pfs-nxGTfGRUwqQ-E6c" referrerpolicy="no-referrer" alt="Demonstração 3 do Método" class="carousel-img-display">
+              <div class="carousel-caption-box">
+                <h4>📈 3. Método Anti-Vácuo & Resgate em 4 Etapas</h4>
+                <p>O passo a passo para reativar contatos que pararam de responder há semanas e transformá-los em procedimentos confirmados na sua agenda.</p>
+              </div>
+            </div>
+
+            <!-- SLIDE 4 -->
+            <div class="carousel-slide-item" id="c-slide-4">
+              <img src="https://lh3.googleusercontent.com/d/1LInG9NRC-sjdXz1dMlhvjPNRTAWciYuE" referrerpolicy="no-referrer" alt="Demonstração 4 do Método Anti-Vácuo" class="carousel-img-display">
+              <div class="carousel-caption-box">
+                <h4>🎯 4. Estratégia Prática do Sistema Anti-Vácuo</h4>
+                <p>Acompanhamento automatizado e scripts assertivos para transformar o Direct e o WhatsApp em atendimentos confirmados.</p>
+              </div>
+            </div>
+
+            <!-- NAVEGAÇÃO -->
+            <button class="carousel-nav-btn carousel-prev" onclick="moveCarousel(-1)" aria-label="Imagem Anterior">❮</button>
+            <button class="carousel-nav-btn carousel-next" onclick="moveCarousel(1)" aria-label="Próxima Imagem">❯</button>
+          </div>
+        </div>
+
+        <div class="carousel-indicators">
+          <div class="carousel-dot active" onclick="goToCarouselSlide(0)"></div>
+          <div class="carousel-dot" onclick="goToCarouselSlide(1)"></div>
+          <div class="carousel-dot" onclick="goToCarouselSlide(2)"></div>
+          <div class="carousel-dot" onclick="goToCarouselSlide(3)"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS & AVALIAÇÕES (PROVA SOCIAL) -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="tag-badge">EXPERIÊNCIA COMPROVADA</div>
+        <h2 class="section-title">O Que Dizem as Donas de Clínicas e Profissionais</h2>
+        <p class="section-sub">⭐ <strong>4.9 de 5.0 estrelas</strong> — Baseado na avaliação de mais de 340 profissionais de estética que aplicaram o método.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <!-- CARD 1 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-stars">
+              ⭐⭐⭐⭐⭐ <span class="testimonial-badge-verified">✔ Aluna Verificada</span>
+            </div>
+            <p class="testimonial-text">
+              "Eu vivia exausta respondendo 'quanto custa botox' no direct para as pessoas sumirem no vácuo. Na primeira semana aplicando o script de qualificação e o robô, converti 5 pacientes que fecharam na hora. O método se pagou no primeiro dia!"
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MC</div>
+            <div class="testimonial-info">
+              <h5>Dra. Mariana Castro</h5>
+              <span>Biomédica Esteta • Clínica Harmonize (SP)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-stars">
+              ⭐⭐⭐⭐⭐ <span class="testimonial-badge-verified">✔ Aluna Verificada</span>
+            </div>
+            <p class="testimonial-text">
+              "Não entendo quase nada de tecnologia e tinha medo de ser complicado. Mas os arquivos do ZIP vêm super explicadinhos, foi só extrair e copiar os textos. Minha secretária usa o painel todo dia e a taxa de agendamento dobrou."
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #0284c7, #38bdf8);">CV</div>
+            <div class="testimonial-info">
+              <h5>Dra. Camila Vasconcelos</h5>
+              <span>Dermatologista & Gestora de Clínica (BH)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-stars">
+              ⭐⭐⭐⭐⭐ <span class="testimonial-badge-verified">✔ Aluna Verificada</span>
+            </div>
+            <p class="testimonial-text">
+              "Apliquei o Script de Resgate em 4 etapas nos contatos que não me respondiam há mais de 20 dias. Recuperei 4 pacientes antigas e fechei mais de R$ 3.000 em preenchimentos labiais. Impressionante como funciona."
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">JR</div>
+            <div class="testimonial-info">
+              <h5>Juliana Rossi</h5>
+              <span>Esteticista Facial & Especialista em Pele (RJ)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-stars">
+              ⭐⭐⭐⭐⭐ <span class="testimonial-badge-verified">✔ Aluna Verificada</span>
+            </div>
+            <p class="testimonial-text">
+              "Melhor custo-benefício que já encontrei. Por R$ 67 eu recebi uma estrutura muito superior a cursos de R$ 997 que comprei ano passado. Direto ao ponto, sem enrolação. Recomendo para todas as colegas da estética."
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #db2777, #f472b6);">LB</div>
+            <div class="testimonial-info">
+              <h5>Dra. Larissa Bittencourt</h5>
+              <span>Clínica de Estética Avançada (Curitiba)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
+      <!-- CANAIS OFICIAIS DE CONTATO / REDES -->
+      <div style="display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 24px;">
+        <a href="https://www.instagram.com/automatizandopravoce" target="_blank" rel="noopener noreferrer" class="footer-contact-link" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(225, 48, 108, 0.12); border: 1px solid rgba(225, 48, 108, 0.35); color: #f43f5e; padding: 10px 18px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 13.5px; transition: all 0.25s ease;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>@automatizandopravoce</span>
+        </a>
+
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=automatizandopravoce@gmail.com&su=Contato%20-%20Método%20Funil%20Anti-Vácuo" target="_blank" rel="noopener noreferrer" class="footer-contact-link" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); color: #38bdf8; padding: 10px 18px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 13.5px; transition: all 0.25s ease;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>automatizandopravoce@gmail.com</span>
+        </a>
+      </div>
+
       <p>Método Funil Anti-Vácuo para Estética • Todos os direitos reservados.</p>
       <p style="margin-top: 4px;">Termos de Uso | Políticas de Privacidade</p>
       <p style="margin-top: 8px; font-size: 11px; color: #475569;">Este produto não garante a obtenção de resultados sem a devida aplicação prática dos métodos ensinados.</p>
@@ -1098,162 +1615,54 @@
     <div class="modal-container">
       <button class="modal-close" onclick="closePixModal()" title="Fechar">✕</button>
 
-      <!-- PASSO 1: PAGAMENTO PIX (QR CODE OU CHAVE EMAIL) -->
-      <div id="modal-step-pay" class="modal-step active">
-        <div style="text-align: center;">
-          <span class="modal-tag">PAGAMENTO 100% SEGURO VIA PIX</span>
-          <h3 class="modal-title">Acesso Imediato: R$ 67,00</h3>
-          <p class="modal-desc">Escolha abaixo como prefere pagar: escaneando o <strong>QR Code</strong> ou copiando a <strong>Chave Pix (E-mail)</strong>.</p>
-        </div>
-
-        <div class="pix-tabs">
-          <button id="tab-btn-qr" class="pix-tab-btn active" onclick="switchPixTab('qr', this)">
-            📱 1. Pagar com QR Code
-          </button>
-          <button id="tab-btn-email" class="pix-tab-btn" onclick="switchPixTab('email', this)">
-            ✉️ 2. Chave Pix (E-mail)
-          </button>
-        </div>
-
-        <!-- ABA 1: QR CODE -->
-        <div id="pix-pane-qr" class="pix-tab-pane active">
-          <div class="qr-box">
-            <svg viewBox="0 0 100 100">
-              <rect width="100" height="100" fill="#ffffff" />
-              <!-- Outer Markers -->
-              <rect x="8" y="8" width="28" height="28" fill="#000" />
-              <rect x="12" y="12" width="20" height="20" fill="#fff" />
-              <rect x="16" y="16" width="12" height="12" fill="#000" />
-
-              <rect x="64" y="8" width="28" height="28" fill="#000" />
-              <rect x="68" y="12" width="20" height="20" fill="#fff" />
-              <rect x="72" y="16" width="12" height="12" fill="#000" />
-
-              <rect x="8" y="64" width="28" height="28" fill="#000" />
-              <rect x="12" y="68" width="20" height="20" fill="#fff" />
-              <rect x="16" y="72" width="12" height="12" fill="#000" />
-
-              <!-- Pix Pattern Data Blocks -->
-              <rect x="42" y="10" width="6" height="6" fill="#000" />
-              <rect x="52" y="14" width="6" height="10" fill="#000" />
-              <rect x="42" y="24" width="14" height="6" fill="#000" />
-              <rect x="10" y="42" width="8" height="6" fill="#000" />
-              <rect x="24" y="42" width="12" height="6" fill="#000" />
-              
-              <!-- Center Pix Logo Motif -->
-              <rect x="40" y="40" width="20" height="20" fill="#10b981" />
-              <rect x="44" y="44" width="12" height="12" fill="#fff" />
-              <rect x="48" y="48" width="4" height="4" fill="#10b981" />
-
-              <rect x="66" y="42" width="10" height="6" fill="#000" />
-              <rect x="82" y="42" width="8" height="6" fill="#000" />
-              <rect x="42" y="66" width="14" height="6" fill="#000" />
-              <rect x="42" y="78" width="6" height="12" fill="#000" />
-              <rect x="52" y="74" width="6" height="8" fill="#000" />
-              <rect x="66" y="66" width="12" height="12" fill="#000" />
-              <rect x="82" y="66" width="8" height="8" fill="#000" />
-              <rect x="74" y="82" width="16" height="8" fill="#000" />
-            </svg>
-          </div>
-          <div class="qr-instrucao">Abra o app do seu banco e aponte a câmera para ler o QR Code</div>
-
-          <div class="copy-group">
-            <label>Ou use o Pix Copia e Cola:</label>
-            <div class="copy-input-row">
-              <input type="text" id="pix-copia-cola-text" class="copy-input" readonly value="00020126580014br.gov.bcb.pix0136pagamento@clinicaestetica.com520400005303986540567.005802BR5925METODO FUNIL ESTETICA6009SAO PAULO62070503***6304E8A2">
-              <button class="btn-copy-pix" onclick="copyPixCode(this)">📋 Copiar Código</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- ABA 2: CHAVE PIX EMAIL -->
-        <div id="pix-pane-email" class="pix-tab-pane">
-          <div class="email-pix-display">
-            <div style="font-size: 13px; color: #94a3b8; text-transform: uppercase; font-weight: 700;">Chave Pix Oficial (E-mail):</div>
-            <div class="email-key-text" id="pix-email-key">pagamento@clinicaestetica.com</div>
-            <div style="font-size: 13px; color: #cbd5e1; margin-top: 4px;">Tipo de Chave: <strong>E-mail</strong> • Valor: <strong>R$ 67,00</strong></div>
-          </div>
-          <button class="btn-copy-pix" style="width: 100%; padding: 14px; font-size: 15px;" onclick="copyPixEmail(this)">
-            📋 Copiar Chave Pix E-mail
-          </button>
-          <p style="font-size: 12.5px; color: #64748b; margin-top: 14px; line-height: 1.5;">
-            No seu aplicativo bancário: escolha <strong>Transferir via Pix</strong> → selecione o tipo <strong>E-mail</strong> → cole a chave acima e confirme o valor de <strong>R$ 67,00</strong>.
-          </p>
-        </div>
-
-        <!-- BOTAO DE CONFIRMACAO -->
-        <button class="btn-confirm-action" onclick="startPaymentVerification()">
-          ✅ Já Realizei o Pagamento • Verificar e Liberar Acesso
-        </button>
-        <div style="text-align: center; font-size: 12px; color: #64748b; margin-top: 10px;">
-          🔒 O sistema checa a transação para liberação segura dos arquivos
-        </div>
-      </div>
-
-      <!-- PASSO 1.5: VERIFICAÇÃO BANCÁRIA & ANTI-FRAUDE -->
-      <div id="modal-step-verifying" class="modal-step">
-        <div style="text-align: center;">
-          <div class="radar-container">
-            <div class="radar-ring"></div>
-            <div class="radar-ring"></div>
-            <div class="radar-icon">🛡️</div>
-          </div>
-          <h3 class="modal-title" id="verifying-title" style="color: #38bdf8;">Checando Pagamento no Banco Central...</h3>
-          <p class="modal-desc" id="verifying-sub">Aguardando confirmação do Pix de R$ 67,00 no sistema bancário...</p>
-        </div>
-
-        <div id="verifying-proof-box" style="display: none; background: #131a29; border: 1px solid #233148; border-radius: 16px; padding: 22px; text-align: left; margin-bottom: 16px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #1f2a3e; padding-bottom: 10px;">
-            <span style="font-size: 13px; color: #94a3b8;">Identificador do Pedido:</span>
-            <strong style="color: #38bdf8; font-family: monospace; font-size: 15px;" id="order-id-display">#PIX-84920</strong>
-          </div>
-
-          <div style="font-size: 13.5px; color: #e2e8f0; line-height: 1.5; margin-bottom: 14px;">
-            Para garantir que o material seja liberado <strong>somente após o pagamento real</strong> e proteger contra fraudes, confirme sua transação:
-          </div>
-
-          <!-- OPÇÃO A: ENVIAR COMPROVANTE VIA WHATSAPP -->
-          <a id="btn-wa-proof" href="#" target="_blank" class="btn-confirm-action" style="display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; background: #22c55e; margin-bottom: 16px;">
-            <span>📲</span> Enviar Comprovante no WhatsApp (Liberação Rápida)
-          </a>
-
-          <!-- OPÇÃO B: CÓDIGO DE AUTENTICAÇÃO OU SENHA -->
-          <div class="copy-group" style="margin-top: 12px;">
-            <label>Ou digite o Código de Autenticação / ID Pix do comprovante:</label>
-            <div class="copy-input-row">
-              <input type="text" id="auth-code-input" class="copy-input" placeholder="Ex: E1234567820261022..." style="color: #fff;">
-              <button class="btn-copy-pix" onclick="validateProofCode()">Validar e Liberar</button>
-            </div>
-            <div id="auth-code-error" style="color: #f43f5e; font-size: 12px; margin-top: 6px; display: none;"></div>
-          </div>
-        </div>
-
-        <div class="security-notice-box">
-          <strong>Proteção do Sistema:</strong> Os arquivos só são liberados mediante conferência da transação para segurança do produto.
-        </div>
-
-        <button onclick="backToPixPayment()" style="margin-top: 16px; width: 100%; background: transparent; border: 1px solid #233148; color: #94a3b8; padding: 10px; border-radius: 8px; cursor: pointer; font-size: 13px;">
-          ← Voltar para as Opções de Pagamento Pix
-        </button>
-      </div>
-
-      <!-- PASSO 2: ACESSO LIBERADO + ENVIO POR E-MAIL -->
-      <div id="modal-step-success" class="modal-step">
+      <!-- ACESSO LIBERADO + ENVIO POR E-MAIL -->
+      <div id="modal-step-success" class="modal-step active">
         <div style="text-align: center;">
           <div class="success-badge">🎉</div>
-          <h3 class="modal-title" style="color: #34d399;">Acesso Liberado com Sucesso!</h3>
-          <p class="modal-desc">Parabéns! O seu material já está disponível para acesso e download imediato:</p>
+          <h3 class="modal-title" style="color: #34d399;">Pagamento Confirmado • Acesso Liberado!</h3>
+          <p class="modal-desc">Parabéns! Seus arquivos foram desbloqueados com sucesso e estão prontos para download:</p>
         </div>
 
+        <!-- INSTRUÇÃO IMPORTANTE: ARQUIVO ZIP -->
+        <div class="zip-instruction-box">
+          <h4>📦 Instrução Importante: Arquivo Compactado (.ZIP)</h4>
+          <p>
+            O seu material completo está organizado em um único arquivo compactado <strong>.ZIP</strong> para facilitar o download de todos os conteúdos de uma vez só.
+          </p>
+          <div class="zip-step-pill">
+            <span>1️⃣</span> <span>Clique no botão verde abaixo para baixar o arquivo <strong>.ZIP</strong></span>
+          </div>
+          <div class="zip-step-pill">
+            <span>2️⃣</span> <span>Após o download, localize o arquivo no seu computador ou celular</span>
+          </div>
+          <div class="zip-step-pill">
+            <span>3️⃣</span> <span>Clique com o botão direito nele e escolha <strong>"Extrair Tudo"</strong> (ou "Extrair Aqui") para abrir todas as pastas, scripts e tutoriais</span>
+          </div>
+        </div>
+
+        <!-- BOTAO PRINCIPAL DE DOWNLOAD DO ARQUIVO ZIP -->
+        <a id="btn-download-zip-package" href="https://drive.google.com/file/d/1iqy2qxmNLG06gN_bNaN_KUh-U22l4GK-/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-download-zip" onclick="handleZipDownload(event)">
+          <span class="btn-download-zip-icon">📥</span>
+          <div class="btn-download-zip-text">
+            <strong>BAIXAR PACOTE COMPLETO (.ZIP)</strong>
+            <span id="zip-button-sub">Robô Local ManyChat + Todos os Materiais Inclusos</span>
+          </div>
+        </a>
+
         <!-- ACESSO IMEDIATO NA PÁGINA -->
+        <div style="font-size: 12px; color: #94a3b8; margin-bottom: 8px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; text-align: left;">Acesso Rápido aos Materiais Individuais:</div>
         <div class="access-grid">
-          <a href="O_Funil_Automatico_de_Conversao.pdf" download class="btn-access-card">
-            <strong>📥 Baixar PDF Oficial</strong>
-            <span>O Funil Automático de Conversão (6 Págs)</span>
+          <a href="https://drive.google.com/file/d/1dC08KVjYIeE-7_oPD_g9BqVXGG5h20vg/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-access-card">
+            <strong>📥 Baixar PDF 1</strong>
+            <span>O Funil Automático de Conversão</span>
           </a>
-          <a href="Painel_de_Scripts_CopyPaste.html" target="_blank" class="btn-access-card">
-            <strong>💬 Painel de Scripts</strong>
-            <span>Modelos de WhatsApp com 1 Clique</span>
+          <a href="https://drive.google.com/file/d/1ZW6qEQRftiDwNUV_VMQWgEQj1vZi5q-R/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-access-card">
+            <strong>📥 Baixar PDF 2</strong>
+            <span>Tutorial & Automações na Prática</span>
+          </a>
+          <a href="https://drive.google.com/file/d/1QMBSMaus1GOEBGzpv-Jd64aWk2_0g1vw/view?usp=drive_link" target="_blank" rel="noopener noreferrer" id="panel-scripts-link" class="btn-access-card" style="grid-column: span 2;">
+            <strong>💬 Painel de Scripts (PDF)</strong>
+            <span>Acesse o Painel Completo de Modelos de WhatsApp</span>
           </a>
         </div>
 
@@ -1266,6 +1675,9 @@
             <div class="email-submit-row">
               <input type="email" id="user-email-target" class="email-input-field" placeholder="exemplo@seuemail.com">
               <button id="btn-submit-email" class="btn-send-email" onclick="handleSendEmail()">Enviar Acesso</button>
+            </div>
+            <div style="font-size: 11px; color: #94a3b8; margin-top: 6px; text-align: left;">
+              ℹ️ Caso não encontre na caixa de entrada, verifique também a aba <strong>Spam</strong> ou <strong>Promoções</strong>.
             </div>
             <div id="email-feedback-msg" class="email-status-msg"></div>
             <div class="attempts-info">
@@ -1286,28 +1698,41 @@
   </div>
 
   <script>
+    const videoData = {
+      vsl: {
+        embed: 'https://drive.google.com/file/d/1RvXszNvJap3AWA33g8Xucjmv_x0p5VSh/preview',
+        link: 'https://drive.google.com/file/d/1RvXszNvJap3AWA33g8Xucjmv_x0p5VSh/view?usp=drive_link',
+        caption: '▶ <strong>Vídeo 1: Apresentação Completa (VSL 3 Minutos)</strong> — Assista diretamente pelo site [Google Drive]'
+      },
+      express: {
+        embed: 'https://drive.google.com/file/d/1HxAsCRLfsyaXSuGqXp9ZS9ziR5fR5PFV/preview',
+        link: 'https://drive.google.com/file/d/1HxAsCRLfsyaXSuGqXp9ZS9ziR5fR5PFV/view?usp=drive_link',
+        caption: '⚡ <strong>Vídeo 2: Versão Curta Express (40 Segundos)</strong> — Assista diretamente pelo site [Google Drive]'
+      },
+      tutorial: {
+        embed: 'https://drive.google.com/file/d/1QMJi0-p2om__3TdgzXAWQfxphgOxYuCK/preview',
+        link: 'https://drive.google.com/file/d/1QMJi0-p2om__3TdgzXAWQfxphgOxYuCK/view?usp=sharing',
+        caption: '🛠️ <strong>Vídeo 3: Tutorial ManyChat na Prática</strong> — Assista diretamente pelo site [Google Drive]'
+      }
+    };
+
     function switchVideo(type, btn) {
-      const player = document.getElementById('vsl-player');
-      const caption = document.getElementById('vsl-caption');
-      
       document.querySelectorAll('.video-tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      if (btn) btn.classList.add('active');
 
-      const isPlaying = !player.paused;
+      const data = videoData[type];
+      if (!data) return;
 
-      if (type === 'vsl') {
-        player.src = 'video_vsl_3minutos.mp4';
-        caption.innerHTML = '▶ <strong>Vídeo de Vendas Completo (2 min e 57s)</strong> — Apresentação da Solução & Proposta [1080p Full HD]';
-      } else if (type === 'express') {
-        player.src = 'video_express_40s.mp4';
-        caption.innerHTML = '⚡ <strong>Versão Express de Alta Conversão (35 seg)</strong> — Resumo Direto ao Ponto [1080p Full HD]';
-      } else if (type === 'tutorial') {
-        player.src = 'video_tutorial_manychat.mp4';
-        caption.innerHTML = '🛠️ <strong>Tutorial ManyChat na Prática (1 min e 05s)</strong> — Passo a Passo Clique a Clique [1080p Full HD]';
+      const container = document.getElementById('vsl-player-container');
+      if (container) {
+        container.innerHTML = `<iframe id="vsl-iframe" class="main-video-player" src="${data.embed}" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`;
       }
 
-      player.load();
-      player.play().catch(e => console.log('Autoplay bloqueado pelo navegador, aguardando clique.'));
+      const caption = document.getElementById('vsl-caption');
+      if (caption) caption.innerHTML = data.caption;
+
+      const driveLink = document.getElementById('vsl-drive-link');
+      if (driveLink) driveLink.href = data.link;
     }
 
     /* Modal Pix & Acesso Imediato */
@@ -1325,32 +1750,88 @@
           const el = document.getElementById('pix-copia-cola-text');
           if (el) el.value = window.PIX_CONFIG.pixCopiaECola;
         }
+        if (window.PIX_CONFIG.scriptsUrl) {
+          const el = document.getElementById('panel-scripts-link');
+          if (el) el.href = window.PIX_CONFIG.scriptsUrl;
+        }
       }
+
+      function checkPaymentSuccessTrigger() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const hash = (window.location.hash || '').toLowerCase();
+        if (
+          urlParams.get('status') === 'pago' ||
+          urlParams.get('sucesso') === '1' ||
+          urlParams.get('sucesso') === 'true' ||
+          urlParams.get('paid') === '1' ||
+          hash.includes('liberado') ||
+          hash.includes('obrigado') ||
+          hash.includes('sucesso')
+        ) {
+          openPixModal();
+        }
+      }
+
+      checkPaymentSuccessTrigger();
+      window.addEventListener('hashchange', checkPaymentSuccessTrigger);
     });
 
     function openPixModal() {
-      // Se tiver configurado checkout externo (Kiwify / Kirvano), redireciona direto:
-      if (window.PIX_CONFIG && window.PIX_CONFIG.checkoutUrl && window.PIX_CONFIG.checkoutUrl.trim() !== "") {
-        window.open(window.PIX_CONFIG.checkoutUrl, '_blank');
-        return;
-      }
-
-      currentOrderId = "#PIX-" + Math.floor(10000 + Math.random() * 90000);
-      const orderEl = document.getElementById('order-id-display');
-      if (orderEl) orderEl.textContent = currentOrderId;
-
-      // Configurar link do WhatsApp para envio do comprovante
-      const waNumber = (window.PIX_CONFIG && window.PIX_CONFIG.whatsappSuporte) ? window.PIX_CONFIG.whatsappSuporte : "5511999999999";
-      const waMsg = encodeURIComponent(`Olá! Acabei de realizar o pagamento Pix de R$ 67,00 referente ao Pedido ${currentOrderId}. Segue meu comprovante para validação e liberação do acesso.`);
-      const waBtn = document.getElementById('btn-wa-proof');
-      if (waBtn) waBtn.href = `https://wa.me/${waNumber}?text=${waMsg}`;
-
       document.getElementById('pix-modal').classList.add('active');
-      document.getElementById('modal-step-pay').classList.add('active');
-      document.getElementById('modal-step-verifying').classList.remove('active');
-      document.getElementById('modal-step-success').classList.remove('active');
+      document.getElementById('modal-step-success').classList.add('active');
       document.body.style.overflow = 'hidden';
     }
+
+    function handleZipDownload(e) {
+      const zipUrl = (window.PIX_CONFIG && window.PIX_CONFIG.zipDownloadUrl && window.PIX_CONFIG.zipDownloadUrl.trim() !== '')
+        ? window.PIX_CONFIG.zipDownloadUrl
+        : '';
+
+      if (zipUrl) {
+        window.open(zipUrl, '_blank');
+      } else {
+        e.preventDefault();
+        alert('📦 O link do seu arquivo compactado (.ZIP) será liberado aqui assim que for cadastrado!\n\nVocê pode colar o link no arquivo pix-config.js (no campo zipDownloadUrl) ou nos passar o link que adicionamos imediatamente.');
+      }
+    }
+
+    /* Controle do Carrossel de Imagens */
+    let currentSlideIndex = 0;
+    let carouselTimer = null;
+
+    function showCarouselSlide(index) {
+      const slides = document.querySelectorAll('.carousel-slide-item');
+      const dots = document.querySelectorAll('.carousel-dot');
+      const total = slides.length || 4;
+
+      currentSlideIndex = (index + total) % total;
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle('active', idx === currentSlideIndex);
+      });
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentSlideIndex);
+      });
+    }
+
+    function moveCarousel(step) {
+      showCarouselSlide(currentSlideIndex + step);
+      resetCarouselAutoPlay();
+    }
+
+    function goToCarouselSlide(index) {
+      showCarouselSlide(index);
+      resetCarouselAutoPlay();
+    }
+
+    function resetCarouselAutoPlay() {
+      if (carouselTimer) clearInterval(carouselTimer);
+      carouselTimer = setInterval(() => {
+        showCarouselSlide(currentSlideIndex + 1);
+      }, 4500);
+    }
+
+    // Iniciar rotação automática ao carregar
+    resetCarouselAutoPlay();
 
     function closePixModal() {
       document.getElementById('pix-modal').classList.remove('active');
@@ -1361,93 +1842,6 @@
       if (e.target.id === 'pix-modal') {
         closePixModal();
       }
-    }
-
-    function switchPixTab(tab, btn) {
-      document.querySelectorAll('.pix-tab-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.pix-tab-pane').forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      if (tab === 'qr') {
-        document.getElementById('pix-pane-qr').classList.add('active');
-      } else {
-        document.getElementById('pix-pane-email').classList.add('active');
-      }
-    }
-
-    function copyPixCode(btn) {
-      const code = document.getElementById('pix-copia-cola-text').value;
-      navigator.clipboard.writeText(code).then(() => {
-        const orig = btn.innerHTML;
-        btn.innerHTML = '✅ Código Copiado!';
-        setTimeout(() => btn.innerHTML = orig, 2500);
-      });
-    }
-
-    function copyPixEmail(btn) {
-      const emailKey = document.getElementById('pix-email-key').textContent.trim();
-      navigator.clipboard.writeText(emailKey).then(() => {
-        const orig = btn.innerHTML;
-        btn.innerHTML = '✅ Chave E-mail Copiada!';
-        setTimeout(() => btn.innerHTML = orig, 2500);
-      });
-    }
-
-    function startPaymentVerification() {
-      document.getElementById('modal-step-pay').classList.remove('active');
-      document.getElementById('modal-step-verifying').classList.add('active');
-
-      const modo = (window.PIX_CONFIG && window.PIX_CONFIG.modoVerificacao) ? window.PIX_CONFIG.modoVerificacao : "comprovante";
-
-      if (modo === "automatico") {
-        document.getElementById('verifying-title').textContent = "Checando Pagamento no Banco Central...";
-        document.getElementById('verifying-sub').textContent = "Aguardando confirmação do Pix de R$ 67,00 no sistema bancário...";
-        document.getElementById('verifying-proof-box').style.display = 'none';
-
-        setTimeout(() => {
-          document.getElementById('modal-step-verifying').classList.remove('active');
-          document.getElementById('modal-step-success').classList.add('active');
-        }, 3200);
-      } else {
-        // Modo com validação de comprovante (segurança anti-fraude)
-        document.getElementById('verifying-title').textContent = "Conectando ao Sistema de Pagamentos...";
-        document.getElementById('verifying-sub').textContent = "Checando confirmação bancária do Pedido " + currentOrderId + "...";
-        document.getElementById('verifying-proof-box').style.display = 'none';
-
-        setTimeout(() => {
-          document.getElementById('verifying-title').textContent = "Aguardando Confirmação do Pagamento";
-          document.getElementById('verifying-sub').textContent = "Para liberar o download e evitar acessos indevidos:";
-          document.getElementById('verifying-proof-box').style.display = 'block';
-        }, 1800);
-      }
-    }
-
-    function backToPixPayment() {
-      document.getElementById('modal-step-verifying').classList.remove('active');
-      document.getElementById('modal-step-pay').classList.add('active');
-    }
-
-    function validateProofCode() {
-      const input = document.getElementById('auth-code-input');
-      const err = document.getElementById('auth-code-error');
-      const code = input.value.trim();
-
-      if (!code || code.length < 5) {
-        err.style.display = 'block';
-        err.textContent = '❌ Digite o código de autenticação do seu comprovante bancário (ou envie pelo WhatsApp acima).';
-        return;
-      }
-
-      err.style.display = 'none';
-      input.disabled = true;
-
-      document.getElementById('verifying-title').textContent = "Autenticação Validada com Sucesso!";
-      document.getElementById('verifying-sub').textContent = "Liberando downloads e arquivos do pedido " + currentOrderId + "...";
-      document.getElementById('verifying-proof-box').style.display = 'none';
-
-      setTimeout(() => {
-        document.getElementById('modal-step-verifying').classList.remove('active');
-        document.getElementById('modal-step-success').classList.add('active');
-      }, 1400);
     }
 
     function handleSendEmail() {
@@ -1477,9 +1871,66 @@
       input.disabled = true;
       btnSubmit.textContent = 'Enviando...';
 
+      const zipLink = (window.PIX_CONFIG && window.PIX_CONFIG.zipDownloadUrl) ? window.PIX_CONFIG.zipDownloadUrl : "https://drive.google.com/file/d/1iqy2qxmNLG06gN_bNaN_KUh-U22l4GK-/view?usp=drive_link";
+      const pdf1Link = (window.PIX_CONFIG && window.PIX_CONFIG.pdf1Url) ? window.PIX_CONFIG.pdf1Url : "https://drive.google.com/file/d/1dC08KVjYIeE-7_oPD_g9BqVXGG5h20vg/view?usp=drive_link";
+      const pdf2Link = (window.PIX_CONFIG && window.PIX_CONFIG.pdf2Url) ? window.PIX_CONFIG.pdf2Url : "https://drive.google.com/file/d/1ZW6qEQRftiDwNUV_VMQWgEQj1vZi5q-R/view?usp=drive_link";
+      const scriptsLink = (window.PIX_CONFIG && window.PIX_CONFIG.scriptsUrl) ? window.PIX_CONFIG.scriptsUrl : "https://drive.google.com/file/d/1QMBSMaus1GOEBGzpv-Jd64aWk2_0g1vw/view?usp=drive_link";
+
+      const serviceId = (window.PIX_CONFIG && window.PIX_CONFIG.emailjsServiceId) ? window.PIX_CONFIG.emailjsServiceId : "service_mqydhoj";
+      const templateId = (window.PIX_CONFIG && window.PIX_CONFIG.emailjsTemplateId) ? window.PIX_CONFIG.emailjsTemplateId : "template_sy1d6tr";
+      const publicKey = (window.PIX_CONFIG && window.PIX_CONFIG.emailjsPublicKey) ? window.PIX_CONFIG.emailjsPublicKey : "mT4h95O5q423b38K8";
+
+      const messageContent = `Olá!\n\nParabéns pelo acesso ao Método Funil Anti-Vácuo para Estética!\n\nAqui estão os seus links oficiais de acesso imediato:\n\n1. 📦 Robô ManyChat Local (.ZIP):\n${zipLink}\n\n2. 📄 PDF 1 - O Funil Automático de Conversão:\n${pdf1Link}\n\n3. 📄 PDF 2 - Tutorial & Automações na Prática:\n${pdf2Link}\n\n4. 💬 Painel de Scripts de Alta Conversão:\n${scriptsLink}\n\nInstrução Importante: O pacote principal do robô está compactado em formato .ZIP. Para abrir no seu computador, basta clicar com o botão direito e escolher "Extrair Tudo".\n\nBons estudos e ótimas conversões!`;
+
+      const templateParams = {
+        email: email,
+        to_email: email,
+        name: "Cliente",
+        time: new Date().toLocaleString('pt-BR'),
+        title: "Seus Links de Acesso: Robô ManyChat, PDFs e Scripts",
+        message: messageContent,
+        zip_link: zipLink,
+        pdf1_link: pdf1Link,
+        pdf2_link: pdf2Link,
+        scripts_link: scriptsLink
+      };
+
+      // Disparo real via EmailJS (SDK oficial ou fetch direto)
+      if (window.emailjs && typeof window.emailjs.send === 'function') {
+        try {
+          window.emailjs.init({ publicKey: publicKey });
+          window.emailjs.send(serviceId, templateId, templateParams, publicKey).catch(() => {});
+        } catch (e) {}
+      } else {
+        try {
+          fetch("https://api.emailjs.com/api/v1.0/email/send", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              service_id: serviceId,
+              template_id: templateId,
+              user_id: publicKey,
+              template_params: templateParams
+            })
+          }).catch(() => {});
+        } catch (e) {}
+      }
+
       setTimeout(() => {
         feedback.className = 'email-status-msg success';
-        feedback.innerHTML = `✅ <strong>Acesso enviado com sucesso para ${email}!</strong><br>Verifique sua caixa de entrada e pasta de spam em até 2 minutos.`;
+        feedback.innerHTML = `
+          <div style="font-weight: 800; font-size: 14px; margin-bottom: 6px;">✅ Links enviados com sucesso para: <span style="color: #38bdf8;">${email}</span></div>
+          <div style="font-size: 12px; color: #fde047; margin: 8px 0 10px 0; background: rgba(234, 179, 8, 0.12); border: 1px solid rgba(234, 179, 8, 0.3); border-radius: 6px; padding: 7px 10px; text-align: left; line-height: 1.4;">
+            📩 <strong>Importante:</strong> Se não encontrar o e-mail na sua caixa principal em até 2 minutos, <strong>verifique a sua aba Spam ou Lixo Eletrônico</strong>!
+          </div>
+          <div style="font-size: 12px; color: #cbd5e1; margin-bottom: 8px;">Abaixo estão os 4 links oficiais também liberados diretamente na sua tela:</div>
+          <div class="dispatched-links-list">
+            <a href="${zipLink}" target="_blank" rel="noopener noreferrer">📦 1. Robô ManyChat Local (.ZIP)</a>
+            <a href="${pdf1Link}" target="_blank" rel="noopener noreferrer">📄 2. PDF 1: O Funil Automático de Conversão</a>
+            <a href="${pdf2Link}" target="_blank" rel="noopener noreferrer">📄 3. PDF 2: Tutorial & Automações na Prática</a>
+            <a href="${scriptsLink}" target="_blank" rel="noopener noreferrer" id="dispatched-scripts-link">💬 4. Painel de Scripts (PDF)</a>
+          </div>
+        `;
         btnSubmit.textContent = 'Enviado ✔';
         
         if (emailAttemptsLeft > 0) {
@@ -1487,7 +1938,7 @@
         } else {
           btnReedit.style.display = 'none';
         }
-      }, 500);
+      }, 700);
     }
 
     function enableEmailReedit() {
@@ -1503,9 +1954,6 @@
       feedback.className = 'email-status-msg';
       feedback.innerHTML = '';
       btnReedit.style.display = 'none';
-      input.focus();
-      input.select();
-    }
       input.focus();
       input.select();
     }

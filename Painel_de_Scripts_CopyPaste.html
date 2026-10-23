@@ -30,6 +30,10 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background-color: var(--bg-dark);
       color: var(--text-main);
@@ -70,11 +74,12 @@
       background: rgba(34, 197, 94, 0.15);
       color: var(--whatsapp);
       border: 1px solid rgba(34, 197, 94, 0.3);
-      padding: 4px 12px;
+      padding: 6px 14px;
       border-radius: 999px;
       font-size: 12px;
       font-weight: 700;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .header-sub {
@@ -83,55 +88,44 @@
       margin-top: 4px;
     }
 
-    /* Tabs */
+    /* Navigation Bar (Tabs) */
     .tabs-nav {
       display: flex;
       gap: 8px;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       overflow-x: auto;
-      padding-bottom: 4px;
+      padding-bottom: 6px;
+      flex-wrap: wrap;
     }
 
     .tab-btn {
       background: var(--bg-card);
       border: 1px solid var(--border);
       color: var(--text-muted);
-      padding: 10px 18px;
+      padding: 10px 16px;
       border-radius: 10px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 13px;
       cursor: pointer;
+      text-decoration: none;
       transition: all 0.2s ease;
       white-space: nowrap;
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     .tab-btn:hover {
       background: var(--bg-card-hover);
       color: #fff;
+      border-color: var(--border-accent);
     }
 
-    .tab-btn.active {
-      background: rgba(34, 197, 94, 0.15);
+    .tab-btn.active, .tab-btn.current {
+      background: rgba(34, 197, 94, 0.2);
       border-color: var(--whatsapp);
       color: #fff;
-    }
-
-    /* Tab Content */
-    .tab-pane {
-      display: none;
-      animation: fadeIn 0.25s ease;
-    }
-
-    .tab-pane.active {
-      display: block;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
+      box-shadow: 0 4px 15px rgba(34, 197, 94, 0.2);
     }
 
     /* Script Cards */
@@ -170,19 +164,21 @@
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
-      padding: 2px 8px;
-      border-radius: 4px;
+      padding: 3px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.3px;
     }
 
-    .tag-green { background: rgba(34, 197, 94, 0.15); color: #4ade80; }
-    .tag-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
-    .tag-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
-    .tag-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+    .tag-green { background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.3); }
+    .tag-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+    .tag-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+    .tag-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
 
     .card-desc {
-      font-size: 12.5px;
+      font-size: 13px;
       color: var(--text-muted);
       margin-bottom: 12px;
+      line-height: 1.5;
     }
 
     /* Script Message Box */
@@ -191,20 +187,29 @@
       border: 1px solid #1e293b;
       border-left: 4px solid var(--whatsapp);
       border-radius: 8px;
-      padding: 14px 16px;
+      padding: 16px 18px;
       font-size: 13.5px;
       color: #e2e8f0;
       white-space: pre-wrap;
-      line-height: 1.55;
+      line-height: 1.6;
       position: relative;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 14px;
+      flex-wrap: wrap;
     }
 
     .btn-copy {
       background: var(--whatsapp);
       color: #000;
       font-weight: 700;
-      font-size: 12px;
-      padding: 8px 16px;
+      font-size: 12.5px;
+      padding: 9px 18px;
       border-radius: 8px;
       border: none;
       cursor: pointer;
@@ -212,7 +217,7 @@
       align-items: center;
       gap: 6px;
       transition: all 0.2s ease;
-      margin-top: 12px;
+      text-decoration: none;
     }
 
     .btn-copy:hover {
@@ -220,8 +225,174 @@
       transform: translateY(-1px);
     }
 
-    .btn-copy:active {
-      transform: translateY(0);
+    .btn-wa-direct {
+      background: #1a2333;
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      font-weight: 700;
+      font-size: 12px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-wa-direct:hover {
+      background: rgba(34, 197, 94, 0.2);
+      border-color: #22c55e;
+      color: #fff;
+    }
+
+    .video-card-box {
+      background: #090e17;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 14px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .video-thumb-link {
+      background: linear-gradient(135deg, #111a2d, #0b1120);
+      border: 2px dashed #1e3a5f;
+      border-radius: 12px;
+      padding: 30px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      transition: all 0.2s ease;
+    }
+
+    .video-thumb-link:hover {
+      border-color: #38bdf8;
+      background: #111e38;
+      transform: translateY(-2px);
+    }
+
+    .video-play-btn {
+      font-size: 40px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .video-thumb-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .video-thumb-sub {
+      font-size: 12px;
+      color: #38bdf8;
+      text-decoration: underline;
+    }
+
+    /* Tab Section Container */
+    .tab-section {
+      margin-bottom: 40px;
+    }
+
+    .tab-section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    .tab-section-title {
+      font-size: 19px;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Print / PDF Specific Rules */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 12mm 15mm 15mm 15mm;
+      }
+
+      body {
+        background-color: #0c1017 !important;
+        color: #f1f5f9 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        padding: 0 !important;
+      }
+
+      .tab-section {
+        display: block !important;
+        page-break-before: always !important;
+        break-before: page !important;
+        padding-top: 10px;
+      }
+
+      .tab-section:first-of-type {
+        page-break-before: avoid !important;
+        break-before: avoid !important;
+      }
+
+      .card {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        background: #151b26 !important;
+        border: 1px solid #232d3f !important;
+      }
+
+      .message-box {
+        background: #0d121c !important;
+        border: 1px solid #1e293b !important;
+        border-left: 4px solid #22c55e !important;
+        color: #e2e8f0 !important;
+      }
+
+      .tabs-nav {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        margin-bottom: 18px !important;
+      }
+
+      .tab-btn {
+        display: inline-flex !important;
+        color: #94a3b8 !important;
+        background: #151b26 !important;
+        border: 1px solid #232d3f !important;
+        text-decoration: none !important;
+      }
+
+      .tab-btn.active, .tab-btn.current {
+        background: rgba(34, 197, 94, 0.25) !important;
+        color: #22c55e !important;
+        border-color: #22c55e !important;
+      }
+
+      .btn-copy {
+        display: inline-flex !important;
+        background: #22c55e !important;
+        color: #000 !important;
+      }
+
+      .btn-wa-direct {
+        display: inline-flex !important;
+        background: #1e293b !important;
+        color: #4ade80 !important;
+      }
+
+      #toast {
+        display: none !important;
+      }
     }
 
     /* Toast */
@@ -261,23 +432,28 @@
         <div class="header-title">
           <span>💬</span> Painel Anti-Vácuo de WhatsApp
         </div>
-        <div class="header-sub">Scripts prontos de alta conversão para clínicas de estética, biomédicas e negócios locais</div>
+        <div class="header-sub">Scripts de alta conversão para clínicas de estética, biomédicas e atendimentos locais</div>
       </div>
-      <div class="header-badge">● Pronto para Uso</div>
+      <div class="header-badge">● Interativo / Clique nas Abas</div>
     </header>
 
-    <!-- NAVIGATION TABS -->
-    <div class="tabs-nav">
-      <button class="tab-btn active" onclick="openTab('tab-etapas', this)">🚀 1. As 3 Etapas Anti-Preço</button>
-      <button class="tab-btn" onclick="openTab('tab-objecoes', this)">🛡️ 2. Quebra de Objeções</button>
-      <button class="tab-btn" onclick="openTab('tab-followup', this)">🔄 3. Resgate (Follow-up)</button>
-      <button class="tab-btn" onclick="openTab('tab-manychat', this)">🤖 4. Automação ManyChat</button>
-      <button class="tab-btn" onclick="openTab('tab-rotina', this)">📋 5. Rotina da Recepção</button>
-      <button class="tab-btn" onclick="openTab('tab-videos', this)">🎬 6. Vídeos de Vendas (MP4)</button>
-    </div>
+    <!-- SECTION 1: AS 3 ETAPAS ANTI-PREÇO -->
+    <div id="tab-etapas" class="tab-section">
+      <div class="tabs-nav">
+        <a href="#tab-etapas" class="tab-btn current">🚀 1. As 3 Etapas Anti-Preço</a>
+        <a href="#tab-objecoes" class="tab-btn">🛡️ 2. Quebra de Objeções</a>
+        <a href="#tab-followup" class="tab-btn">🔄 3. Resgate Follow-up</a>
+        <a href="#tab-manychat" class="tab-btn">🤖 4. Automação ManyChat</a>
+        <a href="#tab-rotina" class="tab-btn">📋 5. Rotina da Recepção</a>
+        <a href="#tab-videos" class="tab-btn">🎬 6. Vídeos de Vendas</a>
+      </div>
 
-    <!-- TAB 1: AS 3 ETAPAS -->
-    <div id="tab-etapas" class="tab-pane active">
+      <div class="tab-section-header">
+        <div class="tab-section-title">
+          <span>🚀</span> Módulo 1: O Funil das 3 Etapas Anti-Preço
+        </div>
+      </div>
+
       <div class="card">
         <div class="card-head">
           <div class="card-title"><span>1️⃣</span> Etapa 1: Acolhimento e Inversão da Dinâmica</div>
@@ -289,7 +465,10 @@
 Antes de te passar os valores, deixa eu te perguntar: você já fez esse procedimento alguma vez ou seria sua primeira experiência?
 
 (Te pergunto isso porque cada rosto/corpo tem uma anatomia única e usamos dosagens personalizadas para o resultado ficar 100% natural).</div>
-        <button class="btn-copy" onclick="copyText('script-etapa1')">📋 Copiar Mensagem</button>
+        <div class="btn-row">
+          <button class="btn-copy" onclick="copyText('script-etapa1', this)">📋 Copiar Mensagem</button>
+          <a href="https://api.whatsapp.com/send?text=Oi%2C%20%5BNome%5D%21%20Tudo%20bem%3F%20Que%20%C3%B3timo%20voc%C3%AA%20ter%20chamado%21%20%F0%9F%A5%B0%0A%0AAntes%20de%20te%20passar%20os%20valores%2C%20deixa%20eu%20te%20perguntar%3A%20voc%C3%AA%20j%C3%A1%20fez%20esse%20procedimento%20alguma%20vez%20ou%20seria%20sua%20primeira%20experi%C3%AAncia%3F%0A%0A%28Te%20pergunto%20isso%20porque%20cada%20rosto%2Fcorpo%20tem%20uma%20anatomia%20%C3%BAnica%20e%20usamos%20dosagens%20personalizadas%20para%20o%20resultado%20ficar%20100%25%20natural%29." target="_blank" rel="noopener noreferrer" class="btn-wa-direct">📲 Abrir no WhatsApp</a>
+        </div>
       </div>
 
       <div class="card">
@@ -303,7 +482,10 @@ Antes de te passar os valores, deixa eu te perguntar: você já fez esse procedi
 Nosso protocolo completo inclui: a aplicação personalizada, o acompanhamento pós e a consulta de revisão em 15 dias com retoque gratuito caso precise.
 
 Hoje o valor desse procedimento completo está saindo por [Valor ou X parcelas de R$ ...].</div>
-        <button class="btn-copy" onclick="copyText('script-etapa2')">📋 Copiar Mensagem</button>
+        <div class="btn-row">
+          <button class="btn-copy" onclick="copyText('script-etapa2', this)">📋 Copiar Mensagem</button>
+          <a href="https://api.whatsapp.com/send?text=Perfeito%2C%20%5BNome%5D%21%20O%20nosso%20protocolo%20de%20toxina%20atua%20exatamente%20suavizando%20essas%20linhas%20sem%20deixar%20a%20express%C3%A3o%20congelada.%20Usamos%20apenas%20marcas%20padr%C3%A3o%20ouro%20com%20registro%20rigoroso%20na%20Anvisa.%0A%0ANosso%20protocolo%20completo%20inclui%3A%20a%20aplica%C3%A7%C3%A3o%20personalizada%2C%20o%20acompanhamento%20p%C3%B3s%20e%20a%20consulta%20de%20revis%C3%A3o%20em%2015%20dias%20com%20retoque%20gratuito%20caso%20precise.%0A%0AHoje%20o%20valor%20desse%20procedimento%20completo%20est%C3%A1%20saindo%20por%20%5BValor%20ou%20X%20parcelas%20de%20R%24%20...%5D." target="_blank" rel="noopener noreferrer" class="btn-wa-direct">📲 Abrir no WhatsApp</a>
+        </div>
       </div>
 
       <div class="card">
@@ -313,27 +495,48 @@ Hoje o valor desse procedimento completo está saindo por [Valor ou X parcelas d
         </div>
         <div class="card-desc">Nunca pergunte "você quer agendar?". Dê duas alternativas de horário para conduzir a decisão com naturalidade.</div>
         <div class="message-box" id="script-etapa3">Para garantir esse valor e o retoque incluso, eu tenho dois horários de avaliação nesta semana: Quinta às 14h ou Sexta às 10h. Qual fica melhor na sua rotina?</div>
-        <button class="btn-copy" onclick="copyText('script-etapa3')">📋 Copiar Mensagem</button>
+        <div class="btn-row">
+          <button class="btn-copy" onclick="copyText('script-etapa3', this)">📋 Copiar Mensagem</button>
+          <a href="https://api.whatsapp.com/send?text=Para%20garantir%20esse%20valor%20e%20o%20retoque%20incluso%2C%20eu%20tenho%20dois%20hor%C3%A1rios%20de%20avalia%C3%A7%C3%A3o%20nesta%20semana%3A%20Quinta%20%C3%A0s%2014h%20ou%20Sexta%20%C3%A0s%2010h.%20Qual%20fica%20melhor%20na%20sua%20rotina%3F" target="_blank" rel="noopener noreferrer" class="btn-wa-direct">📲 Abrir no WhatsApp</a>
+        </div>
       </div>
     </div>
 
-    <!-- TAB 2: QUEBRA DE OBJEÇÕES -->
-    <div id="tab-objecoes" class="tab-pane">
+    <!-- SECTION 2: QUEBRA DE OBJEÇÕES -->
+    <div id="tab-objecoes" class="tab-section">
+      <div class="tabs-nav">
+        <a href="#tab-etapas" class="tab-btn">🚀 1. As 3 Etapas Anti-Preço</a>
+        <a href="#tab-objecoes" class="tab-btn current">🛡️ 2. Quebra de Objeções</a>
+        <a href="#tab-followup" class="tab-btn">🔄 3. Resgate Follow-up</a>
+        <a href="#tab-manychat" class="tab-btn">🤖 4. Automação ManyChat</a>
+        <a href="#tab-rotina" class="tab-btn">📋 5. Rotina da Recepção</a>
+        <a href="#tab-videos" class="tab-btn">🎬 6. Vídeos de Vendas</a>
+      </div>
+
+      <div class="tab-section-header">
+        <div class="tab-section-title">
+          <span>🛡️</span> Módulo 2: Scripts de Quebra de Objeções
+        </div>
+      </div>
+
       <div class="card">
         <div class="card-head">
-          <div class="card-title"><span>💸</span> Objeção: "Achei caro / Na clínica X é mais barato"</div>
+          <div class="card-title"><span>💸</span> Objeção 1: "Achei caro / Na clínica X é mais barato"</div>
           <span class="card-tag tag-amber">Segurança vs. Risco</span>
         </div>
         <div class="card-desc">Elimina o comparador de preços mostrando o perigo de produtos diluídos e procedimentos mal feitos no rosto.</div>
         <div class="message-box" id="script-obj-caro">Eu compreendo perfeitamente, [Nome]. No mercado de estética existem profissionais que utilizam produtos diluídos ou marcas paralelas para baixar o custo.
 
 Quando falamos do seu rosto, um erro de aplicação pode levar meses e o triplo do investimento para consertar. Aqui você tem segurança de insumos de 1ª linha e suporte total. Vale a pena arriscar sua saúde por uma pequena diferença no mês? Conseguimos parcelar em até [X]x sem juros.</div>
-        <button class="btn-copy" onclick="copyText('script-obj-caro')">📋 Copiar Mensagem</button>
+        <div class="btn-row">
+          <button class="btn-copy" onclick="copyText('script-obj-caro', this)">📋 Copiar Mensagem</button>
+          <a href="https://api.whatsapp.com/send?text=Eu%20compreendo%20perfeitamente%2C%20%5BNome%5D.%20No%20mercado%20de%20est%C3%A9tica%20existem%20profissionais%20que%20utilizam%20produtos%20dilu%C3%ADdos%20ou%20marcas%20paralelas%20para%20baixar%20o%20custo.%0A%0AQuando%20falamos%20do%20seu%20rosto%2C%20um%20erro%20de%20aplica%C3%A7%C3%A3o%20pode%20levar%20meses%20e%20o%20triplo%20do%20investimento%20para%20consertar.%20Aqui%20voc%C3%AA%20tem%20seguran%C3%A7a%20de%20insumos%20de%201%C2%AA%20linha%20e%20suporte%20total.%20Vale%20a%20pena%20arriscar%20sua%20sa%C3%BAde%20por%20uma%20pequena%20diferen%C3%A7a%20no%20m%C3%AAs%3F%20Conseguimos%20parcelar%20em%20at%C3%A9%20%5BX%5Dx%20sem%20juros." target="_blank" rel="noopener noreferrer" class="btn-wa-direct">📲 Abrir no WhatsApp</a>
+        </div>
       </div>
 
       <div class="card">
         <div class="card-head">
-          <div class="card-title"><span>👫</span> Objeção: "Vou falar com meu marido antes"</div>
+          <div class="card-title"><span>👫</span> Objeção 2: "Vou falar com meu marido antes"</div>
           <span class="card-tag tag-purple">Autocuidado & Escassez</span>
         </div>
         <div class="card-desc">Desarma a desculpa clássica com empatia e conecta a decisão ao autocuidado pessoal da mulher.</div>
@@ -342,24 +545,45 @@ Quando falamos do seu rosto, um erro de aplicação pode levar meses e o triplo 
 Mas deixa eu te falar uma coisa com carinho: quase 90% das nossas pacientes dizem isso, e depois confessam que os maridos só reparam que elas estão mais confiantes, bonitas e bem consigo mesmas depois de pronto!
 
 Para você não perder o brinde da avaliação, posso pré-reservar o horário de [Dia/Hora] por 3 horas? Se você não confirmar até lá, eu libero para a lista de espera sem problema nenhum.</div>
-        <button class="btn-copy" onclick="copyText('script-obj-marido')">📋 Copiar Mensagem</button>
+        <div class="btn-row">
+          <button class="btn-copy" onclick="copyText('script-obj-marido', this)">📋 Copiar Mensagem</button>
+          <a href="https://api.whatsapp.com/send?text=Super%20entendo%2C%20alinhamento%20%C3%A9%20tudo%21%20%F0%9F%92%95%0A%0AMas%20deixa%20eu%20te%20falar%20uma%20coisa%20com%20carinho%3A%20quase%2090%25%20das%20nossas%20pacientes%20dizem%20isso%2C%20e%20depois%20confessam%20que%20os%20maridos%20s%C3%B3%20reparam%20que%20elas%20est%C3%A3o%20mais%20confiantes%2C%20bonitas%20e%20bem%20consigo%20mesmas%20depois%20de%20pronto%21%0A%0APara%20voc%C3%AA%20n%C3%A3o%20perder%20o%20brinde%20da%20avalia%C3%A7%C3%A3o%2C%20posso%20pr%C3%A9-reservar%20o%20hor%C3%A1rio%20de%20%5BDia%2FHora%5D%20por%203%20horas%3F%20Se%20voc%C3%AA%20n%C3%A3o%20confirmar%20at%C3%A9%20l%C3%A1%2C%20eu%20libero%20para%20a%20lista%20de%20espera%20sem%20problema%20nenhum." target="_blank" rel="noopener noreferrer" class="btn-wa-direct">📲 Abrir no WhatsApp</a>
+        </div>
       </div>
 
       <div class="card">
         <div class="card-head">
-          <div class="card-title"><span>⏳</span> Objeção: "Vou pensar e te aviso depois"</div>
+          <div class="card-title"><span>⏳</span> Objeção 3: "Vou pensar e te aviso depois"</div>
           <span class="card-tag tag-blue">Eliminação de Dúvida Oculta</span>
         </div>
         <div class="card-desc">Descobre se o motivo real é dor, medo ou pagamento, criando urgência legítima de agenda.</div>
         <div class="message-box" id="script-obj-pensar">Combinado, [Nome]! Só para eu saber se consegui te explicar tudo direitinho: ficou alguma dúvida em relação ao procedimento, dor, duração ou forma de pagamento?
 
 Te pergunto porque nossa agenda com a condição especial desse mês encerra amanhã e restam apenas 3 vagas de avaliação.</div>
-        <button class="btn-copy" onclick="copyText('script-obj-pensar')">📋 Copiar Mensagem</button>
+        <div class="btn-row">
+          <button class="btn-copy" onclick="copyText('script-obj-pensar', this)">📋 Copiar Mensagem</button>
+          <a href="https://api.whatsapp.com/send?text=Combinado%2C%20%5BNome%5D%21%20S%C3%B3%20para%20eu%20saber%20se%20consegui%20te%20explicar%20tudo%20direitinho%3A%20ficou%20alguma%20d%C3%BAvida%20em%20rela%C3%A7%C3%A3o%20ao%20procedimento%2C%20dor%2C%20dura%C3%A7%C3%A3o%20ou%20forma%20de%20pagamento%3F%0A%0ATe%20pergunto%20porque%20nossa%20agenda%20com%20a%20condi%C3%A7%C3%A3o%20especial%20desse%20m%C3%AAs%20encerra%20amanh%C3%A3%20e%20restam%20apenas%203%20vagas%20de%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="btn-wa-direct">📲 Abrir no WhatsApp</a>
+        </div>
       </div>
     </div>
 
-    <!-- TAB 3: RESGATE FOLLOW-UP -->
-    <div id="tab-followup" class="tab-pane">
+    <!-- SECTION 3: RESGATE FOLLOW-UP -->
+    <div id="tab-followup" class="tab-section">
+      <div class="tabs-nav">
+        <a href="#tab-etapas" class="tab-btn">🚀 1. As 3 Etapas Anti-Preço</a>
+        <a href="#tab-objecoes" class="tab-btn">🛡️ 2. Quebra de Objeções</a>
+        <a href="#tab-followup" class="tab-btn current">🔄 3. Resgate Follow-up</a>
+        <a href="#tab-manychat" class="tab-btn">🤖 4. Automação ManyChat</a>
+        <a href="#tab-rotina" class="tab-btn">📋 5. Rotina da Recepção</a>
+        <a href="#tab-videos" class="tab-btn">🎬 6. Vídeos de Vendas</a>
+      </div>
+
+      <div class="tab-section-header">
+        <div class="tab-section-title">
+          <span>🔄</span> Módulo 3: Scripts de Resgate de Vácuo (Follow-Up 4 Etapas)
+        </div>
+      </div>
+
       <div class="card">
         <div class="card-head">
           <div class="card-title"><span>⏰</span> Mensagem 1: O "Toque Suave" (Após 4 a 6 horas)</div>
@@ -370,7 +594,10 @@ Te pergunto porque nossa agenda com a condição especial desse mês encerra ama
 A nossa recepção estava organizando a grade de atendimentos da semana e lembrei de você.
 
 Só para eu não fechar a agenda sem te avisar: você prefere que eu segure aquele horário de [Dia/Turno] ou tem outro dia que fica melhor para a sua rotina?</div>
-        <button class="btn-copy" onclick="copyText('script-fu-4h')">📋 Copiar Mensagem</button>
+        <div class="btn-row">
+          <button class="btn-copy" onclick="copyText('script-fu-4h', this)">📋 Copiar Mensagem</button>
+          <a href="https://api.whatsapp.com/send?text=Oi%2C%20%5BNome%5D%21%20Tudo%20bem%3F%0A%0AA%20nossa%20recep%C3%A7%C3%A3o%20estava%20organizando%20a%20grade%20de%20atendimentos%20da%20semana%20e%20lembrei%20de%20voc%C3%AA.%0A%0AS%C3%B3%20para%20eu%20n%C3%A3o%20fechar%20a%20agenda%20sem%20te%20avisar%3A%20voc%C3%AA%20prefere%20que%20eu%20segure%20aquele%20hor%C3%A1rio%20de%20%5BDia%2FTurno%5D%20ou%20tem%20outro%20dia%20que%20fica%20melhor%20para%20a%20sua%20rotina%3F" target="_blank" rel="noopener noreferrer" class="btn-wa-direct">📲 Abrir no WhatsApp</a>
+        </div>
       </div>
 
       <div class="card">
@@ -385,7 +612,10 @@ Atendemos uma paciente que tinha exatamente a mesma preocupação que a sua sobr
 Olha esse resultado de como ficou super natural: (anexar 1 foto discreta de antes/depois ou print de elogio de paciente).
 
 Era mais ou menos esse resultado que você estava imaginando para você?</div>
-        <button class="btn-copy" onclick="copyText('script-fu-24h')">📋 Copiar Mensagem</button>
+        <div class="btn-row">
+          <button class="btn-copy" onclick="copyText('script-fu-24h', this)">📋 Copiar Mensagem</button>
+          <a href="https://api.whatsapp.com/send?text=%5BNome%5D%2C%20lembrei%20de%20voc%C3%AA%20hoje%20na%20cl%C3%ADnica%21%0A%0AAtendemos%20uma%20paciente%20que%20tinha%20exatamente%20a%20mesma%20preocupa%C3%A7%C3%A3o%20que%20a%20sua%20sobre%20%5Bex%3A%20ficar%20com%20o%20rosto%20muito%20inchado%20%2F%20dor%20da%20picadinha%20%2F%20ficar%20artificial%5D.%0A%0AOlha%20esse%20resultado%20de%20como%20ficou%20super%20natural%3A%20%28anexar%201%20foto%20discreta%20de%20antes%2Fdepois%20ou%20print%20de%20elogio%20de%20paciente%29.%0A%0AEra%20mais%20ou%20menos%20esse%20resultado%20que%20voc%C3%AA%20estava%20imaginando%20para%20voc%C3%AA%3F" target="_blank" rel="noopener noreferrer" class="btn-wa-direct">📲 Abrir no WhatsApp</a>
+        </div>
       </div>
 
       <div class="card">
@@ -398,13 +628,16 @@ Era mais ou menos esse resultado que você estava imaginando para você?</div>
 O nosso lote de insumos com o valor promocional que te passei encerra hoje às 18h. A partir de amanhã o sistema atualiza para a tabela cheia.
 
 Se você ainda tiver interesse em fazer a sua aplicação com a [vantagem/bônus], me dá um ok por aqui até o final da tarde para eu travar o seu desconto no sistema, tá bom?</div>
-        <button class="btn-copy" onclick="copyText('script-fu-48h')">📋 Copiar Mensagem</button>
+        <div class="btn-row">
+          <button class="btn-copy" onclick="copyText('script-fu-48h', this)">📋 Copiar Mensagem</button>
+          <a href="https://api.whatsapp.com/send?text=Passando%20rapidinho%2C%20%5BNome%5D%21%0A%0AO%20nosso%20lote%20de%20insumos%20com%20o%20valor%20promocional%20que%20te%20passei%20encerra%20hoje%20%C3%A0s%2018h.%20A%20partir%20de%20amanh%C3%A3%20o%20sistema%20atualiza%20para%20a%20tabela%20cheia.%0A%0ASe%20voc%C3%AA%20ainda%20tiver%20interesse%20em%20fazer%20a%20sua%20aplica%C3%A7%C3%A3o%20com%20a%20%5Bvantagem%2Fb%C3%B4nus%5D%2C%20me%20d%C3%A1%20um%20ok%20por%20aqui%20at%C3%A9%20o%20final%20da%20tarde%20para%20eu%20travar%20o%20seu%20desconto%20no%20sistema%2C%20t%C3%A1%20bom%3F" target="_blank" rel="noopener noreferrer" class="btn-wa-direct">📲 Abrir no WhatsApp</a>
+        </div>
       </div>
 
       <div class="card" style="border-left: 4px solid var(--accent-rose);">
         <div class="card-head">
           <div class="card-title"><span style="color: #f43f5e;">💥</span> Mensagem 4: O "Desapego Estratégico" (Após 5 a 7 dias)</div>
-          <span class="card-tag" style="background: rgba(244, 63, 94, 0.15); color: #f43f5e;">Choque de Perda (40% de Retorno)</span>
+          <span class="card-tag" style="background: rgba(244, 63, 94, 0.15); color: #f43f5e; border: 1px solid rgba(244, 63, 94, 0.3);">Choque de Perda (40% de Retorno)</span>
         </div>
         <div class="card-desc">Quando você desiste do cliente de forma nobre e profissional, o medo de perder a vaga faz ele responder na hora.</div>
         <div class="message-box" id="script-fu-desapego">Oi, [Nome], tudo bem?
@@ -414,12 +647,30 @@ Como não tive mais retorno seu, imaginei que você tenha decidido deixar o seu 
 Estou dando baixa na sua ficha temporária aqui no sistema para liberar a vaga da agenda para outra pessoa da fila.
 
 Se no futuro você quiser retomar, as portas estão super abertas. Um grande abraço!</div>
-        <button class="btn-copy" onclick="copyText('script-fu-desapego')">📋 Copiar Mensagem</button>
+        <div class="btn-row">
+          <button class="btn-copy" onclick="copyText('script-fu-desapego', this)">📋 Copiar Mensagem</button>
+          <a href="https://api.whatsapp.com/send?text=Oi%2C%20%5BNome%5D%2C%20tudo%20bem%3F%0A%0AComo%20n%C3%A3o%20tive%20mais%20retorno%20seu%2C%20imaginei%20que%20voc%C3%AA%20tenha%20decidido%20deixar%20o%20seu%20cuidado%20com%20%5BProcedimento%5D%20para%20outro%20momento%2C%20e%20est%C3%A1%20tudo%20bem%21%0A%0AEstou%20dando%20baixa%20na%20sua%20ficha%20tempor%C3%A1ria%20aqui%20no%20sistema%20para%20liberar%20a%20vaga%20da%20agenda%20para%20outra%20pessoa%20da%20fila.%0A%0ASe%20no%20futuro%20voc%C3%AA%20quiser%20retomar%2C%20as%20portas%20est%C3%A3o%20super%20abertas.%20Um%20grande%20abra%C3%A7o%21" target="_blank" rel="noopener noreferrer" class="btn-wa-direct">📲 Abrir no WhatsApp</a>
+        </div>
       </div>
     </div>
 
-    <!-- TAB 4: MANYCHAT -->
-    <div id="tab-manychat" class="tab-pane">
+    <!-- SECTION 4: MANYCHAT -->
+    <div id="tab-manychat" class="tab-section">
+      <div class="tabs-nav">
+        <a href="#tab-etapas" class="tab-btn">🚀 1. As 3 Etapas Anti-Preço</a>
+        <a href="#tab-objecoes" class="tab-btn">🛡️ 2. Quebra de Objeções</a>
+        <a href="#tab-followup" class="tab-btn">🔄 3. Resgate Follow-up</a>
+        <a href="#tab-manychat" class="tab-btn current">🤖 4. Automação ManyChat</a>
+        <a href="#tab-rotina" class="tab-btn">📋 5. Rotina da Recepção</a>
+        <a href="#tab-videos" class="tab-btn">🎬 6. Vídeos de Vendas</a>
+      </div>
+
+      <div class="tab-section-header">
+        <div class="tab-section-title">
+          <span>🤖</span> Módulo 4: Roteiros do Robô ManyChat
+        </div>
+      </div>
+
       <div class="card">
         <div class="card-head">
           <div class="card-title"><span>🤖</span> Mensagem Instantânea no Direct do Instagram</div>
@@ -431,7 +682,10 @@ Se no futuro você quiser retomar, as portas estão super abertas. Um grande abr
 Como cada avaliação precisa ser analisada individualmente pela nossa especialista, nosso atendimento VIP e envio de fotos exclusivas de casos reais acontecem direto no WhatsApp.
 
 Toque no botão abaixo para falar direto com a gente e garantir o bônus da primeira consulta 👇</div>
-        <button class="btn-copy" onclick="copyText('script-manychat-direct')">📋 Copiar Mensagem</button>
+        <div class="btn-row">
+          <button class="btn-copy" onclick="copyText('script-manychat-direct', this)">📋 Copiar Mensagem</button>
+          <a href="https://api.whatsapp.com/send?text=Oi%2C%20%7B%7Bfirst_name%7D%7D%21%20Vi%20que%20voc%C3%AA%20se%20interessou%20pelo%20nosso%20protocolo%20de%20%5BProcedimento%5D.%0A%0AComo%20cada%20avalia%C3%A7%C3%A3o%20precisa%20ser%20analisada%20individualmente%20pela%20nossa%20especialista%2C%20nosso%20atendimento%20VIP%20e%20envio%20de%20fotos%20exclusivas%20de%20casos%20reais%20acontecem%20direto%20no%20WhatsApp.%0A%0AToque%20no%20bot%C3%A3o%20abaixo%20para%20falar%20direto%20com%20a%20gente%20e%20garantir%20o%20b%C3%B4nus%20da%20primeira%20consulta%20%F0%9F%91%87" target="_blank" rel="noopener noreferrer" class="btn-wa-direct">📲 Abrir no WhatsApp</a>
+        </div>
       </div>
 
       <div class="card">
@@ -440,71 +694,99 @@ Toque no botão abaixo para falar direto com a gente e garantir o bônus da prim
           <span class="card-tag tag-blue">Botão do ManyChat</span>
         </div>
         <div class="message-box" id="script-wa-link">https://wa.me/55SEUNUMERO?text=Oi!%20Vim%20do%20Instagram%20e%20quero%20minha%20avaliação%20de%20estética</div>
-        <button class="btn-copy" onclick="copyText('script-wa-link')">📋 Copiar Link Modelo</button>
+        <div class="btn-row">
+          <button class="btn-copy" onclick="copyText('script-wa-link', this)">📋 Copiar Link Modelo</button>
+        </div>
       </div>
     </div>
 
-    <!-- TAB 5: ROTINA DIÁRIA -->
-    <div id="tab-rotina" class="tab-pane">
+    <!-- SECTION 5: ROTINA DIÁRIA -->
+    <div id="tab-rotina" class="tab-section">
+      <div class="tabs-nav">
+        <a href="#tab-etapas" class="tab-btn">🚀 1. As 3 Etapas Anti-Preço</a>
+        <a href="#tab-objecoes" class="tab-btn">🛡️ 2. Quebra de Objeções</a>
+        <a href="#tab-followup" class="tab-btn">🔄 3. Resgate Follow-up</a>
+        <a href="#tab-manychat" class="tab-btn">🤖 4. Automação ManyChat</a>
+        <a href="#tab-rotina" class="tab-btn current">📋 5. Rotina da Recepção</a>
+        <a href="#tab-videos" class="tab-btn">🎬 6. Vídeos de Vendas</a>
+      </div>
+
+      <div class="tab-section-header">
+        <div class="tab-section-title">
+          <span>📋</span> Módulo 5: Checklist Diário de Atendimento da Recepção
+        </div>
+      </div>
+
       <div class="card">
-        <div class="card-title" style="margin-bottom: 14px;"><span>📋</span> Checklist Diário da Recepção da Clínica</div>
+        <div class="card-title" style="margin-bottom: 14px;"><span>📋</span> Checklist Operacional Diário</div>
         <div style="line-height: 1.8; color: #cbd5e1; font-size: 13.5px;">
-          <h4 style="color: #38bdf8; margin-bottom: 6px;">Manhã (09:00):</h4>
+          <h4 style="color: #38bdf8; margin-bottom: 8px; font-size: 15px;">🌅 Turno da Manhã (09:00):</h4>
           <p>✔️ Abrir o WhatsApp Web e conferir as conversas iniciadas pelo ManyChat durante a noite.</p>
           <p>✔️ Enviar a <strong>Etapa 1 (Acolhimento)</strong> sem passar preço seco para quem chamou.</p>
           <p>✔️ Disparar a <strong>Mensagem 2 (Prova Social)</strong> para quem sumiu ontem à tarde.</p>
 
-          <h4 style="color: #a855f7; margin-top: 14px; margin-bottom: 6px;">Tarde (17:00):</h4>
+          <h4 style="color: #a855f7; margin-top: 18px; margin-bottom: 8px; font-size: 15px;">🌇 Turno da Tarde (17:00):</h4>
           <p>✔️ Disparar a <strong>Mensagem 1 (Toque Suave)</strong> para as interessadas da manhã que pararam de responder.</p>
           <p>✔️ Disparar a <strong>Mensagem 3 (Escassez de Lote)</strong> para quem recebeu orçamento há 48h.</p>
           <p>✔️ Disparar a <strong>Mensagem 4 (Desapego Estratégico)</strong> para quem não responde há 7 dias.</p>
         </div>
       </div>
-    <!-- TAB 6: VÍDEOS DE VENDAS -->
-    <div id="tab-videos" class="tab-pane">
+    </div>
+
+    <!-- SECTION 6: VÍDEOS DE VENDAS -->
+    <div id="tab-videos" class="tab-section">
+      <div class="tabs-nav">
+        <a href="#tab-etapas" class="tab-btn">🚀 1. As 3 Etapas Anti-Preço</a>
+        <a href="#tab-objecoes" class="tab-btn">🛡️ 2. Quebra de Objeções</a>
+        <a href="#tab-followup" class="tab-btn">🔄 3. Resgate Follow-up</a>
+        <a href="#tab-manychat" class="tab-btn">🤖 4. Automação ManyChat</a>
+        <a href="#tab-rotina" class="tab-btn">📋 5. Rotina da Recepção</a>
+        <a href="#tab-videos" class="tab-btn current">🎬 6. Vídeos de Vendas</a>
+      </div>
+
+      <div class="tab-section-header">
+        <div class="tab-section-title">
+          <span>🎬</span> Módulo 6: Vídeos Oficiais & Tutoriais (Google Drive)
+        </div>
+      </div>
+
       <div class="card">
         <div class="card-head">
           <div class="card-title"><span>▶</span> 1. Vídeo de Vendas Completo (VSL de 3 Minutos)</div>
-          <span class="card-tag tag-green">Duração: 02:57 • 1080p Full HD</span>
+          <span class="card-tag tag-green">Duração: ~3 Minutos • 1080p</span>
         </div>
-        <div class="card-desc">Vídeo de vendas completo em 1920x1080 para embutir na landing page, converter leads frios e quebrar o ceticismo de preço.</div>
-        <div style="max-width: 720px; margin: 12px 0;">
-          <video controls playsinline preload="metadata" style="width: 100%; border-radius: 12px; border: 1px solid var(--border); background: #000;">
-            <source src="video_vsl_3minutos.mp4" type="video/mp4">
-            Seu navegador não suporta a tag de vídeo.
-          </video>
-        </div>
-        <a href="video_vsl_3minutos.mp4" download class="btn-copy" style="text-decoration: none;">📥 Baixar VSL 1080p</a>
+        <div class="card-desc">Apresentação completa para quebrar objeções de valor e converter leads frios em pacientes.</div>
+        <a href="https://drive.google.com/file/d/1RvXszNvJap3AWA33g8Xucjmv_x0p5VSh/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="video-thumb-link">
+          <div class="video-play-btn">▶️</div>
+          <div class="video-thumb-title">Assistir VSL Completa no Google Drive</div>
+          <div class="video-thumb-sub">Clique aqui para abrir e reproduzir em tela cheia</div>
+        </a>
       </div>
 
       <div class="card">
         <div class="card-head">
-          <div class="card-title"><span>⚡</span> 2. Vídeo Express / Anúncio Direto (35 Segundos)</div>
-          <span class="card-tag tag-blue">Duração: 00:35 • 1080p Full HD</span>
+          <div class="card-title"><span>⚡</span> 2. Vídeo Versão Curta Express (40 Segundos)</div>
+          <span class="card-tag tag-blue">Duração: ~40s • 1080p</span>
         </div>
-        <div class="card-desc">Vídeo curto e dinâmico em 1920x1080 ideal para anúncios de tráfego pago (Meta Ads), Reels e Stories rápidos.</div>
-        <div style="max-width: 720px; margin: 12px 0;">
-          <video controls playsinline preload="metadata" style="width: 100%; border-radius: 12px; border: 1px solid var(--border); background: #000;">
-            <source src="video_express_40s.mp4" type="video/mp4">
-            Seu navegador não suporta a tag de vídeo.
-          </video>
-        </div>
-        <a href="video_express_40s.mp4" download class="btn-copy" style="text-decoration: none;">📥 Baixar Vídeo Express 1080p</a>
+        <div class="card-desc">Vídeo dinâmico de alta conversão ideal para Reels, Stories e anúncios de tráfego pago.</div>
+        <a href="https://drive.google.com/file/d/1HxAsCRLfsyaXSuGqXp9ZS9ziR5fR5PFV/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="video-thumb-link">
+          <div class="video-play-btn">⚡</div>
+          <div class="video-thumb-title">Assistir Versão Curta no Google Drive</div>
+          <div class="video-thumb-sub">Clique aqui para abrir e reproduzir em tela cheia</div>
+        </a>
       </div>
 
       <div class="card">
         <div class="card-head">
-          <div class="card-title"><span>🛠️</span> 3. Vídeo Tutorial: Configurando o ManyChat (Passo a Passo)</div>
-          <span class="card-tag tag-purple">Duração: 01:05 • 1080p Full HD</span>
+          <div class="card-title"><span>🛠️</span> 3. Vídeo Tutorial ManyChat na Prática</div>
+          <span class="card-tag tag-purple">Passo a Passo Guiado</span>
         </div>
-        <div class="card-desc">Tutorial clique a clique em 1920x1080 mostrando a tela do ManyChat, criando o gatilho de comentários e o botão do WhatsApp.</div>
-        <div style="max-width: 720px; margin: 12px 0;">
-          <video controls playsinline preload="metadata" style="width: 100%; border-radius: 12px; border: 1px solid var(--border); background: #000;">
-            <source src="video_tutorial_manychat.mp4" type="video/mp4">
-            Seu navegador não suporta a tag de vídeo.
-          </video>
-        </div>
-        <a href="video_tutorial_manychat.mp4" download class="btn-copy" style="text-decoration: none;">📥 Baixar Tutorial ManyChat 1080p</a>
+        <div class="card-desc">Tutorial clique a clique mostrando a tela de configuração da automação do robô no ManyChat.</div>
+        <a href="https://drive.google.com/file/d/1QMJi0-p2om__3TdgzXAWQfxphgOxYuCK/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="video-thumb-link">
+          <div class="video-play-btn">🛠️</div>
+          <div class="video-thumb-title">Assistir Tutorial ManyChat no Google Drive</div>
+          <div class="video-thumb-sub">Clique aqui para abrir e reproduzir em tela cheia</div>
+        </a>
       </div>
     </div>
 
@@ -513,20 +795,67 @@ Toque no botão abaixo para falar direto com a gente e garantir o bônus da prim
   <div id="toast">✅ Mensagem copiada com sucesso para a área de transferência!</div>
 
   <script>
-    function openTab(tabId, btn) {
-      document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-      btn.classList.add('active');
+    function copyText(id, btn) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const text = el.innerText || el.textContent;
+
+      const finishSuccess = () => {
+        if (btn) {
+          const original = btn.innerHTML;
+          btn.innerHTML = '✅ Copiado!';
+          btn.style.background = '#4ade80';
+          btn.style.color = '#000';
+          setTimeout(() => {
+            btn.innerHTML = original;
+            btn.style.background = '';
+            btn.style.color = '';
+          }, 2200);
+        }
+        showToast('✅ Mensagem copiada com sucesso! Cole no WhatsApp.');
+      };
+
+      // 1. Tentar Clipboard API moderna (se em contexto seguro)
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(finishSuccess).catch(() => {
+          fallbackCopy(text, finishSuccess);
+        });
+      } else {
+        // 2. Fallback garantido para conexões locais file:/// e navegadores sem permissão explícita
+        fallbackCopy(text, finishSuccess);
+      }
     }
 
-    function copyText(id) {
-      const text = document.getElementById(id).innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        showToast("✅ Mensagem copiada com sucesso! Cole no WhatsApp.");
-      }).catch(err => {
-        console.error("Erro ao copiar: ", err);
-      });
+    function fallbackCopy(text, callback) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.top = '0';
+      textarea.style.left = '0';
+      textarea.style.width = '2em';
+      textarea.style.height = '2em';
+      textarea.style.padding = '0';
+      textarea.style.border = 'none';
+      textarea.style.outline = 'none';
+      textarea.style.boxShadow = 'none';
+      textarea.style.background = 'transparent';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      textarea.setSelectionRange(0, 99999);
+
+      try {
+        const successful = document.execCommand('copy');
+        document.body.removeChild(textarea);
+        if (successful) {
+          callback();
+        } else {
+          showToast('⚠️ Pressione Ctrl+C para copiar.');
+        }
+      } catch (err) {
+        document.body.removeChild(textarea);
+        showToast('⚠️ Pressione Ctrl+C para copiar.');
+      }
     }
 
     function showToast(msg) {
@@ -540,4 +869,3 @@ Toque no botão abaixo para falar direto com a gente e garantir o bônus da prim
   </script>
 </body>
 </html>
-

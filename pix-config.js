@@ -4,11 +4,9 @@
 // ==============================================================================
 
 window.PIX_CONFIG = {
-  // 1. LINK DE CHECKOUT AUTOMÁTICO (KIWIFY / KIRVANO / HOTMART)
-  // Se você cadastrou o produto na Kiwify por R$ 67, cole o link de pagamento aqui:
-  // Exemplo: checkoutUrl: "https://pay.kiwify.com.br/seu-codigo"
-  // Quando preenchido, o botão leva para a Kiwify, que é 100% automática e só entrega o PDF após o Pix compensar!
-  checkoutUrl: "",
+  // 1. LINK DE CHECKOUT AUTOMÁTICO (PAGSEGURO / KIWIFY / KIRVANO)
+  // Quando preenchido, o botão leva diretamente para a página de pagamento seguro!
+  checkoutUrl: "https://pag.ae/82gVcc5TJ",
 
   // 2. SUA CHAVE PIX PESSOAL (TIPO E-MAIL)
   chavePixEmail: "seu-email-pix@exemplo.com",
@@ -23,5 +21,19 @@ window.PIX_CONFIG = {
   // 5. MODO DE LIBERAÇÃO:
   // "comprovante": Exige confirmação real com ID de transação ou envio do comprovante para liberar o download.
   // "automatico": Simula a checagem bancária em 4 segundos e libera na tela.
-  modoVerificacao: "comprovante"
+  modoVerificacao: "comprovante",
+
+  // 6. LINK DO PACOTE ZIPADO (.ZIP)
+  zipDownloadUrl: "https://drive.google.com/file/d/1iqy2qxmNLG06gN_bNaN_KUh-U22l4GK-/view?usp=sharing",
+
+  // 7. LINKS DOS MATERIAIS PARA ENVIO E DOWNLOAD
+  pdf1Url: "https://drive.google.com/file/d/1dC08KVjYIeE-7_oPD_g9BqVXGG5h20vg/view?usp=drive_link",
+  pdf2Url: "https://drive.google.com/file/d/1ZW6qEQRftiDwNUV_VMQWgEQj1vZi5q-R/view?usp=drive_link",
+  scriptsUrl: "https://drive.google.com/file/d/1QMBSMaus1GOEBGzpv-Jd64aWk2_0g1vw/view?usp=drive_link",
+
+  // 8. CONFIGURAÇÃO DE DISPARO DE E-MAIL DIRETO (EMAILJS)
+  emailjsServiceId: "service_mqydhoj",
+  emailjsTemplateId: "template_sy1d6tr",
+  emailjsPublicKey: "mT4h95O5q423b38K8"
 };
+

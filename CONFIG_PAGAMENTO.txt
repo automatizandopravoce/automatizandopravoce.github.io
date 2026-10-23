@@ -53,3 +53,4 @@ Basta colocar o link do seu produto cadastrado.
 MODO B (Verificação Pix com Mercado Pago API ou Validação de Transação):
 O site gera o Pix e inicia o relógio de checagem bancária ("Verificando pagamento no Banco Central...").
 Os botões de download ficam BLOQUEADOS com cadeado até a confirmação!
+
