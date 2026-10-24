@@ -2,6 +2,12 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <script>
+    if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost') {
+      window.location.replace(window.location.href.replace('http:', 'https:'));
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Método Funil Anti-Vácuo para Estética | Vídeo + PDF</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
