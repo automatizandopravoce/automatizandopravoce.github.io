@@ -1235,21 +1235,12 @@
 
       <!-- VIDEO PLAYER COM SELETOR DE VERSÃO (GOOGLE DRIVE) -->
       <div class="video-container-box">
-        <div class="video-tabs">
-          <button class="video-tab-btn active" onclick="switchVideo('principal', this)">
-            <span>⚡</span> Vídeo 1: Demonstração Rápida
-          </button>
-          <button class="video-tab-btn" onclick="switchVideo('tutorial', this)">
-            <span>🛠️</span> Vídeo 2: Tutorial ManyChat
-          </button>
-        </div>
-
         <div id="vsl-player-container">
           <iframe id="vsl-iframe" class="main-video-player" src="https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/preview" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
         </div>
 
         <div class="video-caption" id="vsl-caption">
-          ⚡ <strong>Vídeo 1: Demonstração do Método</strong> — Assista diretamente pelo site [Google Drive]
+          ⚡ <strong>Demonstração do Método</strong> — Assista diretamente pelo site [Google Drive]
         </div>
         <div style="text-align: center; margin-top: 8px;">
           <a id="vsl-drive-link" href="https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/view?usp=drive_link" target="_blank" rel="noopener noreferrer" style="color: #94a3b8; font-size: 12px; text-decoration: underline;">
@@ -1704,12 +1695,7 @@
       principal: {
         embed: 'https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/preview',
         link: 'https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/view?usp=drive_link',
-        caption: '⚡ <strong>Vídeo 1: Demonstração do Método</strong> — Assista diretamente pelo site [Google Drive]'
-      },
-      tutorial: {
-        embed: 'https://drive.google.com/file/d/1QMJi0-p2om__3TdgzXAWQfxphgOxYuCK/preview',
-        link: 'https://drive.google.com/file/d/1QMJi0-p2om__3TdgzXAWQfxphgOxYuCK/view?usp=sharing',
-        caption: '🛠️ <strong>Vídeo 2: Tutorial ManyChat na Prática</strong> — Assista diretamente pelo site [Google Drive]'
+        caption: '⚡ <strong>Demonstração do Método</strong> — Assista diretamente pelo site [Google Drive]'
       }
     };
 
