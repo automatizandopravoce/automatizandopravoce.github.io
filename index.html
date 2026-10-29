@@ -9,10 +9,10 @@
     }
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Método Funil Anti-Vácuo para Estética | Vídeo + PDF</title>
+  <title>Método Funil Anti-Vácuo Direct | Vídeo + PDF</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-body: #080b11;
@@ -1563,19 +1563,718 @@
       gap: 6px;
     }
 
+  
+    /* ==========================================================================
+       CASA PATA 2 INSPIRED DESIGN SYSTEM & COMPONENT ENHANCEMENTS
+       ========================================================================== */
+    :root {
+      --primary: #10b981;
+      --primary-light: #34d399;
+      --primary-dark: #059669;
+      --primary-glow: rgba(16, 185, 129, 0.4);
+
+      --accent-cyan: #38bdf8;
+      --accent-cyan-glow: rgba(56, 189, 248, 0.35);
+      --accent-purple: #8b5cf6;
+      --accent-coral: #f43f5e;
+      --accent-gold: #fbbf24;
+
+      --bg-dark: #070a13;
+      --bg-card: rgba(15, 23, 42, 0.85);
+      --bg-card-hover: rgba(24, 36, 64, 0.95);
+      --bg-surface: #0b1120;
+
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+
+      --border-glass: rgba(255, 255, 255, 0.08);
+      --border-active: rgba(16, 185, 129, 0.5);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-full: 9999px;
+
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+
+      --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4, .section-title, .hero-title, .logo-title, .price-card-title {
+      font-family: var(--font-heading) !important;
+    }
+
+    /* THEMED CANVAS (INSTAGRAM / WHATSAPP CHAT NODES & SPARKS) */
+    #chat-particles-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body {
+      position: relative;
+    }
+    .top-strip, .navbar, .hero, section, footer {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* STICKY GLASS NAVBAR (IDENTICAL TO CASA PATA 2) */
+    .navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(7, 10, 19, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 9999;
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .logo-icon-wrap {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(56, 189, 248, 0.25));
+      border: 1px solid rgba(16, 185, 129, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+    }
+
+    .logo-text-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .logo-title span {
+      color: var(--primary);
+    }
+
+    .logo-badge {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-menu li a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: color 0.2s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+
+    .nav-menu li a:hover {
+      color: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-actions .btn-nav-cta { display: none; /* removed by user request */ 
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #03211e;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 9px 20px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      box-shadow: 0 4px 15px var(--primary-glow);
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .nav-actions .btn-nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+      filter: brightness(1.1);
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 1.4rem;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 990px) {
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(11, 17, 32, 0.98);
+        padding: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        gap: 14px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+      }
+      .nav-menu.open {
+        display: flex;
+      }
+      .mobile-menu-toggle {
+        display: block;
+      }
+      .nav-actions .btn-nav-cta { display: none; /* removed by user request */ 
+        display: none;
+      }
+    }
+
+    /* STATS STRIP (CASA PATA 2 STYLE) */
+    .stats-strip {
+      background: linear-gradient(180deg, rgba(16, 24, 40, 0.9) 0%, rgba(11, 17, 32, 0.95) 100%);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 24px 0;
+      margin-bottom: 50px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .stat-item {
+      padding: 10px;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      background: linear-gradient(135deg, #ffffff 30%, var(--primary-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .stat-item:nth-child(2) {
+        border-right: none;
+      }
+      .stat-number {
+        font-size: 1.6rem;
+      }
+    }
+
+    /* INTERACTIVE MODULE TABS (CASA PATA 2 STYLE) */
+    .module-switcher-container {
+      margin-top: 36px;
+    }
+
+    .module-tabs-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .mod-tab-btn {
+      background: rgba(18, 27, 48, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 14px 24px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .mod-tab-btn:hover {
+      background: rgba(26, 38, 66, 0.95);
+      color: #fff;
+      border-color: rgba(16, 185, 129, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .mod-tab-btn.active {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #03211e;
+      border-color: var(--primary-light);
+      box-shadow: 0 8px 24px var(--primary-glow);
+      transform: translateY(-2px);
+    }
+
+    .module-tab-panel {
+      display: none;
+      animation: fadeInTab 0.4s ease forwards;
+    }
+
+    .module-tab-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeInTab {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .module-featured-box {
+      background: linear-gradient(180deg, rgba(19, 31, 55, 0.95) 0%, rgba(13, 22, 41, 0.98) 100%);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: var(--radius-md);
+      padding: 24px 22px;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .module-box-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .module-badge-tag {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid var(--primary);
+      color: var(--primary-light);
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+    }
+
+    .module-box-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .module-box-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+
+    .module-checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .module-check-card {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .module-check-card:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(16, 185, 129, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .module-check-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    .module-check-text strong {
+      display: block;
+      color: #fff;
+      font-size: 0.88rem;
+      margin-bottom: 2px;
+      line-height: 1.3;
+    }
+
+    .module-check-text span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      line-height: 1.4;
+      display: block;
+    }
+
+    .module-nav-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-module-nav {
+      font-size: 0.82rem;
+      padding: 8px 18px;
+    }
+
+    @media (max-width: 640px) {
+      .module-featured-box {
+        padding: 16px 14px;
+      }
+      .module-box-title {
+        font-size: 1.15rem;
+      }
+      .module-checklist-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .module-check-card {
+        padding: 10px 12px;
+      }
+      .module-check-text strong {
+        font-size: 0.84rem;
+      }
+      .module-check-text span {
+        font-size: 0.76rem;
+      }
+    }
+
+    /* 3 BIG CARDS PRICING GRID (COMPACTO & ELEGANTE) */
+    .structures-section {
+      padding: 45px 0;
+      background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 60%);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 28px;
+    }
+
+    .price-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-md);
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .price-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(16, 185, 129, 0.4);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .price-card.popular {
+      background: linear-gradient(180deg, rgba(19, 31, 55, 0.98) 0%, rgba(13, 22, 41, 0.98) 100%);
+      border: 2px solid var(--primary);
+      box-shadow: 0 15px 35px -10px var(--primary-glow);
+      transform: scale(1.02);
+    }
+
+    .price-card.popular:hover {
+      transform: scale(1.03) translateY(-5px);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, var(--primary), #059669);
+      color: #03211e;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 14px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+    }
+
+    .price-card-header {
+      margin-bottom: 12px;
+    }
+
+    .price-card-tag {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    .price-card.popular .price-card-tag {
+      color: var(--primary-light);
+    }
+
+    .price-card-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+      line-height: 1.25;
+    }
+
+    .price-card-sub {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .price-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--primary-light);
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.76rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+
+    .price-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex-grow: 1;
+    }
+
+    .price-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.84rem;
+      color: #e2e8f0;
+      line-height: 1.4;
+    }
+
+    .price-features li svg {
+      width: 15px;
+      height: 15px;
+      color: var(--primary-light);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .price-card-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 10px 16px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .price-card-btn.btn-outline {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+
+    .price-card-btn.btn-outline:hover {
+      background: rgba(16, 185, 129, 0.15);
+      border-color: var(--primary);
+      color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .price-card-btn.btn-glow {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #03211e;
+      border: none;
+      box-shadow: 0 6px 20px var(--primary-glow);
+    }
+
+    .price-card-btn.btn-glow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.5);
+      filter: brightness(1.1);
+    }
+
+    @media (max-width: 980px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .price-card.popular {
+        transform: scale(1);
+      }
+      .price-card.popular:hover {
+        transform: translateY(-4px);
+      }
+    }
+      .price-card.popular:hover {
+        transform: translateY(-6px);
+      }
+    }
+
   </style>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
+
+  <!-- THEMED CANVAS DE MENSAGENS E AUTOMAÇÃO (SUBSTITUI BOLHAS POR DIRECT / CHAT) -->
+  <canvas id="chat-particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- STICKY GLASS NAVBAR (ESTILO CASA PATA 2) -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#inicio" class="logo-brand">
+        <div class="logo-icon-wrap">⚡</div>
+        <div class="logo-text-wrap">
+          <span class="logo-title">Funil Anti-Vácuo <span>Direct</span></span>
+          
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#cenas">O Problema</a></li>
+        <li><a href="#conteudo">Conteúdo Incluso</a></li>
+        <li><a href="#estruturas">3 Estruturas</a></li>
+        <li><a href="#galeria">Demonstração</a></li>
+        <li><a href="#depoimentos">Resultados</a></li>
+        <li><a href="#garantia">Garantia</a></li>
+        <li><a href="#faq">Dúvidas</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        
+        <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Abrir Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
 
   <div class="top-strip">
     🔥 OFERTA DE LANÇAMENTO: ACESSO IMEDIATO AO COMBO VÍDEO + PDF COM 81% DE DESCONTO
   </div>
 
   <!-- HERO SECTION -->
-  <section class="hero">
+  <section class="hero" id="inicio">
     <div class="container">
-      <div class="tag-badge">EXCLUSIVO PARA BIOMÉDICAS, DERMATOLOGISTAS E DONAS DE CLÍNICAS</div>
+      <div class="tag-badge">MÉTODO PRÁTICO DE AUTOMAÇÃO NO DIRECT & FECHAMENTO NO WHATSAPP</div>
 
       <h1 class="hero-title">
         Pare de perder pacientes para o vácuo no WhatsApp e transforme os curiosos do Direct em <span class="highlight">agenda cheia</span>
@@ -1689,8 +2388,34 @@
     </div>
   </section>
 
+  <!-- STATS STRIP (CASA PATA 2 STYLE) -->
+  <div class="stats-strip">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">+340</div>
+          <div class="stat-label">Clínicas Ativas no Brasil</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Automático no ManyChat</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">81% OFF</div>
+          <div class="stat-label">Desconto de Lançamento</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">7 Dias</div>
+          <div class="stat-label">Garantia Incondicional</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
   <!-- THE LATENT PAIN -->
-  <section>
+  <section id="cenas">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Você se reconhece em alguma destas 3 cenas?</h2>
@@ -1724,53 +2449,391 @@
     <div class="container">
       <div class="solution-box">
         <h3>O segredo não é cobrar mais barato. É ter um funil que conduz até a maca.</h3>
-        <p>Apresentamos o <strong>Método Funil Anti-Vácuo para Estética</strong>: o combo prático em Vídeo + PDF desenvolvido sob medida para a dinâmica de clínicas de estética. Você não precisa contratar agências caras de marketing nem perder horas configurando programas difíceis. Em menos de 40 minutos, você ativa uma estrutura pronta de copiar, colar e faturar.</p>
+        <p>Apresentamos o <strong>Método Funil Anti-Vácuo Direct</strong>: o combo prático em Vídeo + PDF desenvolvido sob medida para a dinâmica de clínicas de estética. Você não precisa contratar agências caras de marketing nem perder horas configurando programas difíceis. Em menos de 40 minutos, você ativa uma estrutura pronta de copiar, colar e faturar.</p>
       </div>
     </div>
   </section>
 
-  <!-- WHAT'S INCLUDED -->
-  <section>
+    <!-- WHAT'S INCLUDED - INTERACTIVE TABS (CASA PATA 2 STYLE) -->
+  <section id="conteudo">
     <div class="container">
       <div class="section-header">
+        <div class="tag-badge">CONTEÚDO PROGRAMÁTICO</div>
         <h2 class="section-title">O que está incluso no seu acesso imediato:</h2>
-        <p class="section-sub">Tudo o que você precisa para automatizar o Direct e blindar suas conversas no WhatsApp.</p>
+        <p class="section-sub">Navegue pelas abas abaixo e explore cada ferramenta prática desenvolvida para blindar sua agenda.</p>
       </div>
 
-      <div class="module-item">
-        <div class="module-num">01</div>
-        <div class="module-content">
-          <h4>Treinamento em Vídeo: Configuração Express no ManyChat (Na Tela)</h4>
-          <p>Passo a passo clique a clique em menos de 15 minutos utilizando a versão 100% gratuita da ferramenta:</p>
-          <ul>
-            <li>Automação de Comentários: O robô que responde automaticamente quem comentar "Preço", "Valor" ou "Eu quero" nos seus Reels e Stories.</li>
-            <li>A ponte de ouro para o WhatsApp: A mensagem exata para levar a seguidora direto para o WhatsApp já pronta para agendar.</li>
-          </ul>
+      <div class="module-switcher-container">
+        <!-- BOTOES DAS ABAS -->
+        <div class="module-tabs-nav" role="tablist">
+          <button class="mod-tab-btn active" id="tab-btn-1" onclick="switchModuleTab(1, this)" role="tab" aria-selected="true">
+            <span>🤖</span> Módulo 01: Robô ManyChat Direct
+          </button>
+          <button class="mod-tab-btn" id="tab-btn-2" onclick="switchModuleTab(2, this)" role="tab" aria-selected="false">
+            <span>📖</span> Módulo 02: Scripts de Atendimento (PDF)
+          </button>
+          <button class="mod-tab-btn" id="tab-btn-3" onclick="switchModuleTab(3, this)" role="tab" aria-selected="false">
+            <span>🎯</span> Módulo 03: Guia de Resgate Anti-Vácuo
+          </button>
+          <button class="mod-tab-btn" id="tab-btn-4" onclick="switchModuleTab(4, this)" role="tab" aria-selected="false">
+            <span>📦</span> Ver Todos os Módulos Juntos
+          </button>
         </div>
-      </div>
 
-      <div class="module-item">
-        <div class="module-num">02</div>
-        <div class="module-content">
-          <h4>O Caderno de Bolso: Scripts de Atendimento e Fechamento (PDF)</h4>
-          <p>Roteiros prontos para deixar na tela da sua recepção ou no seu celular:</p>
-          <ul>
-            <li>Acolhimento Anti-Vácuo: Como responder à pergunta do preço sem assustar a cliente e ancorando autoridade médica.</li>
-            <li>Matriz de Quebra de Objeções: Respostas afiadas para "Achei caro / O concorrente cobra menos", "Tenho que ver com meu marido" e "Vou pensar e te aviso".</li>
-            <li>Scripts segmentados para Toxina Botulínica, Preenchimento, Bioestimuladores, Corporais e Limpeza de Pele.</li>
-          </ul>
+        <!-- PAINEL 1: ROBO MANYCHAT -->
+        <div class="module-tab-panel active" id="mod-panel-1" role="tabpanel">
+          <div class="module-featured-box">
+            <div class="module-box-header">
+              <span class="module-badge-tag">Módulo 01 • Automação Inteligente</span>
+              <span style="color: var(--primary-light); font-weight: 700; font-size: 0.9rem;">⚡ Configuração em 15 Minutos</span>
+            </div>
+            <h3 class="module-box-title">Treinamento em Vídeo: Configuração Express no ManyChat</h3>
+            <p class="module-box-desc">
+              Passo a passo clique a clique na tela do computador para implementar o robô no plano 100% gratuito do ManyChat. Você não precisa contratar agência, nem entender de código.
+            </p>
+
+            <div class="module-checklist-grid">
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>Gatilho de Comentários em Reels & Stories</strong>
+                  <span>Responde automaticamente quem comentar "Preço", "Valor" ou "Eu quero" em menos de 3 segundos.</span>
+                </div>
+              </div>
+
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>A Ponte de Ouro para o WhatsApp</strong>
+                  <span>Leva a paciente qualificada direto do Direct para a conversa do seu WhatsApp com mensagem pronta.</span>
+                </div>
+              </div>
+
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>Arquivo .ZIP Pré-Configurado</strong>
+                  <span>Basta fazer upload do template no ManyChat com 1 clique e todas as automações sobem instantaneamente.</span>
+                </div>
+              </div>
+
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>100% Gratuito (Sem Mensalidades)</strong>
+                  <span>Funciona perfeitamente na versão grátis do ManyChat, sem custos extras com plataformas caras.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="module-nav-footer">
+              <span style="color: var(--text-muted); font-size: 0.9rem;">Passo 1 de 3 da Metodologia</span>
+              <button class="btn-module-nav" onclick="switchModuleTab(2)">
+                Próximo: Módulo 02 (Scripts) →
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="module-item">
-        <div class="module-num">03</div>
-        <div class="module-content">
-          <h4>Guia de Resgate: Recuperação de Pacientes que Sumiram (PDF)</h4>
-          <p>O cronograma de 4 etapas de follow-up (4 horas, 24 horas, 48 horas e o poderoso Script do "Desapego Estratégico") para reativar conversas esquecidas e fechar procedimentos parados.</p>
+        <!-- PAINEL 2: SCRIPTS DE ATENDIMENTO -->
+        <div class="module-tab-panel" id="mod-panel-2" role="tabpanel">
+          <div class="module-featured-box">
+            <div class="module-box-header">
+              <span class="module-badge-tag">Módulo 02 • Conversão Cirúrgica</span>
+              <span style="color: var(--accent-cyan); font-weight: 700; font-size: 0.9rem;">📄 PDF de Bolso Imprimível</span>
+            </div>
+            <h3 class="module-box-title">O Caderno de Bolso: Scripts de Atendimento e Fechamento</h3>
+            <p class="module-box-desc">
+              Roteiros validados prontos para você deixar no WhatsApp Web da sua secretária ou salvar nas respostas rápidas do celular para nunca mais travar diante de qualquer pergunta.
+            </p>
+
+            <div class="module-checklist-grid">
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>Acolhimento & Ancoragem de Valor</strong>
+                  <span>Como responder "qual o valor?" gerando percepção de autoridade e interesse genuíno antes de soltar o número.</span>
+                </div>
+              </div>
+
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>Matriz de Quebra de Objeções</strong>
+                  <span>Respostas afiadas para "Achei caro", "O concorrente cobra menos", "Vou ver com meu marido" e "Vou pensar".</span>
+                </div>
+              </div>
+
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>Modelos Específicos por Procedimento</strong>
+                  <span>Scripts dedicados para Botox, Preenchimento Labial, Bioestimuladores de Colágeno, Fios e Limpeza de Pele.</span>
+                </div>
+              </div>
+
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>O Fechamento Condutivo em 2 Etapas</strong>
+                  <span>Como fazer a paciente escolher a data e o horário da avaliação sem que pareça empurrado ou forçado.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="module-nav-footer">
+              <button class="btn-module-nav" onclick="switchModuleTab(1)">
+                ← Anterior: Módulo 01
+              </button>
+              <button class="btn-module-nav" onclick="switchModuleTab(3)">
+                Próximo: Módulo 03 (Resgate) →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAINEL 3: GUIA DE RESGATE -->
+        <div class="module-tab-panel" id="mod-panel-3" role="tabpanel">
+          <div class="module-featured-box">
+            <div class="module-box-header">
+              <span class="module-badge-tag">Módulo 03 • Recuperação de Pacientes</span>
+              <span style="color: var(--accent-coral); font-weight: 700; font-size: 0.9rem;">🎯 Cronograma em 4 Etapas</span>
+            </div>
+            <h3 class="module-box-title">Guia de Resgate: Recuperação de Pacientes que Sumiram</h3>
+            <p class="module-box-desc">
+              O cronograma milimétrico de follow-up que desarma o vácuo e traz de volta quem pediu orçamento mas parou de responder há dias ou semanas.
+            </p>
+
+            <div class="module-checklist-grid">
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>Follow-up de 4 Horas (O Resgate a Quente)</strong>
+                  <span>Mensagem sutil para desobstruir a conversa logo no mesmo dia sem parecer desesperada.</span>
+                </div>
+              </div>
+
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>Follow-up de 24 Horas & 48 Horas</strong>
+                  <span>Como enviar prova social e tirar dúvidas ocultas sem perguntar 'e aí, decidiu?'.</span>
+                </div>
+              </div>
+
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>O Script do "Desapego Estratégico"</strong>
+                  <span>O gatilho psicológico de escassez e desapego que faz 4 em cada 10 sumidos responderem na mesma hora.</span>
+                </div>
+              </div>
+
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>Campanha de Reativação Relâmpago</strong>
+                  <span>Como lotar horários ociosos da semana disparando 1 mensagem para contatos parados dos últimos 60 dias.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="module-nav-footer">
+              <button class="btn-module-nav" onclick="switchModuleTab(2)">
+                ← Anterior: Módulo 02
+              </button>
+              <button class="btn-module-nav" onclick="switchModuleTab(4)">
+                Ver Todos os Módulos Juntos →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAINEL 4: TODOS OS MODULOS -->
+        <div class="module-tab-panel" id="mod-panel-4" role="tabpanel">
+          <div class="module-featured-box" style="border-color: var(--primary);">
+            <div class="module-box-header">
+              <span class="module-badge-tag">VISÃO COMPLETA DO PACOTE</span>
+              <span style="color: var(--primary-light); font-weight: 800; font-size: 0.95rem;">★ Combo 100% Liberado Imediatamente</span>
+            </div>
+            <h3 class="module-box-title">O Arsenal Completo para Blindar sua Clínica do Vácuo</h3>
+            <p class="module-box-desc">
+              Você recebe acesso vitalício a todos os 3 módulos estruturados para aplicação imediata. Assista à aula de 15 minutos, instale o robô no ManyChat e adote os scripts ainda hoje:
+            </p>
+
+            <div class="module-checklist-grid">
+              <div class="module-check-card" style="border-left: 3px solid var(--primary);">
+                <div class="module-check-icon">01</div>
+                <div class="module-check-text">
+                  <strong>Módulo 01: Robô ManyChat 24h</strong>
+                  <span>Vídeo prático na tela + template .ZIP pronto para importar no ManyChat gratuito em menos de 15 min.</span>
+                </div>
+              </div>
+
+              <div class="module-check-card" style="border-left: 3px solid var(--accent-cyan);">
+                <div class="module-check-icon">02</div>
+                <div class="module-check-text">
+                  <strong>Módulo 02: Caderno de Scripts (PDF)</strong>
+                  <span>Roteiros completos de acolhimento, quebra de objeções e fechamento cirúrgico de procedimentos.</span>
+                </div>
+              </div>
+
+              <div class="module-check-card" style="border-left: 3px solid var(--accent-coral);">
+                <div class="module-check-icon">03</div>
+                <div class="module-check-text">
+                  <strong>Módulo 03: Guia de Resgate (PDF)</strong>
+                  <span>Cronograma de follow-up em 4 etapas (4h, 24h, 48h e Desapego Estratégico) para reativar sumidos.</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+              <a href="#oferta" class="price-card-btn btn-glow" style="display: inline-block; max-width: 360px;">
+                Garantir o Combo Completo por R$ 49,90 →
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  
+  <!-- 3 GRANDES ESTRUTURAS PRONTAS (CASA PATA 2 PRICING GRID - SEM PREÇO) -->
+  <!-- 3 GRANDES ESTRUTURAS PRONTAS (COMPACTO & DIRETO - SEM PREÇO) -->
+  <section class="structures-section" id="estruturas">
+    <div class="container">
+      <div class="section-header">
+        <div class="tag-badge">ESTRUTURAS PRONTAS PARA COPIAR E COLAR</div>
+        <h2 class="section-title">As 3 Peças Fundamentais do <span class="gradient-text">Método Anti-Vácuo</span></h2>
+        <p class="section-sub">Você não precisa criar nada do zero: receba as 3 estruturas validadas prontas para faturar no seu negócio.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- CARD 1: ROBO MANYCHAT -->
+        <div class="price-card">
+          <div class="price-card-header">
+            <span class="price-card-tag">ESTRUTURA 01 • AUTOMAÇÃO DIRECT</span>
+            <h3 class="price-card-title">Robô ManyChat Direct 24h</h3>
+            <p class="price-card-sub">Atendimento automático para comentários de Reels, Stories e Directs.</p>
+          </div>
+
+          <div class="price-status-badge">
+            <span>⚡ Incluso no Pacote • Sem Mensalidades</span>
+          </div>
+
+          <ul class="price-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Resposta em 3s:</strong> Atende quem comenta "Preço" ou "Quero" na hora.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Ponte para o WhatsApp:</strong> Conduz o contato qualificado com mensagem pronta.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Versão 100% Gratuita:</strong> Configure em 15 min sem pagar mensalidades.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Template Pronto (.ZIP):</strong> Basta importar com 1 clique no ManyChat.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Atendimento 24 Horas:</strong> Não perca vendas à noite e nos fins de semana.</span>
+            </li>
+          </ul>
+
+          <a href="#oferta" class="price-card-btn btn-outline">
+            Ver Acesso Incluso ↓
+          </a>
+        </div>
+
+        <!-- CARD 2: CADERNO DE SCRIPTS (POPULAR / MAIS ESCOLHIDO) -->
+        <div class="price-card popular">
+          <span class="popular-badge">⭐ O Método Mais Completo</span>
+          <div class="price-card-header">
+            <span class="price-card-tag">ESTRUTURA 02 • CONVERSÃO & RESGATE</span>
+            <h3 class="price-card-title">Matriz Anti-Vácuo & Caderno de Scripts</h3>
+            <p class="price-card-sub">Combo de roteiros cirúrgicos para fechar na hora e resgatar sumidos.</p>
+          </div>
+
+          <div class="price-status-badge" style="background: rgba(16, 185, 129, 0.22); border-color: var(--primary);">
+            <span>💎 O Mais Escolhido por Profissionais</span>
+          </div>
+
+          <ul class="price-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Caderno de Bolso (PDF):</strong> Scripts de acolhimento que ancoram autoridade.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Quebra de Objeções:</strong> Respostas cirúrgicas para "Achei caro" e "Vou pensar".</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Guia de Resgate (PDF):</strong> Mensagens em 4h, 24h, 48h e Desapego Estratégico.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Segmentado para Vendas:</strong> Modelos para orçamentos, consultas e serviços.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Garantia 7 Dias Kiwify:</strong> Risco zero com reembolso automático e imediato.</span>
+            </li>
+          </ul>
+
+          <a href="#oferta" class="price-card-btn btn-glow">
+            Liberar Método Completo (R$ 49,90) →
+          </a>
+        </div>
+
+        <!-- CARD 3: PROTOCOLO DE RESGATE -->
+        <div class="price-card">
+          <div class="price-card-header">
+            <span class="price-card-tag">ESTRUTURA 03 • REATIVAÇÃO DE CONTATOS</span>
+            <h3 class="price-card-title">Protocolo de Resgate & Áudios Humanizados</h3>
+            <p class="price-card-sub">Sistema para reativar contatos frios e transformar sumidos em vendas.</p>
+          </div>
+
+          <div class="price-status-badge">
+            <span>🎯 Incluso no Pacote • 100% Prático</span>
+          </div>
+
+          <ul class="price-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Régua de Follow-up:</strong> 4 gatilhos psicológicos que desarmam o silêncio.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Áudios de 15 Segundos:</strong> Roteiros com tom natural que geram resposta rápida.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Reativação Relâmpago:</strong> Como preencher 4 a 6 horários ociosos na semana.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Anti-Cancelamento:</strong> Confirmação estratégica que reduz faltas em até 90%.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Acesso Vitalício:</strong> Baixe os PDFs para consultar no celular ou computador.</span>
+            </li>
+          </ul>
+
+          <a href="#oferta" class="price-card-btn btn-outline">
+            Quero o Sistema de Resgate ↓
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- PRICING & OFFER -->
   <section id="oferta">
@@ -1834,14 +2897,14 @@
   </section>
 
   <!-- GUARANTEE -->
-  <section>
+  <section id="garantia">
     <div class="container">
       <div class="guarantee-box">
         <div class="guarantee-icon">🛡️</div>
         <div>
           <h3 style="font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 6px;">Garantia de 7 dias para caso de reembolso</h3>
           <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">
-            Acesse o material, assista às videoaulas, baixe o PDF de scripts e coloque em prática no atendimento da sua clínica. Se por qualquer motivo você achar que os roteiros não melhoraram o fluxo da sua recepção ou a taxa de agendamento de consultas, devolvemos 100% do seu dinheiro, centavo por centavo, sem perguntas e sem letras miúdas.
+            Acesse o material, assista às videoaulas, baixe o PDF de scripts e coloque em prática no atendimento do seu negócio. Se por qualquer motivo você achar que os roteiros não melhoraram o fluxo das suas conversas ou a taxa de agendamento e fechamento, você conta com a nossa garantia incondicional de 7 dias com reembolso emitido diretamente pela plataforma 100% segura e confiável da <strong>Kiwify</strong>. Devolvemos 100% do seu dinheiro, centavo por centavo, sem perguntas, sem burocracia e sem letras miúdas.
           </p>
         </div>
       </div>
@@ -1849,7 +2912,7 @@
   </section>
 
   <!-- FAQ -->
-  <section>
+  <section id="faq">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Perguntas Frequentes (FAQ)</h2>
@@ -1882,7 +2945,7 @@
             <span class="faq-icon">▼</span>
           </div>
           <div class="faq-answer">
-            Imediatamente após a confirmação do pagamento via Pix! O acesso completo é desbloqueado instantaneamente nesta página para download e você também pode digitar seu e-mail para receber uma cópia direta na sua caixa de entrada.
+            O acesso é 100% automático e imediato pela Kiwify! Assim que o seu pagamento for aprovado (inclusive via Pix com confirmação em segundos), você recebe imediatamente os dados de acesso e links para download no seu E-mail, além de ter o conteúdo liberado diretamente na plataforma segura da Kiwify para baixar e assistir quando quiser. Tudo 100% protegido e com garantia incondicional de 7 dias para reembolso caso não fique satisfeito.
           </div>
         </div>
 
@@ -1900,7 +2963,7 @@
   </section>
 
   <!-- GALERIA DE DEMONSTRAÇÃO (CARROSSEL 3 IMAGENS COM BORDA ESTILIZADA) -->
-  <section class="carousel-section">
+  <section class="carousel-section" id="galeria">
     <div class="container">
       <div class="section-header">
         <div class="tag-badge">VISÃO GERAL DO CONTEÚDO</div>
@@ -1964,7 +3027,7 @@
   </section>
 
   <!-- DEPOIMENTOS & AVALIAÇÕES (PROVA SOCIAL) -->
-  <section class="testimonials-section">
+  <section class="testimonials-section" id="depoimentos">
     <div class="container">
       <div class="section-header">
         <div class="tag-badge">EXPERIÊNCIA COMPROVADA</div>
@@ -2083,7 +3146,7 @@
         </a>
       </div>
 
-      <p>Método Funil Anti-Vácuo para Estética • Todos os direitos reservados.</p>
+      <p>Método Funil Anti-Vácuo Direct • Todos os direitos reservados.</p>
       <p style="margin-top: 4px;">Termos de Uso | Políticas de Privacidade</p>
       <p style="margin-top: 8px; font-size: 11px; color: #475569;">Este produto não garante a obtenção de resultados sem a devida aplicação prática dos métodos ensinados.</p>
     </div>
@@ -2349,7 +3412,7 @@
       const templateId = (window.PIX_CONFIG && window.PIX_CONFIG.emailjsTemplateId) ? window.PIX_CONFIG.emailjsTemplateId : "template_sy1d6tr";
       const publicKey = (window.PIX_CONFIG && window.PIX_CONFIG.emailjsPublicKey) ? window.PIX_CONFIG.emailjsPublicKey : "mT4h95O5q423b38K8";
 
-      const messageContent = `Olá!\n\nParabéns pelo acesso ao Método Funil Anti-Vácuo para Estética!\n\nAqui estão os seus links oficiais de acesso imediato:\n\n1. 📦 Robô ManyChat Local (.ZIP):\n${zipLink}\n\n2. 📄 PDF 1 - O Funil Automático de Conversão:\n${pdf1Link}\n\n3. 📄 PDF 2 - Tutorial & Automações na Prática:\n${pdf2Link}\n\n4. 💬 Painel de Scripts de Alta Conversão:\n${scriptsLink}\n\nInstrução Importante: O pacote principal do robô está compactado em formato .ZIP. Para abrir no seu computador, basta clicar com o botão direito e escolher "Extrair Tudo".\n\nBons estudos e ótimas conversões!`;
+      const messageContent = `Olá!\n\nParabéns pelo acesso ao Método Funil Anti-Vácuo Direct!\n\nAqui estão os seus links oficiais de acesso imediato:\n\n1. 📦 Robô ManyChat Local (.ZIP):\n${zipLink}\n\n2. 📄 PDF 1 - O Funil Automático de Conversão:\n${pdf1Link}\n\n3. 📄 PDF 2 - Tutorial & Automações na Prática:\n${pdf2Link}\n\n4. 💬 Painel de Scripts de Alta Conversão:\n${scriptsLink}\n\nInstrução Importante: O pacote principal do robô está compactado em formato .ZIP. Para abrir no seu computador, basta clicar com o botão direito e escolher "Extrair Tudo".\n\nBons estudos e ótimas conversões!`;
 
       const templateParams = {
         email: email,
@@ -2434,6 +3497,238 @@
       <path d="M16.01 2.667C8.65 2.667 2.67 8.647 2.67 16.007c0 2.35.617 4.643 1.79 6.667L2.667 29.333l6.847-1.767a13.25 13.25 0 0 0 6.496 1.767h.005c7.36 0 13.34-5.98 13.34-13.34 0-3.563-1.387-6.913-3.907-9.433a13.27 13.27 0 0 0-9.433-3.893zm0 24.433h-.004a11.08 11.08 0 0 1-5.656-1.547l-.406-.241-4.204 1.103 1.122-4.1-.264-.42a11.07 11.07 0 0 1-1.698-5.888c0-6.12 4.98-11.1 11.106-11.1 2.966 0 5.753 1.155 7.85 3.253a11.06 11.06 0 0 1 3.253 7.85c0 6.124-4.984 11.1-11.099 11.1zm6.09-8.324c-.334-.167-1.975-.974-2.28-1.085-.306-.112-.528-.167-.75.167-.223.334-.863 1.085-1.057 1.308-.195.223-.39.25-.724.084-.334-.167-1.41-.52-2.686-1.658-.993-.886-1.663-1.98-1.858-2.314-.195-.334-.02-.515.147-.681.15-.15.334-.39.501-.585.167-.195.223-.334.334-.557.111-.223.056-.418-.028-.585-.084-.167-.75-1.81-1.03-2.478-.271-.65-.547-.562-.75-.572l-.64-.01c-.223 0-.585.084-.891.418-.306.334-1.169 1.142-1.169 2.784s1.197 3.23 1.364 3.453c.167.223 2.355 3.597 5.706 5.044.797.345 1.419.551 1.904.706.8.254 1.528.218 2.103.132.641-.096 1.975-.807 2.253-1.587.278-.78.278-1.448.195-1.587-.084-.139-.306-.223-.64-.39z"/>
     </svg>
   </a>
+
+
+  <script>
+    // =========================================================================
+    // ALTERNADOR DE ABAS DE MÓDULOS (100% FUNCIONAL E GLOBAL)
+    // =========================================================================
+    window.switchModuleTab = function(tabNum, clickedBtn) {
+      // 1. Atualizar botões
+      const allBtns = document.querySelectorAll('.mod-tab-btn');
+      allBtns.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+
+      if (clickedBtn) {
+        clickedBtn.classList.add('active');
+        clickedBtn.setAttribute('aria-selected', 'true');
+      } else {
+        const targetBtn = document.getElementById('tab-btn-' + tabNum);
+        if (targetBtn) {
+          targetBtn.classList.add('active');
+          targetBtn.setAttribute('aria-selected', 'true');
+        }
+      }
+
+      // 2. Atualizar painéis
+      const allPanels = document.querySelectorAll('.module-tab-panel');
+      allPanels.forEach(panel => panel.classList.remove('active'));
+
+      const targetPanel = document.getElementById('mod-panel-' + tabNum);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+    };
+
+    // Inicialização ao carregar o DOM
+    document.addEventListener('DOMContentLoaded', () => {
+      // Registrar cliques nas abas de módulos
+      const tabBtns = document.querySelectorAll('.mod-tab-btn');
+      tabBtns.forEach((btn, index) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const tabNum = btn.id ? parseInt(btn.id.replace('tab-btn-', '')) : index + 1;
+          window.switchModuleTab(tabNum, btn);
+        });
+      });
+
+      // Mobile navbar toggle
+      const mobileToggle = document.getElementById('mobile-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('open');
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => navMenu.classList.remove('open'));
+        });
+      }
+
+      // Accordion FAQ interativo (Estilo Casa Pata 2)
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (question) {
+          question.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = item.classList.contains('open');
+            faqItems.forEach(i => i.classList.remove('open'));
+            if (!isOpen) {
+              item.classList.add('open');
+            }
+          });
+        }
+      });
+
+      // Smooth scroll para links com âncora
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#' || !targetId) return;
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            const navHeight = 70;
+            const elementPosition = targetEl.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Canvas Themed Particles (Direct Chat Nodes, Sparks & Pulses)
+      initThemedParticlesCanvas();
+    });
+
+    // =========================================================================
+    // CANVAS DE PARTICULAS TEMATICAS: AUTOMAÇÃO, DIRECT & SPARKS (CASA PATA 2 STYLE)
+    // =========================================================================
+    function initThemedParticlesCanvas() {
+      const canvas = document.getElementById('chat-particles-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      let width = (canvas.width = window.innerWidth);
+      let height = (canvas.height = window.innerHeight);
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+
+      let mouse = { x: -1000, y: -1000, radius: 120 };
+      window.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      });
+
+      class ChatParticle {
+        constructor() {
+          this.reset(true);
+        }
+
+        reset(initial = false) {
+          this.x = Math.random() * width;
+          this.y = initial ? Math.random() * height : height + Math.random() * 40;
+          this.size = Math.random() * 8 + 5;
+          this.speedY = Math.random() * 0.7 + 0.3;
+          this.speedX = (Math.random() - 0.5) * 0.4;
+          this.wobble = Math.random() * Math.PI * 2;
+          this.wobbleSpeed = Math.random() * 0.02 + 0.01;
+          this.alpha = Math.random() * 0.4 + 0.15;
+          this.type = Math.random() > 0.4 ? 'bubble' : 'spark';
+          const colors = ['#10b981', '#34d399', '#38bdf8', '#ffffff'];
+          this.color = colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        update() {
+          this.y -= this.speedY;
+          this.wobble += this.wobbleSpeed;
+          this.x += Math.sin(this.wobble) * 0.5 + this.speedX;
+
+          const dx = mouse.x - this.x;
+          const dy = mouse.y - this.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < mouse.radius) {
+            const force = (mouse.radius - dist) / mouse.radius;
+            this.x -= (dx / dist) * force * 3;
+            this.y -= (dy / dist) * force * 3;
+          }
+
+          if (this.y < -30 || this.x < -30 || this.x > width + 30) {
+            this.reset(false);
+          }
+        }
+
+        draw() {
+          ctx.save();
+          ctx.globalAlpha = this.alpha;
+
+          if (this.type === 'bubble') {
+            const w = this.size * 2.8;
+            const h = this.size * 1.8;
+            const r = 5;
+
+            ctx.fillStyle = 'rgba(16, 24, 40, 0.7)';
+            ctx.strokeStyle = this.color;
+            ctx.lineWidth = 1;
+
+            ctx.beginPath();
+            ctx.roundRect(this.x - w/2, this.y - h/2, w, h, r);
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.fillStyle = this.color;
+            const dotSize = Math.max(1, this.size * 0.14);
+            const dotSpacing = this.size * 0.55;
+            ctx.beginPath();
+            ctx.arc(this.x - dotSpacing, this.y, dotSize, 0, Math.PI * 2);
+            ctx.arc(this.x, this.y, dotSize, 0, Math.PI * 2);
+            ctx.arc(this.x + dotSpacing, this.y, dotSize, 0, Math.PI * 2);
+            ctx.fill();
+          } else {
+            ctx.fillStyle = this.color;
+            ctx.shadowColor = this.color;
+            ctx.shadowBlur = 8;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size * 0.35, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          ctx.restore();
+        }
+      }
+
+      const count = Math.min(Math.floor(width / 35), 38);
+      const particles = Array.from({ length: count }, () => new ChatParticle());
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].update();
+          particles[i].draw();
+
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 85) {
+              ctx.save();
+              ctx.globalAlpha = (1 - dist / 85) * 0.12;
+              ctx.strokeStyle = '#10b981';
+              ctx.lineWidth = 0.75;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+              ctx.restore();
+            }
+          }
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    }
+  </script>
 
 </body>
 </html>
