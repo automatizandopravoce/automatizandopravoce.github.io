@@ -15,11 +15,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-body: #07090e;
-      --bg-surface: #0f141f;
-      --bg-card: #151c2c;
-      --border: #232f45;
+      --bg-body: #080b11;
+      --bg-surface: #0e1522;
+      --bg-card: #131b2c;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(16, 185, 129, 0.35);
       --accent-green: #10b981;
+      --accent-green-glow: #34d399;
       --accent-green-hover: #059669;
       --accent-cyan: #38bdf8;
       --accent-purple: #8b5cf6;
@@ -35,12 +37,17 @@
     }
 
     body {
-      background-color: var(--bg-body);
+      background-color: #070a10;
+      background-image: 
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(16, 185, 129, 0.14) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 90% 25%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 70% 50% at 10% 70%, rgba(16, 185, 129, 0.06) 0%, transparent 50%);
       color: var(--text-main);
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 16px;
       line-height: 1.6;
       overflow-x: hidden;
+      letter-spacing: -0.1px;
     }
 
     .container {
@@ -51,13 +58,22 @@
 
     /* Top Bar */
     .top-strip {
-      background: linear-gradient(90deg, #10b981, #06b6d4);
-      color: #000;
+      background: linear-gradient(90deg, #10b981 0%, #06b6d4 50%, #10b981 100%);
+      background-size: 200% auto;
+      animation: topStripFlow 5s linear infinite;
+      color: #021a10;
       text-align: center;
-      padding: 8px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
+      padding: 9px 14px;
+      font-size: 12.5px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);
+      text-transform: uppercase;
+    }
+
+    @keyframes topStripFlow {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
     }
 
     /* Hero Section */
@@ -69,33 +85,39 @@
     }
 
     .tag-badge {
-      display: inline-block;
-      background: rgba(56, 189, 248, 0.12);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      color: var(--accent-cyan);
-      font-size: 12px;
-      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #38bdf8;
+      font-size: 11.5px;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 6px 16px;
+      letter-spacing: 1.2px;
+      padding: 7px 18px;
       border-radius: 999px;
       margin-bottom: 24px;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
+      backdrop-filter: blur(10px);
     }
 
     .hero-title {
-      font-size: 38px;
+      font-size: 40px;
       font-weight: 800;
-      line-height: 1.2;
-      letter-spacing: -1px;
-      color: #fff;
-      max-width: 900px;
+      line-height: 1.22;
+      letter-spacing: -1.2px;
+      color: #ffffff;
+      max-width: 940px;
       margin: 0 auto 20px auto;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     }
 
     .hero-title span.highlight {
-      background: linear-gradient(135deg, #38bdf8, #10b981);
+      background: linear-gradient(135deg, #38bdf8 0%, #34d399 50%, #10b981 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 25px rgba(16, 185, 129, 0.35));
     }
 
     .hero-sub {
@@ -171,23 +193,43 @@
       align-items: center;
       justify-content: center;
       background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-      color: #000;
-      font-size: 19px;
+      color: #022013 !important;
+      font-size: 18.5px;
       font-weight: 800;
-      padding: 20px 42px;
-      border-radius: 12px;
+      padding: 20px 44px;
+      border-radius: 14px;
       text-decoration: none;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
-      transition: all 0.25s ease;
+      letter-spacing: 0.6px;
+      box-shadow: 0 12px 35px rgba(16, 185, 129, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+      transition: all 0.28s cubic-bezier(0.25, 0.8, 0.25, 1);
       cursor: pointer;
-      border: none;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-cta::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transform: rotate(25deg);
+      animation: btnShineAnim 3.8s infinite;
+    }
+
+    @keyframes btnShineAnim {
+      0% { left: -60%; }
+      30% { left: 140%; }
+      100% { left: 140%; }
     }
 
     .btn-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 40px rgba(16, 185, 129, 0.6);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 18px 48px rgba(16, 185, 129, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.6);
       background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
     }
 
@@ -230,16 +272,36 @@
     }
 
     .pain-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 26px;
-      transition: transform 0.2s;
+      background: linear-gradient(180deg, rgba(19, 27, 43, 0.8) 0%, rgba(12, 17, 27, 0.9) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 28px;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .pain-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(244, 63, 94, 0.7), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
     .pain-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(244, 63, 94, 0.4);
+      transform: translateY(-5px);
+      border-color: rgba(244, 63, 94, 0.45);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55), 0 0 30px rgba(244, 63, 94, 0.12);
+    }
+
+    .pain-card:hover::before {
+      opacity: 1;
     }
 
     .pain-icon {
@@ -334,14 +396,14 @@
 
     /* Pricing Box */
     .pricing-card {
-      background: linear-gradient(180deg, #161e2e 0%, #0d121c 100%);
-      border: 2px solid var(--accent-green);
-      border-radius: 20px;
-      padding: 44px 32px;
+      background: linear-gradient(180deg, #131b29 0%, #0a0f18 100%);
+      border: 2px solid #10b981;
+      border-radius: 24px;
+      padding: 46px 32px 30px 32px;
       text-align: center;
-      max-width: 560px;
+      max-width: 580px;
       margin: 0 auto;
-      box-shadow: 0 20px 60px rgba(16, 185, 129, 0.25);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.65), 0 0 50px rgba(16, 185, 129, 0.22);
       position: relative;
     }
 
@@ -1211,6 +1273,296 @@
       color: var(--text-muted);
     }
 
+  
+    /* Balãozinho Verde do WhatsApp (Canto Inferior Direito) */
+    .whatsapp-btn-float {
+      position: fixed;
+      bottom: 26px;
+      right: 26px;
+      width: 62px;
+      height: 62px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      box-shadow: 0 10px 28px rgba(37, 211, 102, 0.5), 0 4px 12px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .whatsapp-btn-float:hover {
+      transform: scale(1.12) translateY(-4px);
+      background: #20ba5a;
+      box-shadow: 0 14px 35px rgba(37, 211, 102, 0.7), 0 6px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    .whatsapp-pulse-wave {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 2.5px solid #25D366;
+      animation: waPulseWave 2s infinite ease-out;
+      pointer-events: none;
+    }
+
+    @keyframes waPulseWave {
+      0% {
+        transform: scale(1);
+        opacity: 0.9;
+      }
+      60% {
+        transform: scale(1.45);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    .whatsapp-float-icon {
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    @media (max-width: 640px) {
+      .whatsapp-btn-float {
+        bottom: 20px;
+        right: 20px;
+        width: 56px;
+        height: 56px;
+      }
+      .whatsapp-float-icon {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    /* Kiwify Trust & Automatic Delivery Box */
+    .kiwify-trust-box {
+      background: linear-gradient(180deg, rgba(17, 24, 39, 0.95) 0%, rgba(15, 20, 31, 0.98) 100%);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: 18px;
+      padding: 24px 28px;
+      max-width: 780px;
+      margin: 24px auto 0 auto;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kiwify-trust-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #10b981, #06b6d4, #10b981);
+    }
+
+    .kiwify-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .kiwify-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .kiwify-pill-badge {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .kiwify-security-tag {
+      font-size: 12px;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+
+    .kiwify-intro {
+      margin-top: 14px;
+      font-size: 14px;
+      color: #cbd5e1;
+      line-height: 1.55;
+    }
+
+    .kiwify-intro strong {
+      color: #10b981;
+    }
+
+    .kiwify-features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 18px 0;
+    }
+
+    @media (max-width: 768px) {
+      .kiwify-features-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .kiwify-trust-box {
+        padding: 20px 18px;
+      }
+    }
+
+    .kiwify-feature-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      transition: all 0.2s ease;
+    }
+
+    .kiwify-feature-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(16, 185, 129, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .kiwify-feature-icon {
+      font-size: 24px;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .kiwify-feature-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .kiwify-feature-text strong {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+
+    .kiwify-feature-text span {
+      font-size: 12px;
+      color: #94a3b8;
+      line-height: 1.45;
+    }
+
+    .kiwify-footer-badges {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .kiwify-badge-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+
+    .kiwify-badge-item span {
+      color: #cbd5e1;
+    }
+
+  
+    /* Kiwify Compact Card (Seção de Oferta/Preço) */
+    .kiwify-compact-card {
+      background: rgba(16, 185, 129, 0.06);
+      border: 1px solid rgba(16, 185, 129, 0.28);
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-top: 20px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .kiwify-compact-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .kiwify-compact-badge {
+      background: rgba(16, 185, 129, 0.18);
+      border: 1px solid rgba(16, 185, 129, 0.45);
+      color: #34d399;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .kiwify-compact-text {
+      font-size: 13.5px;
+      color: #cbd5e1;
+      line-height: 1.5;
+      margin: 0 0 12px 0;
+    }
+
+    .kiwify-compact-text strong {
+      color: #ffffff;
+    }
+
+    .kiwify-compact-badges {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: #cbd5e1;
+      font-weight: 600;
+    }
+
+    .kiwify-mini-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
   </style>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
@@ -1252,6 +1604,88 @@
       <!-- MAIN CTA -->
       <a href="https://pay.kiwify.com.br/POBB16U" target="_blank" rel="noopener noreferrer" class="btn-cta">LIBERAÇÃO IMEDIATA (R$ 49,90)</a>
       <div class="cta-subtext">⚡ Acesso Instantâneo aos Materiais e Robô ManyChat</div>
+
+      <!-- KIWIFY TRUST & AUTOMATIC DELIVERY BADGE -->
+      <div class="kiwify-trust-box">
+        <div class="kiwify-header">
+          <div class="kiwify-brand">
+            <!-- Kiwify Vector Logo -->
+            <svg width="124" height="34" viewBox="0 0 124 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(1, 1)">
+                <!-- Kiwi fruit slice -->
+                <circle cx="16" cy="16" r="15" fill="#15803d" stroke="#166534" stroke-width="1"/>
+                <circle cx="16" cy="16" r="13" fill="#22c55e"/>
+                <circle cx="16" cy="16" r="9.5" fill="#4ade80"/>
+                <ellipse cx="16" cy="16" rx="4.5" ry="3.5" fill="#fef08a"/>
+                <circle cx="16" cy="9.5" r="0.9" fill="#0f172a"/>
+                <circle cx="19" cy="11" r="0.9" fill="#0f172a"/>
+                <circle cx="21" cy="13.5" r="0.9" fill="#0f172a"/>
+                <circle cx="21.5" cy="16" r="0.9" fill="#0f172a"/>
+                <circle cx="21" cy="18.5" r="0.9" fill="#0f172a"/>
+                <circle cx="19" cy="21" r="0.9" fill="#0f172a"/>
+                <circle cx="16" cy="22.5" r="0.9" fill="#0f172a"/>
+                <circle cx="13" cy="21" r="0.9" fill="#0f172a"/>
+                <circle cx="11" cy="18.5" r="0.9" fill="#0f172a"/>
+                <circle cx="10.5" cy="16" r="0.9" fill="#0f172a"/>
+                <circle cx="11" cy="13.5" r="0.9" fill="#0f172a"/>
+                <circle cx="13" cy="11" r="0.9" fill="#0f172a"/>
+              </g>
+              <text x="40" y="24" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="22" letter-spacing="-0.8">kiwify</text>
+            </svg>
+            <span class="kiwify-pill-badge">🔒 Pagamento 100% Seguro</span>
+          </div>
+          <div class="kiwify-security-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Ambiente Blindado & Auditado</span>
+          </div>
+        </div>
+
+        <div class="kiwify-intro">
+          Ao clicar no botão, você será direcionado para o checkout oficial da <strong>Kiwify</strong>, a plataforma de pagamentos mais segura e confiável do Brasil. Seus dados estão 100% protegidos com criptografia bancária.
+        </div>
+
+        <div class="kiwify-features-grid">
+          <div class="kiwify-feature-card">
+            <div class="kiwify-feature-icon">⚡</div>
+            <div class="kiwify-feature-text">
+              <strong>Liberação 100% Automática</strong>
+              <span>Assim que o pagamento for aprovado (Pix ou Cartão), o sistema ativa o seu acesso imediatamente.</span>
+            </div>
+          </div>
+
+          <div class="kiwify-feature-card">
+            <div class="kiwify-feature-icon">📩</div>
+            <div class="kiwify-feature-text">
+              <strong>Receba Direto no seu E-mail</strong>
+              <span>Todos os links de download do robô, PDFs e scripts chegam na sua caixa de entrada no mesmo instante.</span>
+            </div>
+          </div>
+
+          <div class="kiwify-feature-card">
+            <div class="kiwify-feature-icon">📲</div>
+            <div class="kiwify-feature-text">
+              <strong>Acesso Direto na Kiwify</strong>
+              <span>Seus materiais ficam salvos na sua conta da plataforma para você acessar quando quiser, no celular ou PC.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="kiwify-footer-badges">
+          <div class="kiwify-badge-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Criptografia SSL 256 bits</span>
+          </div>
+          <div class="kiwify-badge-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Garantia de 7 dias para caso de reembolso</span>
+          </div>
+          <div class="kiwify-badge-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            <span>Pix Imediato ou Cartão de Crédito</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1351,6 +1785,50 @@
           LIBERAÇÃO IMEDIATA (R$ 49,90)
         </a>
         <div class="cta-subtext">⚡ Liberação Imediata na Tela e por E-mail</div>
+
+              <!-- KIWIFY TRUST COMPACT (SEÇÃO DE PREÇO) -->
+        <div class="kiwify-compact-card">
+          <div class="kiwify-compact-header">
+            <!-- Kiwify SVG logo -->
+            <svg width="105" height="28" viewBox="0 0 124 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(1, 1)">
+                <circle cx="16" cy="16" r="15" fill="#15803d" stroke="#166534" stroke-width="1"/>
+                <circle cx="16" cy="16" r="13" fill="#22c55e"/>
+                <circle cx="16" cy="16" r="9.5" fill="#4ade80"/>
+                <ellipse cx="16" cy="16" rx="4.5" ry="3.5" fill="#fef08a"/>
+                <circle cx="16" cy="9.5" r="0.9" fill="#0f172a"/>
+                <circle cx="19" cy="11" r="0.9" fill="#0f172a"/>
+                <circle cx="21" cy="13.5" r="0.9" fill="#0f172a"/>
+                <circle cx="21.5" cy="16" r="0.9" fill="#0f172a"/>
+                <circle cx="21" cy="18.5" r="0.9" fill="#0f172a"/>
+                <circle cx="19" cy="21" r="0.9" fill="#0f172a"/>
+                <circle cx="16" cy="22.5" r="0.9" fill="#0f172a"/>
+                <circle cx="13" cy="21" r="0.9" fill="#0f172a"/>
+                <circle cx="11" cy="18.5" r="0.9" fill="#0f172a"/>
+                <circle cx="10.5" cy="16" r="0.9" fill="#0f172a"/>
+                <circle cx="11" cy="13.5" r="0.9" fill="#0f172a"/>
+                <circle cx="13" cy="11" r="0.9" fill="#0f172a"/>
+              </g>
+              <text x="40" y="24" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="22" letter-spacing="-0.8">kiwify</text>
+            </svg>
+            <span class="kiwify-compact-badge">🔒 Kiwify 100% Seguro</span>
+          </div>
+
+          <p class="kiwify-compact-text">
+            ⚡ <strong>Liberação do conteúdo enviada no seu e-mail e na plataforma Kiwify de forma 100% automática</strong>, com garantia de 7 dias para caso de reembolso.
+          </p>
+
+          <div class="kiwify-compact-badges">
+            <span class="kiwify-mini-badge">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Entrega Automática
+            </span>
+            <span class="kiwify-mini-badge">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Garantia de 7 dias para caso de reembolso
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1361,7 +1839,7 @@
       <div class="guarantee-box">
         <div class="guarantee-icon">🛡️</div>
         <div>
-          <h3 style="font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 6px;">Garantia Blindada de 7 Dias</h3>
+          <h3 style="font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 6px;">Garantia de 7 dias para caso de reembolso</h3>
           <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">
             Acesse o material, assista às videoaulas, baixe o PDF de scripts e coloque em prática no atendimento da sua clínica. Se por qualquer motivo você achar que os roteiros não melhoraram o fluxo da sua recepção ou a taxa de agendamento de consultas, devolvemos 100% do seu dinheiro, centavo por centavo, sem perguntas e sem letras miúdas.
           </p>
@@ -1587,6 +2065,14 @@
           </svg>
           <span>@automatizandopravoce</span>
         </a>
+
+        <a href="https://wa.me/5583920053791?text=Oi%2C%20vim%20do%20site%20gostaria%20de%20saber%20mais" target="_blank" rel="noopener noreferrer" class="footer-contact-link footer-contact-whatsapp" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(37, 211, 102, 0.15); border: 1px solid rgba(37, 211, 102, 0.4); color: #25d366; padding: 10px 18px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 13.5px; transition: all 0.25s ease;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.52 3.48A11.93 11.93 0 0 0 12.06 0C5.46 0 .09 5.37.09 11.97c0 2.11.55 4.17 1.6 5.98L0 24l6.23-1.63a11.94 11.94 0 0 0 5.83 1.5h.01c6.6 0 11.97-5.37 11.97-11.97 0-3.2-.1.25-1.25-5.54a11.9 11.9 0 0 0-3.27-4.88zM12.06 21.93h-.01c-1.79 0-3.54-.48-5.08-1.39l-.36-.22-3.77.99 1.01-3.67-.24-.38a9.92 9.92 0 0 1-1.52-5.29c0-5.49 4.47-9.96 9.97-9.96 2.66 0 5.16 1.04 7.04 2.92a9.92 9.92 0 0 1 2.92 7.04c0 5.5-4.47 9.96-9.96 9.96zm5.46-7.46c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.89-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/>
+          </svg>
+          <span>WhatsApp: (83) 92005-3791</span>
+        </a>
+
 
         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=automatizandopravoce@gmail.com&su=Contato%20-%20Método%20Funil%20Anti-Vácuo" target="_blank" rel="noopener noreferrer" class="footer-contact-link" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); color: #38bdf8; padding: 10px 18px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 13.5px; transition: all 0.25s ease;">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1941,6 +2427,14 @@
       input.select();
     }
   </script>
+    <!-- BOTAO FLUTUANTE DE WHATSAPP (BALAOZINHO VERDE REDONDO) -->
+  <a href="https://wa.me/5583920053791?text=Oi%2C%20vim%20do%20site%20gostaria%20de%20saber%20mais" target="_blank" rel="noopener noreferrer" class="whatsapp-btn-float" aria-label="Fale conosco no WhatsApp" title="Fale conosco no WhatsApp">
+    <div class="whatsapp-pulse-wave"></div>
+    <svg viewBox="0 0 32 32" width="36" height="36" fill="#ffffff" class="whatsapp-float-icon">
+      <path d="M16.01 2.667C8.65 2.667 2.67 8.647 2.67 16.007c0 2.35.617 4.643 1.79 6.667L2.667 29.333l6.847-1.767a13.25 13.25 0 0 0 6.496 1.767h.005c7.36 0 13.34-5.98 13.34-13.34 0-3.563-1.387-6.913-3.907-9.433a13.27 13.27 0 0 0-9.433-3.893zm0 24.433h-.004a11.08 11.08 0 0 1-5.656-1.547l-.406-.241-4.204 1.103 1.122-4.1-.264-.42a11.07 11.07 0 0 1-1.698-5.888c0-6.12 4.98-11.1 11.106-11.1 2.966 0 5.753 1.155 7.85 3.253a11.06 11.06 0 0 1 3.253 7.85c0 6.124-4.984 11.1-11.099 11.1zm6.09-8.324c-.334-.167-1.975-.974-2.28-1.085-.306-.112-.528-.167-.75.167-.223.334-.863 1.085-1.057 1.308-.195.223-.39.25-.724.084-.334-.167-1.41-.52-2.686-1.658-.993-.886-1.663-1.98-1.858-2.314-.195-.334-.02-.515.147-.681.15-.15.334-.39.501-.585.167-.195.223-.334.334-.557.111-.223.056-.418-.028-.585-.084-.167-.75-1.81-1.03-2.478-.271-.65-.547-.562-.75-.572l-.64-.01c-.223 0-.585.084-.891.418-.306.334-1.169 1.142-1.169 2.784s1.197 3.23 1.364 3.453c.167.223 2.355 3.597 5.706 5.044.797.345 1.419.551 1.904.706.8.254 1.528.218 2.103.132.641-.096 1.975-.807 2.253-1.587.278-.78.278-1.448.195-1.587-.084-.139-.306-.223-.64-.39z"/>
+    </svg>
+  </a>
+
 </body>
 </html>
 
