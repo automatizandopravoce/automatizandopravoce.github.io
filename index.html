@@ -2,6 +2,9 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <script>
     if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost') {
@@ -471,6 +474,13 @@
       align-items: center;
       max-width: 760px;
       margin: 0 auto;
+    }
+
+    .guarantee-box p {
+      font-size: 16px !important;
+      color: #f8fafc !important;
+      font-weight: 600 !important;
+      line-height: 1.7 !important;
     }
 
     .guarantee-icon {
@@ -2300,9 +2310,10 @@
         line-height: 1.65;
       }
       .guarantee-box p {
-        font-size: 15.5px;
-        color: #e2e8f0;
-        line-height: 1.65;
+        font-size: 16px !important;
+        color: #f8fafc !important;
+        font-weight: 600 !important;
+        line-height: 1.7 !important;
       }
       .kiwify-intro {
         font-size: 15px;
@@ -2398,8 +2409,8 @@
       <div class="video-container-box">
         <div id="vsl-player-container">
           <video id="vsl-video" class="main-video-player" controls playsinline webkit-playsinline preload="metadata">
-            <source src="https://drive.usercontent.google.com/download?id=1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6&export=download" type="video/mp4">
-            <source src="https://drive.google.com/uc?export=download&id=1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6" type="video/mp4">
+            <source src="https://drive.usercontent.google.com/download?id=1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6&export=open" type="video/mp4">
+            <source src="https://docs.google.com/uc?export=open&id=1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6" type="video/mp4">
             Seu navegador não suporta reprodução direta de vídeo.
           </video>
         </div>
@@ -3011,9 +3022,9 @@
       <div class="guarantee-box">
         <div class="guarantee-icon">🛡️</div>
         <div>
-          <h3 style="font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 6px;">Garantia de 7 dias para caso de reembolso</h3>
-          <p style="font-size: 15.5px; color: #e2e8f0; line-height: 1.65;">
-            Acesse o material, assista às videoaulas, baixe o PDF de scripts e coloque em prática no atendimento do seu negócio. Se por qualquer motivo você achar que os roteiros não melhoraram o fluxo das suas conversas ou a taxa de agendamento e fechamento, você conta com a nossa garantia incondicional de 7 dias com reembolso emitido diretamente pela plataforma 100% segura e confiável da <strong style="color: #34d399;">Kiwify</strong>. Devolvemos 100% do seu dinheiro, centavo por centavo, sem perguntas, sem burocracia e sem letras miúdas.
+          <h3 style="font-size: 21px; font-weight: 800; color: #ffffff; margin-bottom: 8px;">Garantia de 7 dias para caso de reembolso</h3>
+          <p style="font-size: 16px !important; color: #f8fafc !important; font-weight: 600 !important; line-height: 1.7 !important; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);">
+            Acesse o material, assista às videoaulas, baixe o PDF de scripts e coloque em prática no atendimento do seu negócio. Se por qualquer motivo você achar que os roteiros não melhoraram o fluxo das suas conversas ou a taxa de agendamento e fechamento, você conta com a nossa garantia incondicional de 7 dias com reembolso emitido diretamente pela plataforma 100% segura e confiável da <strong style="color: #22c55e; font-weight: 800;">Kiwify</strong>. Devolvemos 100% do seu dinheiro, centavo por centavo, sem perguntas, sem burocracia e sem letras miúdas.
           </p>
         </div>
       </div>
@@ -3351,10 +3362,8 @@
   <script>
     const videoData = {
       principal: {
-        src: 'https://drive.usercontent.google.com/download?id=1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6&export=download',
-        srcAlt: 'https://drive.google.com/uc?export=download&id=1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6',
-        embed: 'https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/preview',
-        link: 'https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/view?usp=drive_link',
+        src: 'https://drive.usercontent.google.com/download?id=1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6&export=open',
+        srcAlt: 'https://docs.google.com/uc?export=open&id=1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6',
         caption: '⚡ <strong>Demonstração do Método</strong> — Veja como funciona na prática'
       }
     };
@@ -3378,19 +3387,6 @@
       const caption = document.getElementById('vsl-caption');
       if (caption) caption.innerHTML = data.caption;
     }
-
-    // Fallback inteligente caso a conexão móvel do usuário bloqueie o stream direto do Drive
-    window.addEventListener('DOMContentLoaded', () => {
-      const vEl = document.getElementById('vsl-video');
-      if (vEl) {
-        vEl.addEventListener('error', () => {
-          const container = document.getElementById('vsl-player-container');
-          if (container && !container.querySelector('iframe')) {
-            container.innerHTML = `<iframe id="vsl-iframe" class="main-video-player" src="https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/preview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen scrolling="no" style="width:100%;height:100%;border:none;"></iframe>`;
-          }
-        }, true);
-      }
-    });
 
     /* Modal Pix & Acesso Imediato */
     let emailAttemptsLeft = 3;
