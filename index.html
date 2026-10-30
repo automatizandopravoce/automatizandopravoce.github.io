@@ -2360,9 +2360,9 @@
         color: #cbd5e1;
       }
       #vsl-player-container {
-        aspect-ratio: unset;
-        height: 270px;
-        min-height: 270px;
+        aspect-ratio: 16 / 9;
+        height: auto;
+        min-height: unset;
         border-radius: 14px;
       }
       .video-caption {
@@ -2430,10 +2430,13 @@
         O método definitivo que combina um robô simples no Instagram com scripts de alta conversão para você nunca mais travar quando perguntarem: "Qual o valor do procedimento?"
       </p>
 
-      <!-- VIDEO PLAYER (GOOGLE DRIVE EMBED) -->
+      <!-- VIDEO PLAYER (ARQUIVO LOCAL NATIVO DE ALTA VELOCIDADE) -->
       <div class="video-container-box">
         <div id="vsl-player-container">
-          <iframe id="vsl-iframe" class="main-video-player" src="https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/preview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen loading="eager" title="Demonstração do Método"></iframe>
+          <video id="vsl-video" class="main-video-player" controls playsinline webkit-playsinline preload="metadata">
+            <source src="video_anuncio_robo_36s.mp4" type="video/mp4">
+            Seu navegador não suporta reprodução de vídeo.
+          </video>
         </div>
 
         <div class="video-caption" id="vsl-caption">
@@ -3383,7 +3386,7 @@
   <script>
     const videoData = {
       principal: {
-        embed: 'https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/preview',
+        src: 'video_anuncio_robo_36s.mp4',
         caption: '⚡ <strong>Demonstração do Método</strong> — Veja como funciona na prática'
       }
     };
@@ -3397,7 +3400,10 @@
 
       const container = document.getElementById('vsl-player-container');
       if (container) {
-        container.innerHTML = `<iframe id="vsl-iframe" class="main-video-player" src="${data.embed}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen loading="eager" title="Demonstração do Método"></iframe>`;
+        container.innerHTML = `<video id="vsl-video" class="main-video-player" controls playsinline webkit-playsinline preload="metadata">
+          <source src="${data.src}" type="video/mp4">
+          Seu navegador não suporta reprodução de vídeo.
+        </video>`;
       }
 
       const caption = document.getElementById('vsl-caption');
