@@ -6,4 +6,4 @@ dist-ssr/
 Thumbs.db
 *.log
 !public/video_anuncio_robo_36s.mp4
-
+!video_anuncio_robo_36s.mp4
