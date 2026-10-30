@@ -2359,6 +2359,12 @@
         font-size: 13.5px;
         color: #cbd5e1;
       }
+      #vsl-player-container {
+        aspect-ratio: unset;
+        height: 270px;
+        min-height: 270px;
+        border-radius: 14px;
+      }
       .video-caption {
         font-size: 14px;
         color: #cbd5e1;
@@ -2424,14 +2430,10 @@
         O método definitivo que combina um robô simples no Instagram com scripts de alta conversão para você nunca mais travar quando perguntarem: "Qual o valor do procedimento?"
       </p>
 
-      <!-- VIDEO PLAYER (STREAM DIRETO GOOGLE DRIVE NATIVO HTML5) -->
+      <!-- VIDEO PLAYER (GOOGLE DRIVE EMBED) -->
       <div class="video-container-box">
         <div id="vsl-player-container">
-          <video id="vsl-video" class="main-video-player" controls playsinline webkit-playsinline preload="metadata">
-            <source src="https://drive.usercontent.google.com/download?id=1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6&export=open" type="video/mp4">
-            <source src="https://docs.google.com/uc?export=open&id=1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6" type="video/mp4">
-            Seu navegador não suporta reprodução direta de vídeo.
-          </video>
+          <iframe id="vsl-iframe" class="main-video-player" src="https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/preview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen loading="eager" title="Demonstração do Método"></iframe>
         </div>
 
         <div class="video-caption" id="vsl-caption">
@@ -3381,8 +3383,7 @@
   <script>
     const videoData = {
       principal: {
-        src: 'https://drive.usercontent.google.com/download?id=1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6&export=open',
-        srcAlt: 'https://docs.google.com/uc?export=open&id=1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6',
+        embed: 'https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/preview',
         caption: '⚡ <strong>Demonstração do Método</strong> — Veja como funciona na prática'
       }
     };
@@ -3396,11 +3397,7 @@
 
       const container = document.getElementById('vsl-player-container');
       if (container) {
-        container.innerHTML = `<video id="vsl-video" class="main-video-player" controls playsinline webkit-playsinline preload="metadata">
-          <source src="${data.src}" type="video/mp4">
-          <source src="${data.srcAlt}" type="video/mp4">
-          Seu navegador não suporta reprodução direta de vídeo.
-        </video>`;
+        container.innerHTML = `<iframe id="vsl-iframe" class="main-video-player" src="${data.embed}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen loading="eager" title="Demonstração do Método"></iframe>`;
       }
 
       const caption = document.getElementById('vsl-caption');
