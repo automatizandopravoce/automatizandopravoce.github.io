@@ -91,15 +91,16 @@
       background: rgba(56, 189, 248, 0.08);
       border: 1px solid rgba(56, 189, 248, 0.35);
       color: #38bdf8;
-      font-size: 11.5px;
+      font-size: 13.5px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 1.2px;
-      padding: 7px 18px;
+      letter-spacing: 0.8px;
+      padding: 9px 22px;
       border-radius: 999px;
       margin-bottom: 24px;
       box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
       backdrop-filter: blur(10px);
+      line-height: 1.4;
     }
 
     .hero-title {
@@ -169,22 +170,63 @@
       margin: 0 auto 30px auto;
     }
 
-    .main-video-player {
+    #vsl-player-container {
+      position: relative;
       width: 100%;
-      aspect-ratio: 16 / 9;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 16px;
       background: #000;
       border: 2px solid var(--border);
-      border-radius: 16px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    .main-video-player {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
       display: block;
+      background: #000;
+      overflow: hidden;
     }
 
     .video-caption {
-      margin-top: 12px;
-      font-size: 13.5px;
+      margin-top: 14px;
+      font-size: 14.5px;
       font-weight: 600;
       color: #cbd5e1;
       text-align: center;
+    }
+
+    .btn-drive-play {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #38bdf8;
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      margin-top: 8px;
+    }
+
+    .btn-drive-play:hover {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: #38bdf8;
+      color: #fff;
+      transform: translateY(-2px);
     }
 
     /* CTA Button */
@@ -234,9 +276,10 @@
     }
 
     .cta-subtext {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-top: 10px;
+      font-size: 14.5px;
+      color: #cbd5e1;
+      font-weight: 500;
+      margin-top: 12px;
     }
 
     /* Section Styling */
@@ -1386,9 +1429,9 @@
       background: rgba(16, 185, 129, 0.15);
       border: 1px solid rgba(16, 185, 129, 0.4);
       color: #34d399;
-      font-size: 11.5px;
+      font-size: 13px;
       font-weight: 700;
-      padding: 4px 12px;
+      padding: 5px 14px;
       border-radius: 999px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -1398,8 +1441,8 @@
     }
 
     .kiwify-security-tag {
-      font-size: 12px;
-      color: #94a3b8;
+      font-size: 13.5px;
+      color: #cbd5e1;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -1408,9 +1451,9 @@
 
     .kiwify-intro {
       margin-top: 14px;
-      font-size: 14px;
-      color: #cbd5e1;
-      line-height: 1.55;
+      font-size: 15.5px;
+      color: #e2e8f0;
+      line-height: 1.65;
     }
 
     .kiwify-intro strong {
@@ -1427,10 +1470,14 @@
     @media (max-width: 768px) {
       .kiwify-features-grid {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 12px;
       }
       .kiwify-trust-box {
         padding: 20px 18px;
+      }
+      .kiwify-intro {
+        font-size: 15px;
+        line-height: 1.6;
       }
     }
 
@@ -1465,15 +1512,15 @@
     }
 
     .kiwify-feature-text strong {
-      font-size: 13.5px;
+      font-size: 15.5px;
       font-weight: 700;
       color: #f8fafc;
     }
 
     .kiwify-feature-text span {
-      font-size: 12px;
-      color: #94a3b8;
-      line-height: 1.45;
+      font-size: 14px;
+      color: #cbd5e1;
+      line-height: 1.55;
     }
 
     .kiwify-footer-badges {
@@ -1484,8 +1531,8 @@
       gap: 12px;
       padding-top: 14px;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 12px;
-      color: #94a3b8;
+      font-size: 13.5px;
+      color: #cbd5e1;
     }
 
     .kiwify-badge-item {
@@ -1496,7 +1543,8 @@
     }
 
     .kiwify-badge-item span {
-      color: #cbd5e1;
+      color: #e2e8f0;
+      font-size: 13.5px;
     }
 
   
@@ -2031,10 +2079,12 @@
         padding: 10px 12px;
       }
       .module-check-text strong {
-        font-size: 0.84rem;
+        font-size: 0.95rem;
       }
       .module-check-text span {
-        font-size: 0.76rem;
+        font-size: 0.88rem;
+        color: #cbd5e1;
+        line-height: 1.45;
       }
     }
 
@@ -2224,8 +2274,99 @@
         transform: translateY(-4px);
       }
     }
-      .price-card.popular:hover {
-        transform: translateY(-6px);
+
+    /* AJUSTES DE LEGIBILIDADE E FONTES NO CELULAR (TEXTOS CINZAS E INFORMAÇÕES) */
+    @media (max-width: 768px) {
+      .tag-badge {
+        font-size: 12.5px;
+        padding: 8px 16px;
+        letter-spacing: 0.6px;
+        line-height: 1.4;
+      }
+      .hero-sub {
+        font-size: 16.5px;
+        color: #cbd5e1;
+        line-height: 1.55;
+      }
+      .cta-subtext {
+        font-size: 14px;
+        color: #cbd5e1;
+      }
+      .section-sub {
+        font-size: 15.5px;
+        color: #cbd5e1;
+        line-height: 1.55;
+      }
+      .pain-desc {
+        font-size: 15px;
+        color: #cbd5e1;
+        line-height: 1.6;
+      }
+      .stat-label {
+        font-size: 0.92rem;
+        color: #cbd5e1;
+      }
+      .module-box-desc {
+        font-size: 1rem;
+        color: #cbd5e1;
+        line-height: 1.55;
+      }
+      .price-card-sub {
+        font-size: 0.92rem;
+        color: #cbd5e1;
+      }
+      .price-status-badge {
+        font-size: 0.85rem;
+      }
+      .price-features li {
+        font-size: 0.92rem;
+        color: #f1f5f9;
+      }
+      .faq-question {
+        font-size: 16px;
+      }
+      .faq-answer {
+        font-size: 15px;
+        color: #cbd5e1;
+        line-height: 1.65;
+      }
+      .guarantee-box p {
+        font-size: 15px;
+        color: #cbd5e1;
+        line-height: 1.65;
+      }
+      .kiwify-intro {
+        font-size: 15px;
+        color: #e2e8f0;
+        line-height: 1.6;
+      }
+      .kiwify-feature-text strong {
+        font-size: 15.5px;
+      }
+      .kiwify-feature-text span {
+        font-size: 14px;
+        color: #cbd5e1;
+        line-height: 1.5;
+      }
+      .kiwify-footer-badges {
+        font-size: 13.5px;
+        color: #cbd5e1;
+      }
+      .kiwify-badge-item span {
+        font-size: 13.5px;
+        color: #e2e8f0;
+      }
+      .kiwify-security-tag {
+        font-size: 13.5px;
+        color: #cbd5e1;
+      }
+      .video-caption {
+        font-size: 14px;
+        color: #cbd5e1;
+      }
+      footer.footer {
+        font-size: 13.5px;
+        color: #94a3b8;
       }
     }
 
@@ -2284,17 +2425,18 @@
         O método definitivo que combina um robô simples no Instagram com scripts de alta conversão para você nunca mais travar quando perguntarem: "Qual o valor do procedimento?"
       </p>
 
-      <!-- VIDEO PLAYER COM SELETOR DE VERSÃO (GOOGLE DRIVE) -->
+      <!-- VIDEO PLAYER (GOOGLE DRIVE COM ISOLAMENTO DE TELA E PROPORÇÃO 16:9) -->
       <div class="video-container-box">
         <div id="vsl-player-container">
-          <iframe id="vsl-iframe" class="main-video-player" src="https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/preview" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+          <iframe id="vsl-iframe" class="main-video-player" src="https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/preview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen scrolling="no" loading="eager" title="Demonstração do Método"></iframe>
         </div>
 
         <div class="video-caption" id="vsl-caption">
-          ⚡ <strong>Demonstração do Método</strong> — Assista diretamente pelo site [Google Drive]
+          ⚡ <strong>Demonstração do Método</strong> — Assista no player ou em tela cheia no Google Drive
         </div>
-        <div style="text-align: center; margin-top: 8px;">
-          <a id="vsl-drive-link" href="https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/view?usp=drive_link" target="_blank" rel="noopener noreferrer" style="color: #94a3b8; font-size: 12px; text-decoration: underline;">
+        <div style="text-align: center; margin-top: 12px;">
+          <a id="vsl-drive-link" href="https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-drive-play">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             Abrir vídeo em tela cheia no Google Drive
           </a>
         </div>
@@ -2512,8 +2654,8 @@
               <div class="module-check-card">
                 <div class="module-check-icon">✓</div>
                 <div class="module-check-text">
-                  <strong>Arquivo .ZIP Pré-Configurado</strong>
-                  <span>Basta fazer upload do template no ManyChat com 1 clique e todas as automações sobem instantaneamente.</span>
+                  <strong>Estrutura Pronta de Atendimento</strong>
+                  <span>Configure suas mensagens e respostas automáticas no ManyChat em poucos cliques, sem complicação.</span>
                 </div>
               </div>
 
@@ -2666,7 +2808,7 @@
                 <div class="module-check-icon">01</div>
                 <div class="module-check-text">
                   <strong>Módulo 01: Robô ManyChat 24h</strong>
-                  <span>Vídeo prático na tela + template .ZIP pronto para importar no ManyChat gratuito em menos de 15 min.</span>
+                  <span>Vídeo prático na tela + passo a passo completo para configurar o ManyChat gratuito em menos de 15 min.</span>
                 </div>
               </div>
 
@@ -2737,7 +2879,7 @@
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-              <span><strong>Template Pronto (.ZIP):</strong> Basta importar com 1 clique no ManyChat.</span>
+              <span><strong>Fluxo Pronto para Uso:</strong> Ativação rápida e direta no ManyChat em poucos cliques.</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
@@ -2968,7 +3110,7 @@
       <div class="section-header">
         <div class="tag-badge">VISÃO GERAL DO CONTEÚDO</div>
         <h2 class="section-title">Veja Como Funciona o Método por Dentro</h2>
-        <p class="section-sub">Tudo estruturado e pronto: robô pré-configurado, fluxos visuais e scripts de alta conversão.</p>
+        <p class="section-sub">Tudo estruturado e pronto: automação prática passo a passo, fluxos visuais e scripts de alta conversão.</p>
       </div>
 
       <div class="carousel-wrapper">
@@ -3244,7 +3386,7 @@
       principal: {
         embed: 'https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/preview',
         link: 'https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/view?usp=drive_link',
-        caption: '⚡ <strong>Demonstração do Método</strong> — Assista diretamente pelo site [Google Drive]'
+        caption: '⚡ <strong>Demonstração do Método</strong> — Assista no player ou em tela cheia no Google Drive'
       }
     };
 
@@ -3257,7 +3399,7 @@
 
       const container = document.getElementById('vsl-player-container');
       if (container) {
-        container.innerHTML = `<iframe id="vsl-iframe" class="main-video-player" src="${data.embed}" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`;
+        container.innerHTML = `<iframe id="vsl-iframe" class="main-video-player" src="${data.embed}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen scrolling="no" loading="eager" title="Demonstração do Método"></iframe>`;
       }
 
       const caption = document.getElementById('vsl-caption');
