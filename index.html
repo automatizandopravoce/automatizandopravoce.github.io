@@ -1,0 +1,3877 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <script>
+    if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost') {
+      window.location.replace(window.location.href.replace('http:', 'https:'));
+    }
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Método Funil Anti-Vácuo Direct | Vídeo + PDF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-body: #080b11;
+      --bg-surface: #0e1522;
+      --bg-card: #131b2c;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(16, 185, 129, 0.35);
+      --accent-green: #10b981;
+      --accent-green-glow: #34d399;
+      --accent-green-hover: #059669;
+      --accent-cyan: #38bdf8;
+      --accent-purple: #8b5cf6;
+      --accent-rose: #f43f5e;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #070a10;
+      background-image: 
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(16, 185, 129, 0.14) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 90% 25%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 70% 50% at 10% 70%, rgba(16, 185, 129, 0.06) 0%, transparent 50%);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      letter-spacing: -0.1px;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top Bar */
+    .top-strip {
+      background: linear-gradient(90deg, #10b981 0%, #06b6d4 50%, #10b981 100%);
+      background-size: 200% auto;
+      animation: topStripFlow 5s linear infinite;
+      color: #021a10;
+      text-align: center;
+      padding: 9px 14px;
+      font-size: 12.5px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);
+      text-transform: uppercase;
+    }
+
+    @keyframes topStripFlow {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    /* Hero Section */
+    section.hero {
+      padding: 60px 0 70px 0;
+      text-align: center;
+      background: radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.12) 0%, transparent 60%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #38bdf8;
+      font-size: 13.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 9px 22px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
+      backdrop-filter: blur(10px);
+      line-height: 1.4;
+    }
+
+    .hero-title {
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1.22;
+      letter-spacing: -1.2px;
+      color: #ffffff;
+      max-width: 940px;
+      margin: 0 auto 20px auto;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(135deg, #38bdf8 0%, #34d399 50%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 25px rgba(16, 185, 129, 0.35));
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 780px;
+      margin: 0 auto 36px auto;
+      line-height: 1.5;
+    }
+
+    /* Video Switcher */
+    .video-tabs {
+      display: inline-flex;
+      background: #111827;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 5px;
+      margin-bottom: 20px;
+      gap: 8px;
+    }
+
+    .video-tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 13.5px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .video-tab-btn:hover {
+      color: #fff;
+    }
+
+    .video-tab-btn.active {
+      background: var(--accent-green);
+      color: #000;
+    }
+
+    .video-container-box {
+      max-width: 820px;
+      margin: 0 auto 30px auto;
+    }
+
+    #vsl-player-container {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 16px;
+      background: #000;
+      border: 2px solid var(--border);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    .main-video-player {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .video-caption {
+      margin-top: 14px;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: #cbd5e1;
+      text-align: center;
+    }
+
+    .btn-drive-play {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #38bdf8;
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      margin-top: 8px;
+    }
+
+    .btn-drive-play:hover {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: #38bdf8;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* CTA Button */
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: #022013 !important;
+      font-size: 18.5px;
+      font-weight: 800;
+      padding: 20px 44px;
+      border-radius: 14px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      box-shadow: 0 12px 35px rgba(16, 185, 129, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+      transition: all 0.28s cubic-bezier(0.25, 0.8, 0.25, 1);
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-cta::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transform: rotate(25deg);
+      animation: btnShineAnim 3.8s infinite;
+    }
+
+    @keyframes btnShineAnim {
+      0% { left: -60%; }
+      30% { left: 140%; }
+      100% { left: 140%; }
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 18px 48px rgba(16, 185, 129, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+    }
+
+    .cta-subtext {
+      font-size: 14.5px;
+      color: #cbd5e1;
+      font-weight: 500;
+      margin-top: 12px;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 70px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-title {
+      font-size: 30px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .section-sub {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Cards Grid (3 Scenes) */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .pain-card {
+      background: linear-gradient(180deg, rgba(19, 27, 43, 0.8) 0%, rgba(12, 17, 27, 0.9) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 28px;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .pain-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(244, 63, 94, 0.7), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .pain-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(244, 63, 94, 0.45);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55), 0 0 30px rgba(244, 63, 94, 0.12);
+    }
+
+    .pain-card:hover::before {
+      opacity: 1;
+    }
+
+    .pain-icon {
+      font-size: 32px;
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+
+    .pain-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .pain-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Solution Box */
+    .solution-box {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .solution-box h3 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .solution-box p {
+      font-size: 16px;
+      color: #cbd5e1;
+      line-height: 1.7;
+    }
+
+    /* Modules List */
+    .module-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .module-num {
+      width: 44px;
+      height: 44px;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .module-content h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .module-content p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .module-content ul {
+      margin-top: 8px;
+      padding-left: 20px;
+      color: #cbd5e1;
+      font-size: 13.5px;
+    }
+
+    /* Pricing Box */
+    .pricing-card {
+      background: linear-gradient(180deg, #131b29 0%, #0a0f18 100%);
+      border: 2px solid #10b981;
+      border-radius: 24px;
+      padding: 46px 32px 30px 32px;
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.65), 0 0 50px rgba(16, 185, 129, 0.22);
+      position: relative;
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-green);
+      color: #000;
+      font-weight: 800;
+      font-size: 12px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+    }
+
+    .original-price {
+      font-size: 18px;
+      color: #64748b;
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+
+    .installment-price {
+      font-size: 42px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .installment-price span {
+      font-size: 20px;
+      color: var(--accent-green);
+    }
+
+    .cash-price {
+      font-size: 16px;
+      color: #cbd5e1;
+      margin-bottom: 24px;
+    }
+
+    /* Guarantee */
+    .guarantee-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .guarantee-icon {
+      font-size: 52px;
+      line-height: 1;
+    }
+
+    /* FAQ */
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 18px 22px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .faq-answer {
+      padding: 0 22px 18px 22px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      display: none;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-icon {
+      transition: transform 0.2s;
+    }
+
+    /* Footer */
+    footer.footer {
+      padding: 40px 0;
+      text-align: center;
+      font-size: 12.5px;
+      color: #64748b;
+    }
+    .footer-contact-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      filter: brightness(1.2);
+    }
+
+    /* Modal Pix Checkout & Access */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 7, 14, 0.88);
+      backdrop-filter: blur(10px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+      animation: modalFadeIn 0.25s ease;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-container {
+      background: #0f1422;
+      border: 2px solid #1e2c45;
+      border-radius: 24px;
+      max-width: 600px;
+      width: 100%;
+      padding: 34px 30px;
+      position: relative;
+      max-height: 92vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.8);
+      color: #fff;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      background: #182236;
+      border: 1px solid #283754;
+      color: #94a3b8;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .modal-close:hover {
+      background: #ef4444;
+      color: #fff;
+    }
+
+    .modal-step {
+      display: none;
+    }
+    .modal-step.active {
+      display: block;
+    }
+
+    .modal-tag {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #10b981;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .modal-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .modal-desc {
+      font-size: 14px;
+      color: #94a3b8;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    /* Pix Tabs */
+    .pix-tabs {
+      display: flex;
+      background: #162032;
+      border-radius: 12px;
+      padding: 4px;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .pix-tab-btn {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 13.5px;
+      padding: 11px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+
+    .pix-tab-btn.active {
+      background: #10b981;
+      color: #000;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+
+    .pix-tab-pane {
+      display: none;
+      background: #131a29;
+      border: 1px solid #233148;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .pix-tab-pane.active {
+      display: block;
+    }
+
+    .qr-box {
+      background: #fff;
+      padding: 16px;
+      border-radius: 16px;
+      display: inline-block;
+      margin: 0 auto 12px auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+    .qr-box svg {
+      display: block;
+      width: 170px;
+      height: 170px;
+    }
+
+    .qr-instrucao {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-bottom: 16px;
+    }
+
+    .copy-group {
+      text-align: left;
+      margin-top: 14px;
+    }
+    .copy-group label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #cbd5e1;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .copy-input-row {
+      display: flex;
+      gap: 8px;
+    }
+    .copy-input {
+      flex: 1;
+      background: #090d15;
+      border: 1px solid #233148;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 12.5px;
+      color: #94a3b8;
+      font-family: monospace;
+      outline: none;
+    }
+    .btn-copy-pix {
+      background: #1e2c45;
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .btn-copy-pix:hover {
+      background: #38bdf8;
+      color: #000;
+    }
+
+    .email-pix-display {
+      background: #090d15;
+      border: 2px dashed #10b981;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .email-key-text {
+      font-size: 18px;
+      font-weight: 800;
+      color: #10b981;
+      letter-spacing: 0.5px;
+      margin: 8px 0;
+      word-break: break-all;
+    }
+
+    .btn-confirm-action {
+      width: 100%;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: #000;
+      font-size: 16px;
+      font-weight: 800;
+      padding: 16px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.35);
+      transition: all 0.2s;
+    }
+    .btn-confirm-action:hover {
+      background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+      transform: translateY(-1px);
+    }
+
+    /* Step 2: Acesso Liberado */
+    .success-badge {
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin: 0 auto 16px auto;
+    }
+
+    .access-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .btn-access-card {
+      background: #162032;
+      border: 1px solid #233148;
+      border-radius: 12px;
+      padding: 16px;
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: all 0.2s;
+    }
+    .btn-access-card:hover {
+      border-color: #10b981;
+      transform: translateY(-2px);
+      background: #1c2940;
+    }
+    .btn-access-card strong {
+      font-size: 14.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-access-card span {
+      font-size: 11.5px;
+      color: #94a3b8;
+    }
+
+    .email-box-section {
+      background: #131a29;
+      border: 1px solid #233148;
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 20px;
+      text-align: left;
+    }
+    .email-box-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .email-box-sub {
+      font-size: 12.5px;
+      color: #94a3b8;
+      margin-bottom: 12px;
+    }
+    .email-submit-row {
+      display: flex;
+      gap: 8px;
+    }
+    .email-input-field {
+      flex: 1;
+      background: #090d15;
+      border: 1px solid #233148;
+      border-radius: 8px;
+      padding: 10px 14px;
+      color: #fff;
+      font-size: 13.5px;
+      outline: none;
+    }
+    .email-input-field:focus {
+      border-color: #10b981;
+    }
+    .btn-send-email {
+      background: #10b981;
+      color: #000;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-send-email:hover {
+      background: #34d399;
+    }
+
+    .email-status-msg {
+      margin-top: 10px;
+      font-size: 12.5px;
+      line-height: 1.4;
+      display: none;
+    }
+    .email-status-msg.success {
+      display: block;
+      color: #34d399;
+    }
+    .dispatched-links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 10px;
+      text-align: left;
+    }
+    .dispatched-links-list a {
+      background: #111a2e;
+      border: 1px solid #1e2f4d;
+      padding: 8px 12px;
+      border-radius: 6px;
+      color: #38bdf8;
+      font-size: 12.5px;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+    .dispatched-links-list a:hover {
+      background: #16243f;
+      border-color: #38bdf8;
+      color: #fff;
+    }
+    .email-status-msg.error {
+      display: block;
+      color: #f43f5e;
+    }
+
+    .attempts-info {
+      font-size: 11.5px;
+      color: #64748b;
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn-reedit {
+      background: none;
+      border: none;
+      color: #38bdf8;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    /* Verification Screen & Radar */
+    .radar-container {
+      width: 80px;
+      height: 80px;
+      position: relative;
+      margin: 0 auto 16px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .radar-ring {
+      position: absolute;
+      inset: 0;
+      border: 3px solid #10b981;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: radarPulse 1.8s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    .radar-ring:nth-child(2) {
+      animation-delay: 0.6s;
+    }
+    .radar-icon {
+      font-size: 34px;
+      position: relative;
+      z-index: 2;
+    }
+    @keyframes radarPulse {
+      0% { transform: scale(0.6); opacity: 1; }
+      100% { transform: scale(1.4); opacity: 0; }
+    }
+
+    .security-notice-box {
+      background: #090e17;
+      border: 1px solid #1e2c45;
+      border-left: 4px solid #f59e0b;
+      border-radius: 10px;
+      padding: 14px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #cbd5e1;
+      text-align: left;
+    }
+    .security-notice-box strong {
+      color: #fbbf24;
+    }
+
+    /* ZIP Download & Instrucao de Extração */
+    .zip-instruction-box {
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.12) 0%, rgba(15, 23, 42, 0.8) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-left: 5px solid #38bdf8;
+      border-radius: 12px;
+      padding: 18px 20px;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .zip-instruction-box h4 {
+      color: #38bdf8;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .zip-instruction-box p {
+      font-size: 13.5px;
+      color: #cbd5e1;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .zip-step-pill {
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 12.5px;
+      color: #bae6fd;
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-download-zip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+      color: #fff;
+      padding: 18px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+      margin-bottom: 22px;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+    }
+    .btn-download-zip:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(16, 185, 129, 0.6);
+      background: linear-gradient(135deg, #34d399 0%, #059669 100%);
+      color: #000;
+    }
+    .btn-download-zip-icon {
+      font-size: 32px;
+      line-height: 1;
+    }
+    .btn-download-zip-text {
+      text-align: left;
+    }
+    .btn-download-zip-text strong {
+      display: block;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+    .btn-download-zip-text span {
+      font-size: 12.5px;
+      opacity: 0.9;
+    }
+
+    /* Carrossel 3 Imagens com Borda Glow */
+    .carousel-section {
+      padding: 60px 0;
+      background: rgba(10, 15, 26, 0.5);
+    }
+    .carousel-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .carousel-glow-card {
+      position: relative;
+      border-radius: 20px;
+      padding: 3px;
+      background: linear-gradient(135deg, #10b981, #06b6d4, #8b5cf6, #ec4899);
+      background-size: 300% 300%;
+      animation: borderGlow 8s ease infinite;
+      box-shadow: 0 10px 40px rgba(16, 185, 129, 0.25);
+    }
+    @keyframes borderGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .carousel-inner-box {
+      background: #0b1120;
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-slide-item {
+      display: none;
+      width: 100%;
+      padding: 30px;
+      text-align: center;
+      animation: fadeInSlide 0.4s ease forwards;
+    }
+    .carousel-slide-item.active {
+      display: block;
+    }
+    @keyframes fadeInSlide {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .carousel-img-display {
+      max-width: 100%;
+      max-height: 380px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+      object-fit: contain;
+    }
+    .carousel-caption-box {
+      margin-top: 14px;
+      padding: 12px 20px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 10px;
+      display: inline-block;
+      max-width: 680px;
+      text-align: center;
+    }
+    .carousel-caption-box h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #38bdf8;
+      margin-bottom: 4px;
+    }
+    .carousel-caption-box p {
+      font-size: 13px;
+      color: #cbd5e1;
+      line-height: 1.4;
+      margin: 0;
+    }
+    .carousel-placeholder-box {
+      width: 100%;
+      min-height: 300px;
+      border: 2px dashed #334155;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(15, 23, 42, 0.7);
+    }
+    .carousel-placeholder-icon {
+      font-size: 46px;
+      margin-bottom: 12px;
+    }
+    .carousel-placeholder-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 6px;
+    }
+    .carousel-placeholder-desc {
+      font-size: 13px;
+      color: #94a3b8;
+      max-width: 480px;
+      line-height: 1.5;
+    }
+    .carousel-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #fff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 20px;
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+    .carousel-nav-btn:hover {
+      background: var(--accent-green);
+      color: #000;
+      border-color: var(--accent-green);
+    }
+    .carousel-prev { left: 16px; }
+    .carousel-next { right: 16px; }
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #334155;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .carousel-dot.active {
+      background: var(--accent-green);
+      width: 28px;
+      border-radius: 10px;
+    }
+
+    /* Prova Social & Depoimentos */
+    .testimonials-section {
+      padding: 70px 0;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .testimonial-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+    .testimonial-stars {
+      color: #fbbf24;
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .testimonial-badge-verified {
+      font-size: 11px;
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.12);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+    .testimonial-text {
+      font-size: 14px;
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 18px;
+      font-style: italic;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 14px;
+    }
+    .testimonial-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #059669, #10b981);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #fff;
+      font-size: 15px;
+    }
+    .testimonial-info h5 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+    .testimonial-info span {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+  
+    /* Balãozinho Verde do WhatsApp (Canto Inferior Direito) */
+    .whatsapp-btn-float {
+      position: fixed;
+      bottom: 26px;
+      right: 26px;
+      width: 62px;
+      height: 62px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      box-shadow: 0 10px 28px rgba(37, 211, 102, 0.5), 0 4px 12px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .whatsapp-btn-float:hover {
+      transform: scale(1.12) translateY(-4px);
+      background: #20ba5a;
+      box-shadow: 0 14px 35px rgba(37, 211, 102, 0.7), 0 6px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    .whatsapp-pulse-wave {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 2.5px solid #25D366;
+      animation: waPulseWave 2s infinite ease-out;
+      pointer-events: none;
+    }
+
+    @keyframes waPulseWave {
+      0% {
+        transform: scale(1);
+        opacity: 0.9;
+      }
+      60% {
+        transform: scale(1.45);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    .whatsapp-float-icon {
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    @media (max-width: 640px) {
+      .whatsapp-btn-float {
+        bottom: 20px;
+        right: 20px;
+        width: 56px;
+        height: 56px;
+      }
+      .whatsapp-float-icon {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    /* Kiwify Trust & Automatic Delivery Box */
+    .kiwify-trust-box {
+      background: linear-gradient(180deg, rgba(17, 24, 39, 0.95) 0%, rgba(15, 20, 31, 0.98) 100%);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: 18px;
+      padding: 24px 28px;
+      max-width: 780px;
+      margin: 24px auto 0 auto;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kiwify-trust-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #10b981, #06b6d4, #10b981);
+    }
+
+    .kiwify-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .kiwify-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .kiwify-pill-badge {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .kiwify-security-tag {
+      font-size: 13.5px;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+
+    .kiwify-intro {
+      margin-top: 14px;
+      font-size: 15.5px;
+      color: #e2e8f0;
+      line-height: 1.65;
+    }
+
+    .kiwify-intro strong {
+      color: #10b981;
+    }
+
+    .kiwify-features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 18px 0;
+    }
+
+    @media (max-width: 768px) {
+      .kiwify-features-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .kiwify-trust-box {
+        padding: 20px 18px;
+      }
+      .kiwify-intro {
+        font-size: 15px;
+        line-height: 1.6;
+      }
+    }
+
+    .kiwify-feature-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      transition: all 0.2s ease;
+    }
+
+    .kiwify-feature-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(16, 185, 129, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .kiwify-feature-icon {
+      font-size: 24px;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .kiwify-feature-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .kiwify-feature-text strong {
+      font-size: 15.5px;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+
+    .kiwify-feature-text span {
+      font-size: 14px;
+      color: #cbd5e1;
+      line-height: 1.55;
+    }
+
+    .kiwify-footer-badges {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 13.5px;
+      color: #cbd5e1;
+    }
+
+    .kiwify-badge-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+
+    .kiwify-badge-item span {
+      color: #e2e8f0;
+      font-size: 13.5px;
+    }
+
+  
+    /* Kiwify Compact Card (Seção de Oferta/Preço) */
+    .kiwify-compact-card {
+      background: rgba(16, 185, 129, 0.06);
+      border: 1px solid rgba(16, 185, 129, 0.28);
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-top: 20px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .kiwify-compact-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .kiwify-compact-badge {
+      background: rgba(16, 185, 129, 0.18);
+      border: 1px solid rgba(16, 185, 129, 0.45);
+      color: #34d399;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .kiwify-compact-text {
+      font-size: 13.5px;
+      color: #cbd5e1;
+      line-height: 1.5;
+      margin: 0 0 12px 0;
+    }
+
+    .kiwify-compact-text strong {
+      color: #ffffff;
+    }
+
+    .kiwify-compact-badges {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: #cbd5e1;
+      font-weight: 600;
+    }
+
+    .kiwify-mini-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+  
+    /* ==========================================================================
+       CASA PATA 2 INSPIRED DESIGN SYSTEM & COMPONENT ENHANCEMENTS
+       ========================================================================== */
+    :root {
+      --primary: #10b981;
+      --primary-light: #34d399;
+      --primary-dark: #059669;
+      --primary-glow: rgba(16, 185, 129, 0.4);
+
+      --accent-cyan: #38bdf8;
+      --accent-cyan-glow: rgba(56, 189, 248, 0.35);
+      --accent-purple: #8b5cf6;
+      --accent-coral: #f43f5e;
+      --accent-gold: #fbbf24;
+
+      --bg-dark: #070a13;
+      --bg-card: rgba(15, 23, 42, 0.85);
+      --bg-card-hover: rgba(24, 36, 64, 0.95);
+      --bg-surface: #0b1120;
+
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+
+      --border-glass: rgba(255, 255, 255, 0.08);
+      --border-active: rgba(16, 185, 129, 0.5);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-full: 9999px;
+
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+
+      --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4, .section-title, .hero-title, .logo-title, .price-card-title {
+      font-family: var(--font-heading) !important;
+    }
+
+    /* THEMED CANVAS (INSTAGRAM / WHATSAPP CHAT NODES & SPARKS) */
+    #chat-particles-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body {
+      position: relative;
+    }
+    .top-strip, .navbar, .hero, section, footer {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* STICKY GLASS NAVBAR (IDENTICAL TO CASA PATA 2) */
+    .navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(7, 10, 19, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 9999;
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .logo-icon-wrap {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(56, 189, 248, 0.25));
+      border: 1px solid rgba(16, 185, 129, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+    }
+
+    .logo-text-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .logo-title span {
+      color: var(--primary);
+    }
+
+    .logo-badge {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-menu li a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: color 0.2s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+
+    .nav-menu li a:hover {
+      color: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-actions .btn-nav-cta { display: none; /* removed by user request */ 
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #03211e;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 9px 20px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      box-shadow: 0 4px 15px var(--primary-glow);
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .nav-actions .btn-nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+      filter: brightness(1.1);
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 1.4rem;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 990px) {
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(11, 17, 32, 0.98);
+        padding: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        gap: 14px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+      }
+      .nav-menu.open {
+        display: flex;
+      }
+      .mobile-menu-toggle {
+        display: block;
+      }
+      .nav-actions .btn-nav-cta { display: none; /* removed by user request */ 
+        display: none;
+      }
+    }
+
+    /* STATS STRIP (CASA PATA 2 STYLE) */
+    .stats-strip {
+      background: linear-gradient(180deg, rgba(16, 24, 40, 0.9) 0%, rgba(11, 17, 32, 0.95) 100%);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 24px 0;
+      margin-bottom: 50px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .stat-item {
+      padding: 10px;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      background: linear-gradient(135deg, #ffffff 30%, var(--primary-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .stat-item:nth-child(2) {
+        border-right: none;
+      }
+      .stat-number {
+        font-size: 1.6rem;
+      }
+    }
+
+    /* INTERACTIVE MODULE TABS (CASA PATA 2 STYLE) */
+    .module-switcher-container {
+      margin-top: 36px;
+    }
+
+    .module-tabs-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .mod-tab-btn {
+      background: rgba(18, 27, 48, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 14px 24px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .mod-tab-btn:hover {
+      background: rgba(26, 38, 66, 0.95);
+      color: #fff;
+      border-color: rgba(16, 185, 129, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .mod-tab-btn.active {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #03211e;
+      border-color: var(--primary-light);
+      box-shadow: 0 8px 24px var(--primary-glow);
+      transform: translateY(-2px);
+    }
+
+    .module-tab-panel {
+      display: none;
+      animation: fadeInTab 0.4s ease forwards;
+    }
+
+    .module-tab-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeInTab {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .module-featured-box {
+      background: linear-gradient(180deg, rgba(19, 31, 55, 0.95) 0%, rgba(13, 22, 41, 0.98) 100%);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: var(--radius-md);
+      padding: 24px 22px;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .module-box-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .module-badge-tag {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid var(--primary);
+      color: var(--primary-light);
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+    }
+
+    .module-box-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .module-box-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+
+    .module-checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .module-check-card {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .module-check-card:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(16, 185, 129, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .module-check-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    .module-check-text strong {
+      display: block;
+      color: #fff;
+      font-size: 0.88rem;
+      margin-bottom: 2px;
+      line-height: 1.3;
+    }
+
+    .module-check-text span {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      line-height: 1.4;
+      display: block;
+    }
+
+    .module-nav-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-module-nav {
+      font-size: 0.82rem;
+      padding: 8px 18px;
+    }
+
+    @media (max-width: 640px) {
+      .module-featured-box {
+        padding: 16px 14px;
+      }
+      .module-box-title {
+        font-size: 1.15rem;
+      }
+      .module-checklist-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .module-check-card {
+        padding: 10px 12px;
+      }
+      .module-check-text strong {
+        font-size: 0.95rem;
+      }
+      .module-check-text span {
+        font-size: 0.88rem;
+        color: #cbd5e1;
+        line-height: 1.45;
+      }
+    }
+
+    /* 3 BIG CARDS PRICING GRID (COMPACTO & ELEGANTE) */
+    .structures-section {
+      padding: 45px 0;
+      background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 60%);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 28px;
+    }
+
+    .price-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-md);
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .price-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(16, 185, 129, 0.4);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .price-card.popular {
+      background: linear-gradient(180deg, rgba(19, 31, 55, 0.98) 0%, rgba(13, 22, 41, 0.98) 100%);
+      border: 2px solid var(--primary);
+      box-shadow: 0 15px 35px -10px var(--primary-glow);
+      transform: scale(1.02);
+    }
+
+    .price-card.popular:hover {
+      transform: scale(1.03) translateY(-5px);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, var(--primary), #059669);
+      color: #03211e;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 14px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+    }
+
+    .price-card-header {
+      margin-bottom: 12px;
+    }
+
+    .price-card-tag {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    .price-card.popular .price-card-tag {
+      color: var(--primary-light);
+    }
+
+    .price-card-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+      line-height: 1.25;
+    }
+
+    .price-card-sub {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .price-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--primary-light);
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.76rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+
+    .price-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex-grow: 1;
+    }
+
+    .price-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.84rem;
+      color: #e2e8f0;
+      line-height: 1.4;
+    }
+
+    .price-features li svg {
+      width: 15px;
+      height: 15px;
+      color: var(--primary-light);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .price-card-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 10px 16px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .price-card-btn.btn-outline {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+
+    .price-card-btn.btn-outline:hover {
+      background: rgba(16, 185, 129, 0.15);
+      border-color: var(--primary);
+      color: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .price-card-btn.btn-glow {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #03211e;
+      border: none;
+      box-shadow: 0 6px 20px var(--primary-glow);
+    }
+
+    .price-card-btn.btn-glow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.5);
+      filter: brightness(1.1);
+    }
+
+    @media (max-width: 980px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .price-card.popular {
+        transform: scale(1);
+      }
+      .price-card.popular:hover {
+        transform: translateY(-4px);
+      }
+    }
+
+    /* AJUSTES DE LEGIBILIDADE E FONTES NO CELULAR (TEXTOS CINZAS E INFORMAÇÕES) */
+    @media (max-width: 768px) {
+      .tag-badge {
+        font-size: 12.5px;
+        padding: 8px 16px;
+        letter-spacing: 0.6px;
+        line-height: 1.4;
+      }
+      .hero-sub {
+        font-size: 16.5px;
+        color: #cbd5e1;
+        line-height: 1.55;
+      }
+      .cta-subtext {
+        font-size: 14px;
+        color: #cbd5e1;
+      }
+      .section-sub {
+        font-size: 15.5px;
+        color: #cbd5e1;
+        line-height: 1.55;
+      }
+      .pain-desc {
+        font-size: 15px;
+        color: #cbd5e1;
+        line-height: 1.6;
+      }
+      .stat-label {
+        font-size: 0.92rem;
+        color: #cbd5e1;
+      }
+      .module-box-desc {
+        font-size: 1rem;
+        color: #cbd5e1;
+        line-height: 1.55;
+      }
+      .price-card-sub {
+        font-size: 0.92rem;
+        color: #cbd5e1;
+      }
+      .price-status-badge {
+        font-size: 0.85rem;
+      }
+      .price-features li {
+        font-size: 0.92rem;
+        color: #f1f5f9;
+      }
+      .faq-question {
+        font-size: 16px;
+      }
+      .faq-answer {
+        font-size: 15px;
+        color: #cbd5e1;
+        line-height: 1.65;
+      }
+      .guarantee-box p {
+        font-size: 15px;
+        color: #cbd5e1;
+        line-height: 1.65;
+      }
+      .kiwify-intro {
+        font-size: 15px;
+        color: #e2e8f0;
+        line-height: 1.6;
+      }
+      .kiwify-feature-text strong {
+        font-size: 15.5px;
+      }
+      .kiwify-feature-text span {
+        font-size: 14px;
+        color: #cbd5e1;
+        line-height: 1.5;
+      }
+      .kiwify-footer-badges {
+        font-size: 13.5px;
+        color: #cbd5e1;
+      }
+      .kiwify-badge-item span {
+        font-size: 13.5px;
+        color: #e2e8f0;
+      }
+      .kiwify-security-tag {
+        font-size: 13.5px;
+        color: #cbd5e1;
+      }
+      .video-caption {
+        font-size: 14px;
+        color: #cbd5e1;
+      }
+      footer.footer {
+        font-size: 13.5px;
+        color: #94a3b8;
+      }
+    }
+
+  </style>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+  <!-- THEMED CANVAS DE MENSAGENS E AUTOMAÇÃO (SUBSTITUI BOLHAS POR DIRECT / CHAT) -->
+  <canvas id="chat-particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- STICKY GLASS NAVBAR (ESTILO CASA PATA 2) -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#inicio" class="logo-brand">
+        <div class="logo-icon-wrap">⚡</div>
+        <div class="logo-text-wrap">
+          <span class="logo-title">Funil Anti-Vácuo <span>Direct</span></span>
+          
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#cenas">O Problema</a></li>
+        <li><a href="#conteudo">Conteúdo Incluso</a></li>
+        <li><a href="#estruturas">3 Estruturas</a></li>
+        <li><a href="#galeria">Demonstração</a></li>
+        <li><a href="#depoimentos">Resultados</a></li>
+        <li><a href="#garantia">Garantia</a></li>
+        <li><a href="#faq">Dúvidas</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        
+        <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Abrir Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="top-strip">
+    🔥 OFERTA DE LANÇAMENTO: ACESSO IMEDIATO AO COMBO VÍDEO + PDF COM 81% DE DESCONTO
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="tag-badge">MÉTODO PRÁTICO DE AUTOMAÇÃO NO DIRECT & FECHAMENTO NO WHATSAPP</div>
+
+      <h1 class="hero-title">
+        Pare de perder pacientes para o vácuo no WhatsApp e transforme os curiosos do Direct em <span class="highlight">agenda cheia</span>
+      </h1>
+
+      <p class="hero-sub">
+        O método definitivo que combina um robô simples no Instagram com scripts de alta conversão para você nunca mais travar quando perguntarem: "Qual o valor do procedimento?"
+      </p>
+
+      <!-- VIDEO PLAYER (GOOGLE DRIVE COM ISOLAMENTO DE TELA E PROPORÇÃO 16:9) -->
+      <div class="video-container-box">
+        <div id="vsl-player-container">
+          <iframe id="vsl-iframe" class="main-video-player" src="https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/preview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen scrolling="no" loading="eager" title="Demonstração do Método"></iframe>
+        </div>
+
+        <div class="video-caption" id="vsl-caption">
+          ⚡ <strong>Demonstração do Método</strong> — Assista no player ou em tela cheia no Google Drive
+        </div>
+        <div style="text-align: center; margin-top: 12px;">
+          <a id="vsl-drive-link" href="https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-drive-play">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Abrir vídeo em tela cheia no Google Drive
+          </a>
+        </div>
+      </div>
+
+      <!-- MAIN CTA -->
+      <a href="https://pay.kiwify.com.br/POBB16U" target="_blank" rel="noopener noreferrer" class="btn-cta">LIBERAÇÃO IMEDIATA (R$ 49,90)</a>
+      <div class="cta-subtext">⚡ Acesso Instantâneo aos Materiais e Robô ManyChat</div>
+
+      <!-- KIWIFY TRUST & AUTOMATIC DELIVERY BADGE -->
+      <div class="kiwify-trust-box">
+        <div class="kiwify-header">
+          <div class="kiwify-brand">
+            <!-- Kiwify Vector Logo -->
+            <svg width="124" height="34" viewBox="0 0 124 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(1, 1)">
+                <!-- Kiwi fruit slice -->
+                <circle cx="16" cy="16" r="15" fill="#15803d" stroke="#166534" stroke-width="1"/>
+                <circle cx="16" cy="16" r="13" fill="#22c55e"/>
+                <circle cx="16" cy="16" r="9.5" fill="#4ade80"/>
+                <ellipse cx="16" cy="16" rx="4.5" ry="3.5" fill="#fef08a"/>
+                <circle cx="16" cy="9.5" r="0.9" fill="#0f172a"/>
+                <circle cx="19" cy="11" r="0.9" fill="#0f172a"/>
+                <circle cx="21" cy="13.5" r="0.9" fill="#0f172a"/>
+                <circle cx="21.5" cy="16" r="0.9" fill="#0f172a"/>
+                <circle cx="21" cy="18.5" r="0.9" fill="#0f172a"/>
+                <circle cx="19" cy="21" r="0.9" fill="#0f172a"/>
+                <circle cx="16" cy="22.5" r="0.9" fill="#0f172a"/>
+                <circle cx="13" cy="21" r="0.9" fill="#0f172a"/>
+                <circle cx="11" cy="18.5" r="0.9" fill="#0f172a"/>
+                <circle cx="10.5" cy="16" r="0.9" fill="#0f172a"/>
+                <circle cx="11" cy="13.5" r="0.9" fill="#0f172a"/>
+                <circle cx="13" cy="11" r="0.9" fill="#0f172a"/>
+              </g>
+              <text x="40" y="24" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="22" letter-spacing="-0.8">kiwify</text>
+            </svg>
+            <span class="kiwify-pill-badge">🔒 Pagamento 100% Seguro</span>
+          </div>
+          <div class="kiwify-security-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Ambiente Blindado & Auditado</span>
+          </div>
+        </div>
+
+        <div class="kiwify-intro">
+          Ao clicar no botão, você será direcionado para o checkout oficial da <strong>Kiwify</strong>, a plataforma de pagamentos mais segura e confiável do Brasil. Seus dados estão 100% protegidos com criptografia bancária.
+        </div>
+
+        <div class="kiwify-features-grid">
+          <div class="kiwify-feature-card">
+            <div class="kiwify-feature-icon">⚡</div>
+            <div class="kiwify-feature-text">
+              <strong>Liberação 100% Automática</strong>
+              <span>Assim que o pagamento for aprovado (Pix ou Cartão), o sistema ativa o seu acesso imediatamente.</span>
+            </div>
+          </div>
+
+          <div class="kiwify-feature-card">
+            <div class="kiwify-feature-icon">📩</div>
+            <div class="kiwify-feature-text">
+              <strong>Receba Direto no seu E-mail</strong>
+              <span>Todos os links de download do robô, PDFs e scripts chegam na sua caixa de entrada no mesmo instante.</span>
+            </div>
+          </div>
+
+          <div class="kiwify-feature-card">
+            <div class="kiwify-feature-icon">📲</div>
+            <div class="kiwify-feature-text">
+              <strong>Acesso Direto na Kiwify</strong>
+              <span>Seus materiais ficam salvos na sua conta da plataforma para você acessar quando quiser, no celular ou PC.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="kiwify-footer-badges">
+          <div class="kiwify-badge-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Criptografia SSL 256 bits</span>
+          </div>
+          <div class="kiwify-badge-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Garantia de 7 dias para caso de reembolso</span>
+          </div>
+          <div class="kiwify-badge-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            <span>Pix Imediato ou Cartão de Crédito</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STATS STRIP (CASA PATA 2 STYLE) -->
+  <div class="stats-strip">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">+340</div>
+          <div class="stat-label">Clínicas Ativas no Brasil</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Automático no ManyChat</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">81% OFF</div>
+          <div class="stat-label">Desconto de Lançamento</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">7 Dias</div>
+          <div class="stat-label">Garantia Incondicional</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- THE LATENT PAIN -->
+  <section id="cenas">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Você se reconhece em alguma destas 3 cenas?</h2>
+        <p class="section-sub">O motivo pelo qual tantas profissionais talentosas continuam com a agenda vazia no fim do mês.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="pain-card">
+          <div class="pain-icon">📸</div>
+          <h3 class="pain-title">A armadilha do Antes e Depois</h3>
+          <p class="pain-desc">Você gasta tempo gravando vídeos, posta uma transformação incrível de botox ou harmonização, recebe 15 comentários de "Quanto custa?", responde o Direct e… ninguém responde de volta.</p>
+        </div>
+
+        <div class="pain-card">
+          <div class="pain-icon">🤦‍♀️</div>
+          <h3 class="pain-title">O eterno "Vou falar com meu marido"</h3>
+          <p class="pain-desc">Você atende com paciência, tira dúvidas por 20 minutos, mas quando passa o valor da sessão, a cliente solta a desculpa clássica ou diz que "na clínica da esquina está mais barato".</p>
+        </div>
+
+        <div class="pain-card">
+          <div class="pain-icon">⏳</div>
+          <h3 class="pain-title">A rotina sobrecarregada</h3>
+          <p class="pain-desc">Enquanto você está atendendo na maca ou gerenciando a clínica, as mensagens acumulam no WhatsApp. Quando a recepção finalmente responde 3 horas depois, a cliente já fechou com o concorrente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SOLUTION -->
+  <section>
+    <div class="container">
+      <div class="solution-box">
+        <h3>O segredo não é cobrar mais barato. É ter um funil que conduz até a maca.</h3>
+        <p>Apresentamos o <strong>Método Funil Anti-Vácuo Direct</strong>: o combo prático em Vídeo + PDF desenvolvido sob medida para a dinâmica de clínicas de estética. Você não precisa contratar agências caras de marketing nem perder horas configurando programas difíceis. Em menos de 40 minutos, você ativa uma estrutura pronta de copiar, colar e faturar.</p>
+      </div>
+    </div>
+  </section>
+
+    <!-- WHAT'S INCLUDED - INTERACTIVE TABS (CASA PATA 2 STYLE) -->
+  <section id="conteudo">
+    <div class="container">
+      <div class="section-header">
+        <div class="tag-badge">CONTEÚDO PROGRAMÁTICO</div>
+        <h2 class="section-title">O que está incluso no seu acesso imediato:</h2>
+        <p class="section-sub">Navegue pelas abas abaixo e explore cada ferramenta prática desenvolvida para blindar sua agenda.</p>
+      </div>
+
+      <div class="module-switcher-container">
+        <!-- BOTOES DAS ABAS -->
+        <div class="module-tabs-nav" role="tablist">
+          <button class="mod-tab-btn active" id="tab-btn-1" onclick="switchModuleTab(1, this)" role="tab" aria-selected="true">
+            <span>🤖</span> Módulo 01: Robô ManyChat Direct
+          </button>
+          <button class="mod-tab-btn" id="tab-btn-2" onclick="switchModuleTab(2, this)" role="tab" aria-selected="false">
+            <span>📖</span> Módulo 02: Scripts de Atendimento (PDF)
+          </button>
+          <button class="mod-tab-btn" id="tab-btn-3" onclick="switchModuleTab(3, this)" role="tab" aria-selected="false">
+            <span>🎯</span> Módulo 03: Guia de Resgate Anti-Vácuo
+          </button>
+          <button class="mod-tab-btn" id="tab-btn-4" onclick="switchModuleTab(4, this)" role="tab" aria-selected="false">
+            <span>📦</span> Ver Todos os Módulos Juntos
+          </button>
+        </div>
+
+        <!-- PAINEL 1: ROBO MANYCHAT -->
+        <div class="module-tab-panel active" id="mod-panel-1" role="tabpanel">
+          <div class="module-featured-box">
+            <div class="module-box-header">
+              <span class="module-badge-tag">Módulo 01 • Automação Inteligente</span>
+              <span style="color: var(--primary-light); font-weight: 700; font-size: 0.9rem;">⚡ Configuração em 15 Minutos</span>
+            </div>
+            <h3 class="module-box-title">Treinamento em Vídeo: Configuração Express no ManyChat</h3>
+            <p class="module-box-desc">
+              Passo a passo clique a clique na tela do computador para implementar o robô no plano 100% gratuito do ManyChat. Você não precisa contratar agência, nem entender de código.
+            </p>
+
+            <div class="module-checklist-grid">
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>Gatilho de Comentários em Reels & Stories</strong>
+                  <span>Responde automaticamente quem comentar "Preço", "Valor" ou "Eu quero" em menos de 3 segundos.</span>
+                </div>
+              </div>
+
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>A Ponte de Ouro para o WhatsApp</strong>
+                  <span>Leva a paciente qualificada direto do Direct para a conversa do seu WhatsApp com mensagem pronta.</span>
+                </div>
+              </div>
+
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>Estrutura Pronta de Atendimento</strong>
+                  <span>Configure suas mensagens e respostas automáticas no ManyChat em poucos cliques, sem complicação.</span>
+                </div>
+              </div>
+
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>100% Gratuito (Sem Mensalidades)</strong>
+                  <span>Funciona perfeitamente na versão grátis do ManyChat, sem custos extras com plataformas caras.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="module-nav-footer">
+              <span style="color: var(--text-muted); font-size: 0.9rem;">Passo 1 de 3 da Metodologia</span>
+              <button class="btn-module-nav" onclick="switchModuleTab(2)">
+                Próximo: Módulo 02 (Scripts) →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAINEL 2: SCRIPTS DE ATENDIMENTO -->
+        <div class="module-tab-panel" id="mod-panel-2" role="tabpanel">
+          <div class="module-featured-box">
+            <div class="module-box-header">
+              <span class="module-badge-tag">Módulo 02 • Conversão Cirúrgica</span>
+              <span style="color: var(--accent-cyan); font-weight: 700; font-size: 0.9rem;">📄 PDF de Bolso Imprimível</span>
+            </div>
+            <h3 class="module-box-title">O Caderno de Bolso: Scripts de Atendimento e Fechamento</h3>
+            <p class="module-box-desc">
+              Roteiros validados prontos para você deixar no WhatsApp Web da sua secretária ou salvar nas respostas rápidas do celular para nunca mais travar diante de qualquer pergunta.
+            </p>
+
+            <div class="module-checklist-grid">
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>Acolhimento & Ancoragem de Valor</strong>
+                  <span>Como responder "qual o valor?" gerando percepção de autoridade e interesse genuíno antes de soltar o número.</span>
+                </div>
+              </div>
+
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>Matriz de Quebra de Objeções</strong>
+                  <span>Respostas afiadas para "Achei caro", "O concorrente cobra menos", "Vou ver com meu marido" e "Vou pensar".</span>
+                </div>
+              </div>
+
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>Modelos Específicos por Procedimento</strong>
+                  <span>Scripts dedicados para Botox, Preenchimento Labial, Bioestimuladores de Colágeno, Fios e Limpeza de Pele.</span>
+                </div>
+              </div>
+
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>O Fechamento Condutivo em 2 Etapas</strong>
+                  <span>Como fazer a paciente escolher a data e o horário da avaliação sem que pareça empurrado ou forçado.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="module-nav-footer">
+              <button class="btn-module-nav" onclick="switchModuleTab(1)">
+                ← Anterior: Módulo 01
+              </button>
+              <button class="btn-module-nav" onclick="switchModuleTab(3)">
+                Próximo: Módulo 03 (Resgate) →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAINEL 3: GUIA DE RESGATE -->
+        <div class="module-tab-panel" id="mod-panel-3" role="tabpanel">
+          <div class="module-featured-box">
+            <div class="module-box-header">
+              <span class="module-badge-tag">Módulo 03 • Recuperação de Pacientes</span>
+              <span style="color: var(--accent-coral); font-weight: 700; font-size: 0.9rem;">🎯 Cronograma em 4 Etapas</span>
+            </div>
+            <h3 class="module-box-title">Guia de Resgate: Recuperação de Pacientes que Sumiram</h3>
+            <p class="module-box-desc">
+              O cronograma milimétrico de follow-up que desarma o vácuo e traz de volta quem pediu orçamento mas parou de responder há dias ou semanas.
+            </p>
+
+            <div class="module-checklist-grid">
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>Follow-up de 4 Horas (O Resgate a Quente)</strong>
+                  <span>Mensagem sutil para desobstruir a conversa logo no mesmo dia sem parecer desesperada.</span>
+                </div>
+              </div>
+
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>Follow-up de 24 Horas & 48 Horas</strong>
+                  <span>Como enviar prova social e tirar dúvidas ocultas sem perguntar 'e aí, decidiu?'.</span>
+                </div>
+              </div>
+
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>O Script do "Desapego Estratégico"</strong>
+                  <span>O gatilho psicológico de escassez e desapego que faz 4 em cada 10 sumidos responderem na mesma hora.</span>
+                </div>
+              </div>
+
+              <div class="module-check-card">
+                <div class="module-check-icon">✓</div>
+                <div class="module-check-text">
+                  <strong>Campanha de Reativação Relâmpago</strong>
+                  <span>Como lotar horários ociosos da semana disparando 1 mensagem para contatos parados dos últimos 60 dias.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="module-nav-footer">
+              <button class="btn-module-nav" onclick="switchModuleTab(2)">
+                ← Anterior: Módulo 02
+              </button>
+              <button class="btn-module-nav" onclick="switchModuleTab(4)">
+                Ver Todos os Módulos Juntos →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAINEL 4: TODOS OS MODULOS -->
+        <div class="module-tab-panel" id="mod-panel-4" role="tabpanel">
+          <div class="module-featured-box" style="border-color: var(--primary);">
+            <div class="module-box-header">
+              <span class="module-badge-tag">VISÃO COMPLETA DO PACOTE</span>
+              <span style="color: var(--primary-light); font-weight: 800; font-size: 0.95rem;">★ Combo 100% Liberado Imediatamente</span>
+            </div>
+            <h3 class="module-box-title">O Arsenal Completo para Blindar sua Clínica do Vácuo</h3>
+            <p class="module-box-desc">
+              Você recebe acesso vitalício a todos os 3 módulos estruturados para aplicação imediata. Assista à aula de 15 minutos, instale o robô no ManyChat e adote os scripts ainda hoje:
+            </p>
+
+            <div class="module-checklist-grid">
+              <div class="module-check-card" style="border-left: 3px solid var(--primary);">
+                <div class="module-check-icon">01</div>
+                <div class="module-check-text">
+                  <strong>Módulo 01: Robô ManyChat 24h</strong>
+                  <span>Vídeo prático na tela + passo a passo completo para configurar o ManyChat gratuito em menos de 15 min.</span>
+                </div>
+              </div>
+
+              <div class="module-check-card" style="border-left: 3px solid var(--accent-cyan);">
+                <div class="module-check-icon">02</div>
+                <div class="module-check-text">
+                  <strong>Módulo 02: Caderno de Scripts (PDF)</strong>
+                  <span>Roteiros completos de acolhimento, quebra de objeções e fechamento cirúrgico de procedimentos.</span>
+                </div>
+              </div>
+
+              <div class="module-check-card" style="border-left: 3px solid var(--accent-coral);">
+                <div class="module-check-icon">03</div>
+                <div class="module-check-text">
+                  <strong>Módulo 03: Guia de Resgate (PDF)</strong>
+                  <span>Cronograma de follow-up em 4 etapas (4h, 24h, 48h e Desapego Estratégico) para reativar sumidos.</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+              <a href="#oferta" class="price-card-btn btn-glow" style="display: inline-block; max-width: 360px;">
+                Garantir o Combo Completo por R$ 49,90 →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- 3 GRANDES ESTRUTURAS PRONTAS (CASA PATA 2 PRICING GRID - SEM PREÇO) -->
+  <!-- 3 GRANDES ESTRUTURAS PRONTAS (COMPACTO & DIRETO - SEM PREÇO) -->
+  <section class="structures-section" id="estruturas">
+    <div class="container">
+      <div class="section-header">
+        <div class="tag-badge">ESTRUTURAS PRONTAS PARA COPIAR E COLAR</div>
+        <h2 class="section-title">As 3 Peças Fundamentais do <span class="gradient-text">Método Anti-Vácuo</span></h2>
+        <p class="section-sub">Você não precisa criar nada do zero: receba as 3 estruturas validadas prontas para faturar no seu negócio.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- CARD 1: ROBO MANYCHAT -->
+        <div class="price-card">
+          <div class="price-card-header">
+            <span class="price-card-tag">ESTRUTURA 01 • AUTOMAÇÃO DIRECT</span>
+            <h3 class="price-card-title">Robô ManyChat Direct 24h</h3>
+            <p class="price-card-sub">Atendimento automático para comentários de Reels, Stories e Directs.</p>
+          </div>
+
+          <div class="price-status-badge">
+            <span>⚡ Incluso no Pacote • Sem Mensalidades</span>
+          </div>
+
+          <ul class="price-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Resposta em 3s:</strong> Atende quem comenta "Preço" ou "Quero" na hora.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Ponte para o WhatsApp:</strong> Conduz o contato qualificado com mensagem pronta.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Versão 100% Gratuita:</strong> Configure em 15 min sem pagar mensalidades.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Fluxo Pronto para Uso:</strong> Ativação rápida e direta no ManyChat em poucos cliques.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Atendimento 24 Horas:</strong> Não perca vendas à noite e nos fins de semana.</span>
+            </li>
+          </ul>
+
+          <a href="#oferta" class="price-card-btn btn-outline">
+            Ver Acesso Incluso ↓
+          </a>
+        </div>
+
+        <!-- CARD 2: CADERNO DE SCRIPTS (POPULAR / MAIS ESCOLHIDO) -->
+        <div class="price-card popular">
+          <span class="popular-badge">⭐ O Método Mais Completo</span>
+          <div class="price-card-header">
+            <span class="price-card-tag">ESTRUTURA 02 • CONVERSÃO & RESGATE</span>
+            <h3 class="price-card-title">Matriz Anti-Vácuo & Caderno de Scripts</h3>
+            <p class="price-card-sub">Combo de roteiros cirúrgicos para fechar na hora e resgatar sumidos.</p>
+          </div>
+
+          <div class="price-status-badge" style="background: rgba(16, 185, 129, 0.22); border-color: var(--primary);">
+            <span>💎 O Mais Escolhido por Profissionais</span>
+          </div>
+
+          <ul class="price-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Caderno de Bolso (PDF):</strong> Scripts de acolhimento que ancoram autoridade.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Quebra de Objeções:</strong> Respostas cirúrgicas para "Achei caro" e "Vou pensar".</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Guia de Resgate (PDF):</strong> Mensagens em 4h, 24h, 48h e Desapego Estratégico.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Segmentado para Vendas:</strong> Modelos para orçamentos, consultas e serviços.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Garantia 7 Dias Kiwify:</strong> Risco zero com reembolso automático e imediato.</span>
+            </li>
+          </ul>
+
+          <a href="#oferta" class="price-card-btn btn-glow">
+            Liberar Método Completo (R$ 49,90) →
+          </a>
+        </div>
+
+        <!-- CARD 3: PROTOCOLO DE RESGATE -->
+        <div class="price-card">
+          <div class="price-card-header">
+            <span class="price-card-tag">ESTRUTURA 03 • REATIVAÇÃO DE CONTATOS</span>
+            <h3 class="price-card-title">Protocolo de Resgate & Áudios Humanizados</h3>
+            <p class="price-card-sub">Sistema para reativar contatos frios e transformar sumidos em vendas.</p>
+          </div>
+
+          <div class="price-status-badge">
+            <span>🎯 Incluso no Pacote • 100% Prático</span>
+          </div>
+
+          <ul class="price-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Régua de Follow-up:</strong> 4 gatilhos psicológicos que desarmam o silêncio.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Áudios de 15 Segundos:</strong> Roteiros com tom natural que geram resposta rápida.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Reativação Relâmpago:</strong> Como preencher 4 a 6 horários ociosos na semana.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Anti-Cancelamento:</strong> Confirmação estratégica que reduz faltas em até 90%.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><strong>Acesso Vitalício:</strong> Baixe os PDFs para consultar no celular ou computador.</span>
+            </li>
+          </ul>
+
+          <a href="#oferta" class="price-card-btn btn-outline">
+            Quero o Sistema de Resgate ↓
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PRICING & OFFER -->
+  <section id="oferta">
+    <div class="container">
+      <div class="pricing-card">
+        <div class="pricing-badge">Condição Especial de Lançamento</div>
+        <div class="original-price">De R$ 361,00 por:</div>
+        <div class="installment-price" style="font-size: 54px; color: #10b981;">R$ 49,90</div>
+        <div class="cash-price" style="font-size: 16px; font-weight: 700; color: #fff;">Pagamento Único • Acesso Vitalício</div>
+
+        <a href="https://pay.kiwify.com.br/POBB16U" target="_blank" rel="noopener noreferrer" class="btn-cta" style="width: 100%; font-size: 18px; padding: 20px;">
+          LIBERAÇÃO IMEDIATA (R$ 49,90)
+        </a>
+        <div class="cta-subtext">⚡ Liberação Imediata na Tela e por E-mail</div>
+
+              <!-- KIWIFY TRUST COMPACT (SEÇÃO DE PREÇO) -->
+        <div class="kiwify-compact-card">
+          <div class="kiwify-compact-header">
+            <!-- Kiwify SVG logo -->
+            <svg width="105" height="28" viewBox="0 0 124 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(1, 1)">
+                <circle cx="16" cy="16" r="15" fill="#15803d" stroke="#166534" stroke-width="1"/>
+                <circle cx="16" cy="16" r="13" fill="#22c55e"/>
+                <circle cx="16" cy="16" r="9.5" fill="#4ade80"/>
+                <ellipse cx="16" cy="16" rx="4.5" ry="3.5" fill="#fef08a"/>
+                <circle cx="16" cy="9.5" r="0.9" fill="#0f172a"/>
+                <circle cx="19" cy="11" r="0.9" fill="#0f172a"/>
+                <circle cx="21" cy="13.5" r="0.9" fill="#0f172a"/>
+                <circle cx="21.5" cy="16" r="0.9" fill="#0f172a"/>
+                <circle cx="21" cy="18.5" r="0.9" fill="#0f172a"/>
+                <circle cx="19" cy="21" r="0.9" fill="#0f172a"/>
+                <circle cx="16" cy="22.5" r="0.9" fill="#0f172a"/>
+                <circle cx="13" cy="21" r="0.9" fill="#0f172a"/>
+                <circle cx="11" cy="18.5" r="0.9" fill="#0f172a"/>
+                <circle cx="10.5" cy="16" r="0.9" fill="#0f172a"/>
+                <circle cx="11" cy="13.5" r="0.9" fill="#0f172a"/>
+                <circle cx="13" cy="11" r="0.9" fill="#0f172a"/>
+              </g>
+              <text x="40" y="24" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="22" letter-spacing="-0.8">kiwify</text>
+            </svg>
+            <span class="kiwify-compact-badge">🔒 Kiwify 100% Seguro</span>
+          </div>
+
+          <p class="kiwify-compact-text">
+            ⚡ <strong>Liberação do conteúdo enviada no seu e-mail e na plataforma Kiwify de forma 100% automática</strong>, com garantia de 7 dias para caso de reembolso.
+          </p>
+
+          <div class="kiwify-compact-badges">
+            <span class="kiwify-mini-badge">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Entrega Automática
+            </span>
+            <span class="kiwify-mini-badge">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Garantia de 7 dias para caso de reembolso
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section id="garantia">
+    <div class="container">
+      <div class="guarantee-box">
+        <div class="guarantee-icon">🛡️</div>
+        <div>
+          <h3 style="font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 6px;">Garantia de 7 dias para caso de reembolso</h3>
+          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">
+            Acesse o material, assista às videoaulas, baixe o PDF de scripts e coloque em prática no atendimento do seu negócio. Se por qualquer motivo você achar que os roteiros não melhoraram o fluxo das suas conversas ou a taxa de agendamento e fechamento, você conta com a nossa garantia incondicional de 7 dias com reembolso emitido diretamente pela plataforma 100% segura e confiável da <strong>Kiwify</strong>. Devolvemos 100% do seu dinheiro, centavo por centavo, sem perguntas, sem burocracia e sem letras miúdas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Perguntas Frequentes (FAQ)</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item open" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            <span>1. Eu não entendo nada de tecnologia. Vou conseguir configurar o robô?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            Sim. A aula de ManyChat é gravada mostrando a tela do computador, onde clicar e o que escrever. Não exige nenhuma linha de código nem conhecimentos avançados.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            <span>2. Serve tanto para quem trabalha sozinha quanto para quem tem recepcionista?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            Com certeza. Se você atende sozinha, o material poupa o tempo que você não tem. Se você tem secretária ou equipe de atendimento, basta imprimir o PDF ou deixá-lo aberto na tela dela como um manual de trabalho diário.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            <span>3. Como e quando eu recebo o acesso?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            O acesso é 100% automático e imediato pela Kiwify! Assim que o seu pagamento for aprovado (inclusive via Pix com confirmação em segundos), você recebe imediatamente os dados de acesso e links para download no seu E-mail, além de ter o conteúdo liberado diretamente na plataforma segura da Kiwify para baixar e assistir quando quiser. Tudo 100% protegido e com garantia incondicional de 7 dias para reembolso caso não fique satisfeito.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            <span>4. Preciso pagar ferramentas caras para o robô funcionar?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            Não. O tutorial ensina a configurar a automação utilizando a versão gratuita do ManyChat, suficiente para operar sem custos extras de software no início.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA DE DEMONSTRAÇÃO (CARROSSEL 3 IMAGENS COM BORDA ESTILIZADA) -->
+  <section class="carousel-section" id="galeria">
+    <div class="container">
+      <div class="section-header">
+        <div class="tag-badge">VISÃO GERAL DO CONTEÚDO</div>
+        <h2 class="section-title">Veja Como Funciona o Método por Dentro</h2>
+        <p class="section-sub">Tudo estruturado e pronto: automação prática passo a passo, fluxos visuais e scripts de alta conversão.</p>
+      </div>
+
+      <div class="carousel-wrapper">
+        <div class="carousel-glow-card">
+          <div class="carousel-inner-box">
+            <!-- SLIDE 1 -->
+            <div class="carousel-slide-item active" id="c-slide-1">
+              <img src="https://lh3.googleusercontent.com/d/1pMY8E-FoDwrFxWc4bscLFw3p2Dnntonh" referrerpolicy="no-referrer" alt="Automatizando Mensagem" class="carousel-img-display">
+              <div class="carousel-caption-box">
+                <h4>🤖 1. Automatizando Mensagem</h4>
+                <p>Visão prática da automação no Instagram: envio automático de mensagens e links diretamente no Direct, respondendo seus clientes no mesmo segundo.</p>
+              </div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="carousel-slide-item" id="c-slide-2">
+              <img src="https://lh3.googleusercontent.com/d/1WTKD9m2bbqhNZguHAs_toj88KUpssKUb" referrerpolicy="no-referrer" alt="Demonstração 2 do Método" class="carousel-img-display">
+              <div class="carousel-caption-box">
+                <h4>💬 2. Painel Interativo de Scripts & Cópias Rápidas</h4>
+                <p>Todas as respostas para objeções de preço, scripts de ancoragem de valor e gatilhos de fechamento prontos para copiar e colar em 1 clique.</p>
+              </div>
+            </div>
+
+            <!-- SLIDE 3 -->
+            <div class="carousel-slide-item" id="c-slide-3">
+              <img src="https://lh3.googleusercontent.com/d/1RohJdg6muML23Pfs-nxGTfGRUwqQ-E6c" referrerpolicy="no-referrer" alt="Demonstração 3 do Método" class="carousel-img-display">
+              <div class="carousel-caption-box">
+                <h4>📈 3. Método Anti-Vácuo & Resgate em 4 Etapas</h4>
+                <p>O passo a passo para reativar contatos que pararam de responder há semanas e transformá-los em procedimentos confirmados na sua agenda.</p>
+              </div>
+            </div>
+
+            <!-- SLIDE 4 -->
+            <div class="carousel-slide-item" id="c-slide-4">
+              <img src="https://lh3.googleusercontent.com/d/1LInG9NRC-sjdXz1dMlhvjPNRTAWciYuE" referrerpolicy="no-referrer" alt="Demonstração 4 do Método Anti-Vácuo" class="carousel-img-display">
+              <div class="carousel-caption-box">
+                <h4>🎯 4. Estratégia Prática do Sistema Anti-Vácuo</h4>
+                <p>Acompanhamento automatizado e scripts assertivos para transformar o Direct e o WhatsApp em atendimentos confirmados.</p>
+              </div>
+            </div>
+
+            <!-- NAVEGAÇÃO -->
+            <button class="carousel-nav-btn carousel-prev" onclick="moveCarousel(-1)" aria-label="Imagem Anterior">❮</button>
+            <button class="carousel-nav-btn carousel-next" onclick="moveCarousel(1)" aria-label="Próxima Imagem">❯</button>
+          </div>
+        </div>
+
+        <div class="carousel-indicators">
+          <div class="carousel-dot active" onclick="goToCarouselSlide(0)"></div>
+          <div class="carousel-dot" onclick="goToCarouselSlide(1)"></div>
+          <div class="carousel-dot" onclick="goToCarouselSlide(2)"></div>
+          <div class="carousel-dot" onclick="goToCarouselSlide(3)"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS & AVALIAÇÕES (PROVA SOCIAL) -->
+  <section class="testimonials-section" id="depoimentos">
+    <div class="container">
+      <div class="section-header">
+        <div class="tag-badge">EXPERIÊNCIA COMPROVADA</div>
+        <h2 class="section-title">O Que Dizem as Donas de Clínicas e Profissionais</h2>
+        <p class="section-sub">⭐ <strong>4.9 de 5.0 estrelas</strong> — Baseado na avaliação de mais de 340 profissionais de estética que aplicaram o método.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <!-- CARD 1 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-stars">
+              ⭐⭐⭐⭐⭐ <span class="testimonial-badge-verified">✔ Aluna Verificada</span>
+            </div>
+            <p class="testimonial-text">
+              "Eu vivia exausta respondendo 'quanto custa botox' no direct para as pessoas sumirem no vácuo. Na primeira semana aplicando o script de qualificação e o robô, converti 5 pacientes que fecharam na hora. O método se pagou no primeiro dia!"
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MC</div>
+            <div class="testimonial-info">
+              <h5>Dra. Mariana Castro</h5>
+              <span>Biomédica Esteta • Clínica Harmonize (SP)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-stars">
+              ⭐⭐⭐⭐⭐ <span class="testimonial-badge-verified">✔ Aluna Verificada</span>
+            </div>
+            <p class="testimonial-text">
+              "Não entendo quase nada de tecnologia e tinha medo de ser complicado. Mas os arquivos do ZIP vêm super explicadinhos, foi só extrair e copiar os textos. Minha secretária usa o painel todo dia e a taxa de agendamento dobrou."
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #0284c7, #38bdf8);">CV</div>
+            <div class="testimonial-info">
+              <h5>Dra. Camila Vasconcelos</h5>
+              <span>Dermatologista & Gestora de Clínica (BH)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-stars">
+              ⭐⭐⭐⭐⭐ <span class="testimonial-badge-verified">✔ Aluna Verificada</span>
+            </div>
+            <p class="testimonial-text">
+              "Apliquei o Script de Resgate em 4 etapas nos contatos que não me respondiam há mais de 20 dias. Recuperei 4 pacientes antigas e fechei mais de R$ 3.000 em preenchimentos labiais. Impressionante como funciona."
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">JR</div>
+            <div class="testimonial-info">
+              <h5>Juliana Rossi</h5>
+              <span>Esteticista Facial & Especialista em Pele (RJ)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-stars">
+              ⭐⭐⭐⭐⭐ <span class="testimonial-badge-verified">✔ Aluna Verificada</span>
+            </div>
+            <p class="testimonial-text">
+              "Melhor custo-benefício que já encontrei. Por R$ 49,90 eu recebi uma estrutura muito superior a cursos de R$ 997 que comprei ano passado. Direto ao ponto, sem enrolação. Recomendo para todas as colegas da estética."
+            </p>
+          </div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #db2777, #f472b6);">LB</div>
+            <div class="testimonial-info">
+              <h5>Dra. Larissa Bittencourt</h5>
+              <span>Clínica de Estética Avançada (Curitiba)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <!-- CANAIS OFICIAIS DE CONTATO / REDES -->
+      <div style="display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 24px;">
+        <a href="https://www.instagram.com/automatizandopravoce" target="_blank" rel="noopener noreferrer" class="footer-contact-link" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(225, 48, 108, 0.12); border: 1px solid rgba(225, 48, 108, 0.35); color: #f43f5e; padding: 10px 18px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 13.5px; transition: all 0.25s ease;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>@automatizandopravoce</span>
+        </a>
+
+        <a href="https://wa.me/5583920053791?text=Oi%2C%20vim%20do%20site%20gostaria%20de%20saber%20mais" target="_blank" rel="noopener noreferrer" class="footer-contact-link footer-contact-whatsapp" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(37, 211, 102, 0.15); border: 1px solid rgba(37, 211, 102, 0.4); color: #25d366; padding: 10px 18px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 13.5px; transition: all 0.25s ease;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.52 3.48A11.93 11.93 0 0 0 12.06 0C5.46 0 .09 5.37.09 11.97c0 2.11.55 4.17 1.6 5.98L0 24l6.23-1.63a11.94 11.94 0 0 0 5.83 1.5h.01c6.6 0 11.97-5.37 11.97-11.97 0-3.2-.1.25-1.25-5.54a11.9 11.9 0 0 0-3.27-4.88zM12.06 21.93h-.01c-1.79 0-3.54-.48-5.08-1.39l-.36-.22-3.77.99 1.01-3.67-.24-.38a9.92 9.92 0 0 1-1.52-5.29c0-5.49 4.47-9.96 9.97-9.96 2.66 0 5.16 1.04 7.04 2.92a9.92 9.92 0 0 1 2.92 7.04c0 5.5-4.47 9.96-9.96 9.96zm5.46-7.46c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.89-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/>
+          </svg>
+          <span>WhatsApp: (83) 92005-3791</span>
+        </a>
+
+
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=automatizandopravoce@gmail.com&su=Contato%20-%20Método%20Funil%20Anti-Vácuo" target="_blank" rel="noopener noreferrer" class="footer-contact-link" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); color: #38bdf8; padding: 10px 18px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 13.5px; transition: all 0.25s ease;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>automatizandopravoce@gmail.com</span>
+        </a>
+      </div>
+
+      <p>Método Funil Anti-Vácuo Direct • Todos os direitos reservados.</p>
+      <p style="margin-top: 4px;">Termos de Uso | Políticas de Privacidade</p>
+      <p style="margin-top: 8px; font-size: 11px; color: #475569;">Este produto não garante a obtenção de resultados sem a devida aplicação prática dos métodos ensinados.</p>
+    </div>
+  </footer>
+
+  <!-- PIX CHECKOUT & ACCESS MODAL -->
+  <div id="pix-modal" class="modal-overlay" onclick="handleOverlayClick(event)">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closePixModal()" title="Fechar">✕</button>
+
+      <!-- ACESSO LIBERADO + ENVIO POR E-MAIL -->
+      <div id="modal-step-success" class="modal-step active">
+        <div style="text-align: center;">
+          <div class="success-badge">🎉</div>
+          <h3 class="modal-title" style="color: #34d399;">Pagamento Confirmado • Acesso Liberado!</h3>
+          <p class="modal-desc">Parabéns! Seus arquivos foram desbloqueados com sucesso e estão prontos para download:</p>
+        </div>
+
+        <!-- INSTRUÇÃO IMPORTANTE: ARQUIVO ZIP -->
+        <div class="zip-instruction-box">
+          <h4>📦 Instrução Importante: Arquivo Compactado (.ZIP)</h4>
+          <p>
+            O seu material completo está organizado em um único arquivo compactado <strong>.ZIP</strong> para facilitar o download de todos os conteúdos de uma vez só.
+          </p>
+          <div class="zip-step-pill">
+            <span>1️⃣</span> <span>Clique no botão verde abaixo para baixar o arquivo <strong>.ZIP</strong></span>
+          </div>
+          <div class="zip-step-pill">
+            <span>2️⃣</span> <span>Após o download, localize o arquivo no seu computador ou celular</span>
+          </div>
+          <div class="zip-step-pill">
+            <span>3️⃣</span> <span>Clique com o botão direito nele e escolha <strong>"Extrair Tudo"</strong> (ou "Extrair Aqui") para abrir todas as pastas, scripts e tutoriais</span>
+          </div>
+        </div>
+
+        <!-- BOTAO PRINCIPAL DE DOWNLOAD DO ARQUIVO ZIP -->
+        <a id="btn-download-zip-package" href="https://drive.google.com/file/d/1iqy2qxmNLG06gN_bNaN_KUh-U22l4GK-/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-download-zip" onclick="handleZipDownload(event)">
+          <span class="btn-download-zip-icon">📥</span>
+          <div class="btn-download-zip-text">
+            <strong>BAIXAR PACOTE COMPLETO (.ZIP)</strong>
+            <span id="zip-button-sub">Robô Local ManyChat + Todos os Materiais Inclusos</span>
+          </div>
+        </a>
+
+        <!-- ACESSO IMEDIATO NA PÁGINA -->
+        <div style="font-size: 12px; color: #94a3b8; margin-bottom: 8px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; text-align: left;">Acesso Rápido aos Materiais Individuais:</div>
+        <div class="access-grid">
+          <a href="https://drive.google.com/file/d/1dC08KVjYIeE-7_oPD_g9BqVXGG5h20vg/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-access-card">
+            <strong>📥 Baixar PDF 1</strong>
+            <span>O Funil Automático de Conversão</span>
+          </a>
+          <a href="https://drive.google.com/file/d/1ZW6qEQRftiDwNUV_VMQWgEQj1vZi5q-R/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-access-card">
+            <strong>📥 Baixar PDF 2</strong>
+            <span>Tutorial & Automações na Prática</span>
+          </a>
+          <a href="https://drive.google.com/file/d/1QMBSMaus1GOEBGzpv-Jd64aWk2_0g1vw/view?usp=drive_link" target="_blank" rel="noopener noreferrer" id="panel-scripts-link" class="btn-access-card" style="grid-column: span 2;">
+            <strong>💬 Painel de Scripts (PDF)</strong>
+            <span>Acesse o Painel Completo de Modelos de WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- OPÇÃO DE ENVIO POR E-MAIL COM PROTEÇÃO E LIMITE DE REENVIO -->
+        <div class="email-box-section">
+          <div class="email-box-title">📨 Quer receber também no seu E-mail?</div>
+          <div class="email-box-sub">Digite seu e-mail para enviarmos os links de acesso permanente direto na sua caixa de entrada:</div>
+
+          <div id="email-form-container">
+            <div class="email-submit-row">
+              <input type="email" id="user-email-target" class="email-input-field" placeholder="exemplo@seuemail.com">
+              <button id="btn-submit-email" class="btn-send-email" onclick="handleSendEmail()">Enviar Acesso</button>
+            </div>
+            <div style="font-size: 11px; color: #94a3b8; margin-top: 6px; text-align: left;">
+              ℹ️ Caso não encontre na caixa de entrada, verifique também a aba <strong>Spam</strong> ou <strong>Promoções</strong>.
+            </div>
+            <div id="email-feedback-msg" class="email-status-msg"></div>
+            <div class="attempts-info">
+              <span>Tentativas restantes: <strong id="attempts-num" style="color: #38bdf8;">3</strong> de 3</span>
+              <button id="btn-try-again" class="btn-reedit" style="display: none;" onclick="enableEmailReedit()">
+                ✏️ Digitei errado, reenviar para outro e-mail
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button onclick="closePixModal()" style="margin-top: 20px; width: 100%; background: #162032; border: 1px solid #233148; color: #cbd5e1; font-weight: 700; padding: 12px; border-radius: 10px; cursor: pointer;">
+          Fechar Janela e Continuar Navegando
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const videoData = {
+      principal: {
+        embed: 'https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/preview',
+        link: 'https://drive.google.com/file/d/1rGpux0jSnCUntVoQU1jUEEbbM5O0xk-6/view?usp=drive_link',
+        caption: '⚡ <strong>Demonstração do Método</strong> — Assista no player ou em tela cheia no Google Drive'
+      }
+    };
+
+    function switchVideo(type, btn) {
+      document.querySelectorAll('.video-tab-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const data = videoData[type];
+      if (!data) return;
+
+      const container = document.getElementById('vsl-player-container');
+      if (container) {
+        container.innerHTML = `<iframe id="vsl-iframe" class="main-video-player" src="${data.embed}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen scrolling="no" loading="eager" title="Demonstração do Método"></iframe>`;
+      }
+
+      const caption = document.getElementById('vsl-caption');
+      if (caption) caption.innerHTML = data.caption;
+
+      const driveLink = document.getElementById('vsl-drive-link');
+      if (driveLink) driveLink.href = data.link;
+    }
+
+    /* Modal Pix & Acesso Imediato */
+    let emailAttemptsLeft = 3;
+    let currentOrderId = "#PIX-" + Math.floor(10000 + Math.random() * 90000);
+
+    // Carregar configurações do pix-config.js
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.PIX_CONFIG) {
+        if (window.PIX_CONFIG.chavePixEmail) {
+          const el = document.getElementById('pix-email-key');
+          if (el) el.textContent = window.PIX_CONFIG.chavePixEmail;
+        }
+        if (window.PIX_CONFIG.pixCopiaECola) {
+          const el = document.getElementById('pix-copia-cola-text');
+          if (el) el.value = window.PIX_CONFIG.pixCopiaECola;
+        }
+        if (window.PIX_CONFIG.scriptsUrl) {
+          const el = document.getElementById('panel-scripts-link');
+          if (el) el.href = window.PIX_CONFIG.scriptsUrl;
+        }
+      }
+
+      function checkPaymentSuccessTrigger() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const hash = (window.location.hash || '').toLowerCase();
+        if (
+          urlParams.get('status') === 'pago' ||
+          urlParams.get('sucesso') === '1' ||
+          urlParams.get('sucesso') === 'true' ||
+          urlParams.get('paid') === '1' ||
+          hash.includes('liberado') ||
+          hash.includes('obrigado') ||
+          hash.includes('sucesso')
+        ) {
+          openPixModal();
+        }
+      }
+
+      checkPaymentSuccessTrigger();
+      window.addEventListener('hashchange', checkPaymentSuccessTrigger);
+    });
+
+    function openPixModal() {
+      document.getElementById('pix-modal').classList.add('active');
+      document.getElementById('modal-step-success').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function handleZipDownload(e) {
+      const zipUrl = (window.PIX_CONFIG && window.PIX_CONFIG.zipDownloadUrl && window.PIX_CONFIG.zipDownloadUrl.trim() !== '')
+        ? window.PIX_CONFIG.zipDownloadUrl
+        : '';
+
+      if (zipUrl) {
+        window.open(zipUrl, '_blank');
+      } else {
+        e.preventDefault();
+        alert('📦 O link do seu arquivo compactado (.ZIP) será liberado aqui assim que for cadastrado!\n\nVocê pode colar o link no arquivo pix-config.js (no campo zipDownloadUrl) ou nos passar o link que adicionamos imediatamente.');
+      }
+    }
+
+    /* Controle do Carrossel de Imagens */
+    let currentSlideIndex = 0;
+    let carouselTimer = null;
+
+    function showCarouselSlide(index) {
+      const slides = document.querySelectorAll('.carousel-slide-item');
+      const dots = document.querySelectorAll('.carousel-dot');
+      const total = slides.length || 4;
+
+      currentSlideIndex = (index + total) % total;
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle('active', idx === currentSlideIndex);
+      });
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentSlideIndex);
+      });
+    }
+
+    function moveCarousel(step) {
+      showCarouselSlide(currentSlideIndex + step);
+      resetCarouselAutoPlay();
+    }
+
+    function goToCarouselSlide(index) {
+      showCarouselSlide(index);
+      resetCarouselAutoPlay();
+    }
+
+    function resetCarouselAutoPlay() {
+      if (carouselTimer) clearInterval(carouselTimer);
+      carouselTimer = setInterval(() => {
+        showCarouselSlide(currentSlideIndex + 1);
+      }, 4500);
+    }
+
+    // Iniciar rotação automática ao carregar
+    resetCarouselAutoPlay();
+
+    function closePixModal() {
+      document.getElementById('pix-modal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function handleOverlayClick(e) {
+      if (e.target.id === 'pix-modal') {
+        closePixModal();
+      }
+    }
+
+    function handleSendEmail() {
+      const input = document.getElementById('user-email-target');
+      const email = input.value.trim();
+      const feedback = document.getElementById('email-feedback-msg');
+      const attemptsText = document.getElementById('attempts-num');
+      const btnReedit = document.getElementById('btn-try-again');
+      const btnSubmit = document.getElementById('btn-submit-email');
+
+      if (emailAttemptsLeft <= 0) {
+        feedback.className = 'email-status-msg error';
+        feedback.innerHTML = '⚠️ Você atingiu o limite de tentativas por segurança. Acesse seus materiais diretamente pelos botões de download acima!';
+        return;
+      }
+
+      if (!email || !/\S+@\S+\.\S+/.test(email)) {
+        feedback.className = 'email-status-msg error';
+        feedback.innerHTML = '❌ Digite um formato de e-mail válido (ex: seuemail@gmail.com).';
+        return;
+      }
+
+      emailAttemptsLeft--;
+      attemptsText.textContent = emailAttemptsLeft;
+
+      btnSubmit.disabled = true;
+      input.disabled = true;
+      btnSubmit.textContent = 'Enviando...';
+
+      const zipLink = (window.PIX_CONFIG && window.PIX_CONFIG.zipDownloadUrl) ? window.PIX_CONFIG.zipDownloadUrl : "https://drive.google.com/file/d/1iqy2qxmNLG06gN_bNaN_KUh-U22l4GK-/view?usp=drive_link";
+      const pdf1Link = (window.PIX_CONFIG && window.PIX_CONFIG.pdf1Url) ? window.PIX_CONFIG.pdf1Url : "https://drive.google.com/file/d/1dC08KVjYIeE-7_oPD_g9BqVXGG5h20vg/view?usp=drive_link";
+      const pdf2Link = (window.PIX_CONFIG && window.PIX_CONFIG.pdf2Url) ? window.PIX_CONFIG.pdf2Url : "https://drive.google.com/file/d/1ZW6qEQRftiDwNUV_VMQWgEQj1vZi5q-R/view?usp=drive_link";
+      const scriptsLink = (window.PIX_CONFIG && window.PIX_CONFIG.scriptsUrl) ? window.PIX_CONFIG.scriptsUrl : "https://drive.google.com/file/d/1QMBSMaus1GOEBGzpv-Jd64aWk2_0g1vw/view?usp=drive_link";
+
+      const serviceId = (window.PIX_CONFIG && window.PIX_CONFIG.emailjsServiceId) ? window.PIX_CONFIG.emailjsServiceId : "service_mqydhoj";
+      const templateId = (window.PIX_CONFIG && window.PIX_CONFIG.emailjsTemplateId) ? window.PIX_CONFIG.emailjsTemplateId : "template_sy1d6tr";
+      const publicKey = (window.PIX_CONFIG && window.PIX_CONFIG.emailjsPublicKey) ? window.PIX_CONFIG.emailjsPublicKey : "mT4h95O5q423b38K8";
+
+      const messageContent = `Olá!\n\nParabéns pelo acesso ao Método Funil Anti-Vácuo Direct!\n\nAqui estão os seus links oficiais de acesso imediato:\n\n1. 📦 Robô ManyChat Local (.ZIP):\n${zipLink}\n\n2. 📄 PDF 1 - O Funil Automático de Conversão:\n${pdf1Link}\n\n3. 📄 PDF 2 - Tutorial & Automações na Prática:\n${pdf2Link}\n\n4. 💬 Painel de Scripts de Alta Conversão:\n${scriptsLink}\n\nInstrução Importante: O pacote principal do robô está compactado em formato .ZIP. Para abrir no seu computador, basta clicar com o botão direito e escolher "Extrair Tudo".\n\nBons estudos e ótimas conversões!`;
+
+      const templateParams = {
+        email: email,
+        to_email: email,
+        name: "Cliente",
+        time: new Date().toLocaleString('pt-BR'),
+        title: "Seus Links de Acesso: Robô ManyChat, PDFs e Scripts",
+        message: messageContent,
+        zip_link: zipLink,
+        pdf1_link: pdf1Link,
+        pdf2_link: pdf2Link,
+        scripts_link: scriptsLink
+      };
+
+      // Disparo real via EmailJS (SDK oficial ou fetch direto)
+      if (window.emailjs && typeof window.emailjs.send === 'function') {
+        try {
+          window.emailjs.init({ publicKey: publicKey });
+          window.emailjs.send(serviceId, templateId, templateParams, publicKey).catch(() => {});
+        } catch (e) {}
+      } else {
+        try {
+          fetch("https://api.emailjs.com/api/v1.0/email/send", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              service_id: serviceId,
+              template_id: templateId,
+              user_id: publicKey,
+              template_params: templateParams
+            })
+          }).catch(() => {});
+        } catch (e) {}
+      }
+
+      setTimeout(() => {
+        feedback.className = 'email-status-msg success';
+        feedback.innerHTML = `
+          <div style="font-weight: 800; font-size: 14px; margin-bottom: 6px;">✅ Links enviados com sucesso para: <span style="color: #38bdf8;">${email}</span></div>
+          <div style="font-size: 12px; color: #fde047; margin: 8px 0 10px 0; background: rgba(234, 179, 8, 0.12); border: 1px solid rgba(234, 179, 8, 0.3); border-radius: 6px; padding: 7px 10px; text-align: left; line-height: 1.4;">
+            📩 <strong>Importante:</strong> Se não encontrar o e-mail na sua caixa principal em até 2 minutos, <strong>verifique a sua aba Spam ou Lixo Eletrônico</strong>!
+          </div>
+          <div style="font-size: 12px; color: #cbd5e1; margin-bottom: 8px;">Abaixo estão os 4 links oficiais também liberados diretamente na sua tela:</div>
+          <div class="dispatched-links-list">
+            <a href="${zipLink}" target="_blank" rel="noopener noreferrer">📦 1. Robô ManyChat Local (.ZIP)</a>
+            <a href="${pdf1Link}" target="_blank" rel="noopener noreferrer">📄 2. PDF 1: O Funil Automático de Conversão</a>
+            <a href="${pdf2Link}" target="_blank" rel="noopener noreferrer">📄 3. PDF 2: Tutorial & Automações na Prática</a>
+            <a href="${scriptsLink}" target="_blank" rel="noopener noreferrer" id="dispatched-scripts-link">💬 4. Painel de Scripts (PDF)</a>
+          </div>
+        `;
+        btnSubmit.textContent = 'Enviado ✔';
+        
+        if (emailAttemptsLeft > 0) {
+          btnReedit.style.display = 'inline-block';
+        } else {
+          btnReedit.style.display = 'none';
+        }
+      }, 700);
+    }
+
+    function enableEmailReedit() {
+      if (emailAttemptsLeft <= 0) return;
+      const input = document.getElementById('user-email-target');
+      const btnSubmit = document.getElementById('btn-submit-email');
+      const feedback = document.getElementById('email-feedback-msg');
+      const btnReedit = document.getElementById('btn-try-again');
+
+      input.disabled = false;
+      btnSubmit.disabled = false;
+      btnSubmit.textContent = 'Reenviar Acesso';
+      feedback.className = 'email-status-msg';
+      feedback.innerHTML = '';
+      btnReedit.style.display = 'none';
+      input.focus();
+      input.select();
+    }
+  </script>
+    <!-- BOTAO FLUTUANTE DE WHATSAPP (BALAOZINHO VERDE REDONDO) -->
+  <a href="https://wa.me/5583920053791?text=Oi%2C%20vim%20do%20site%20gostaria%20de%20saber%20mais" target="_blank" rel="noopener noreferrer" class="whatsapp-btn-float" aria-label="Fale conosco no WhatsApp" title="Fale conosco no WhatsApp">
+    <div class="whatsapp-pulse-wave"></div>
+    <svg viewBox="0 0 32 32" width="36" height="36" fill="#ffffff" class="whatsapp-float-icon">
+      <path d="M16.01 2.667C8.65 2.667 2.67 8.647 2.67 16.007c0 2.35.617 4.643 1.79 6.667L2.667 29.333l6.847-1.767a13.25 13.25 0 0 0 6.496 1.767h.005c7.36 0 13.34-5.98 13.34-13.34 0-3.563-1.387-6.913-3.907-9.433a13.27 13.27 0 0 0-9.433-3.893zm0 24.433h-.004a11.08 11.08 0 0 1-5.656-1.547l-.406-.241-4.204 1.103 1.122-4.1-.264-.42a11.07 11.07 0 0 1-1.698-5.888c0-6.12 4.98-11.1 11.106-11.1 2.966 0 5.753 1.155 7.85 3.253a11.06 11.06 0 0 1 3.253 7.85c0 6.124-4.984 11.1-11.099 11.1zm6.09-8.324c-.334-.167-1.975-.974-2.28-1.085-.306-.112-.528-.167-.75.167-.223.334-.863 1.085-1.057 1.308-.195.223-.39.25-.724.084-.334-.167-1.41-.52-2.686-1.658-.993-.886-1.663-1.98-1.858-2.314-.195-.334-.02-.515.147-.681.15-.15.334-.39.501-.585.167-.195.223-.334.334-.557.111-.223.056-.418-.028-.585-.084-.167-.75-1.81-1.03-2.478-.271-.65-.547-.562-.75-.572l-.64-.01c-.223 0-.585.084-.891.418-.306.334-1.169 1.142-1.169 2.784s1.197 3.23 1.364 3.453c.167.223 2.355 3.597 5.706 5.044.797.345 1.419.551 1.904.706.8.254 1.528.218 2.103.132.641-.096 1.975-.807 2.253-1.587.278-.78.278-1.448.195-1.587-.084-.139-.306-.223-.64-.39z"/>
+    </svg>
+  </a>
+
+
+  <script>
+    // =========================================================================
+    // ALTERNADOR DE ABAS DE MÓDULOS (100% FUNCIONAL E GLOBAL)
+    // =========================================================================
+    window.switchModuleTab = function(tabNum, clickedBtn) {
+      // 1. Atualizar botões
+      const allBtns = document.querySelectorAll('.mod-tab-btn');
+      allBtns.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+
+      if (clickedBtn) {
+        clickedBtn.classList.add('active');
+        clickedBtn.setAttribute('aria-selected', 'true');
+      } else {
+        const targetBtn = document.getElementById('tab-btn-' + tabNum);
+        if (targetBtn) {
+          targetBtn.classList.add('active');
+          targetBtn.setAttribute('aria-selected', 'true');
+        }
+      }
+
+      // 2. Atualizar painéis
+      const allPanels = document.querySelectorAll('.module-tab-panel');
+      allPanels.forEach(panel => panel.classList.remove('active'));
+
+      const targetPanel = document.getElementById('mod-panel-' + tabNum);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+    };
+
+    // Inicialização ao carregar o DOM
+    document.addEventListener('DOMContentLoaded', () => {
+      // Registrar cliques nas abas de módulos
+      const tabBtns = document.querySelectorAll('.mod-tab-btn');
+      tabBtns.forEach((btn, index) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const tabNum = btn.id ? parseInt(btn.id.replace('tab-btn-', '')) : index + 1;
+          window.switchModuleTab(tabNum, btn);
+        });
+      });
+
+      // Mobile navbar toggle
+      const mobileToggle = document.getElementById('mobile-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('open');
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => navMenu.classList.remove('open'));
+        });
+      }
+
+      // Accordion FAQ interativo (Estilo Casa Pata 2)
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (question) {
+          question.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = item.classList.contains('open');
+            faqItems.forEach(i => i.classList.remove('open'));
+            if (!isOpen) {
+              item.classList.add('open');
+            }
+          });
+        }
+      });
+
+      // Smooth scroll para links com âncora
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#' || !targetId) return;
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            const navHeight = 70;
+            const elementPosition = targetEl.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Canvas Themed Particles (Direct Chat Nodes, Sparks & Pulses)
+      initThemedParticlesCanvas();
+    });
+
+    // =========================================================================
+    // CANVAS DE PARTICULAS TEMATICAS: AUTOMAÇÃO, DIRECT & SPARKS (CASA PATA 2 STYLE)
+    // =========================================================================
+    function initThemedParticlesCanvas() {
+      const canvas = document.getElementById('chat-particles-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      let width = (canvas.width = window.innerWidth);
+      let height = (canvas.height = window.innerHeight);
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+
+      let mouse = { x: -1000, y: -1000, radius: 120 };
+      window.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      });
+
+      class ChatParticle {
+        constructor() {
+          this.reset(true);
+        }
+
+        reset(initial = false) {
+          this.x = Math.random() * width;
+          this.y = initial ? Math.random() * height : height + Math.random() * 40;
+          this.size = Math.random() * 8 + 5;
+          this.speedY = Math.random() * 0.7 + 0.3;
+          this.speedX = (Math.random() - 0.5) * 0.4;
+          this.wobble = Math.random() * Math.PI * 2;
+          this.wobbleSpeed = Math.random() * 0.02 + 0.01;
+          this.alpha = Math.random() * 0.4 + 0.15;
+          this.type = Math.random() > 0.4 ? 'bubble' : 'spark';
+          const colors = ['#10b981', '#34d399', '#38bdf8', '#ffffff'];
+          this.color = colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        update() {
+          this.y -= this.speedY;
+          this.wobble += this.wobbleSpeed;
+          this.x += Math.sin(this.wobble) * 0.5 + this.speedX;
+
+          const dx = mouse.x - this.x;
+          const dy = mouse.y - this.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < mouse.radius) {
+            const force = (mouse.radius - dist) / mouse.radius;
+            this.x -= (dx / dist) * force * 3;
+            this.y -= (dy / dist) * force * 3;
+          }
+
+          if (this.y < -30 || this.x < -30 || this.x > width + 30) {
+            this.reset(false);
+          }
+        }
+
+        draw() {
+          ctx.save();
+          ctx.globalAlpha = this.alpha;
+
+          if (this.type === 'bubble') {
+            const w = this.size * 2.8;
+            const h = this.size * 1.8;
+            const r = 5;
+
+            ctx.fillStyle = 'rgba(16, 24, 40, 0.7)';
+            ctx.strokeStyle = this.color;
+            ctx.lineWidth = 1;
+
+            ctx.beginPath();
+            ctx.roundRect(this.x - w/2, this.y - h/2, w, h, r);
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.fillStyle = this.color;
+            const dotSize = Math.max(1, this.size * 0.14);
+            const dotSpacing = this.size * 0.55;
+            ctx.beginPath();
+            ctx.arc(this.x - dotSpacing, this.y, dotSize, 0, Math.PI * 2);
+            ctx.arc(this.x, this.y, dotSize, 0, Math.PI * 2);
+            ctx.arc(this.x + dotSpacing, this.y, dotSize, 0, Math.PI * 2);
+            ctx.fill();
+          } else {
+            ctx.fillStyle = this.color;
+            ctx.shadowColor = this.color;
+            ctx.shadowBlur = 8;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size * 0.35, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          ctx.restore();
+        }
+      }
+
+      const count = Math.min(Math.floor(width / 35), 38);
+      const particles = Array.from({ length: count }, () => new ChatParticle());
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].update();
+          particles[i].draw();
+
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 85) {
+              ctx.save();
+              ctx.globalAlpha = (1 - dist / 85) * 0.12;
+              ctx.strokeStyle = '#10b981';
+              ctx.lineWidth = 0.75;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+              ctx.restore();
+            }
+          }
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    }
+  </script>
+
+</body>
+</html>
+
